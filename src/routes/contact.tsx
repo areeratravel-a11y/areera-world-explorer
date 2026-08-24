@@ -115,7 +115,7 @@ function Contact() {
           <div className="overflow-hidden rounded-2xl border border-border">
             <iframe
               title="Areera Travel and Tours office location"
-              src="https://www.google.com/maps?q=Gulberg%20III%20Lahore&output=embed"
+              src="https://www.google.com/maps?q=Blue%20Area%20Islamabad&output=embed"
               className="h-72 w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

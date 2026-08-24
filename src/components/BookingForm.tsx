@@ -59,8 +59,9 @@ export function BookingForm({
     const values = parsed.data;
     const msg = `*New Inquiry via Website*\n*Name:* ${values.name}\n*Email:* ${values.email}\n*Phone:* ${values.phone}\n*Details:* ${values.detail}${values.message ? `\n*Message:* ${values.message}` : ""}`;
     const encoded = encodeURIComponent(msg);
+    const waNumber = "923145556024";
     toast.success("Opening WhatsApp with your inquiry details...");
-    window.open(`https://wa.me/923001234567?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/${waNumber}?text=${encoded}`, "_blank");
   }
 
   const field = (name: string) =>

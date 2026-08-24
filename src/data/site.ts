@@ -86,10 +86,10 @@ export const testimonials = [
 
 export const contactInfo = {
   name: "Areera Travel and Tours",
-  phone: "+92 300 1234567",
-  whatsapp: "+92 300 1234567",
+  phone: "+92 314 5556024",
+  whatsapp: "+92 314 5556024",
   email: "areeratravel@gmail.com",
-  address: "Office 12, Second Floor, Gulberg III, Lahore, Pakistan",
+  address: "Blue Area, Islamabad, Pakistan",
   hours: [
     { day: "Monday – Friday", time: "9:00 AM – 7:00 PM" },
     { day: "Saturday", time: "10:00 AM – 5:00 PM" },
