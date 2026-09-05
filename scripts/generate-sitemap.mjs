@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
-const baseUrl = "https://areeratravel.com";
+const baseUrl = "https://www.areeratravels.com";
 const today = new Date().toISOString().split("T")[0];
 
 // Extract country slugs from src/data/countries.ts
@@ -64,6 +64,22 @@ for (const slug of countrySlugs) {
 
 xml += `</urlset>\n`;
 
+// Write to public/
 const sitemapPath = path.join(rootDir, "public", "sitemap.xml");
 fs.writeFileSync(sitemapPath, xml, "utf8");
-console.log(`[Sitemap] Generated public/sitemap.xml with ${staticRoutes.length + countrySlugs.length} URLs.`);
+
+// Mirror to all potential Vercel & Nitro deployment output paths if they exist
+const targetDirs = [
+  path.join(rootDir, ".vercel", "output", "static"),
+  path.join(rootDir, ".vercel", "output"),
+  path.join(rootDir, ".output", "public"),
+  path.join(rootDir, ".output"),
+];
+
+for (const dir of targetDirs) {
+  if (fs.existsSync(dir)) {
+    fs.writeFileSync(path.join(dir, "sitemap.xml"), xml, "utf8");
+  }
+}
+
+console.log(`[Sitemap] Generated sitemap.xml with ${staticRoutes.length + countrySlugs.length} URLs for ${baseUrl}.`);

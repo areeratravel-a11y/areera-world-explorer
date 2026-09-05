@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { countries } from "@/data/countries";
 
-const baseUrl = "https://areeratravel.com";
+const baseUrl = "https://www.areeratravels.com";
 
 const staticRoutes = [
   { path: "/", priority: "1.0", changefreq: "daily" },
@@ -59,7 +59,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           headers: {
             "Content-Type": "application/xml; charset=utf-8",
             "Cache-Control": "public, max-age=3600, s-maxage=86400",
-            "X-Robots-Tag": "noindex",
           },
         });
       },

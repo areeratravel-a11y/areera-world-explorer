@@ -4,7 +4,7 @@ const robotsTxt = `User-agent: *
 Allow: /
 Disallow: /thank-you
 
-Sitemap: https://areeratravel.com/sitemap.xml
+Sitemap: https://www.areeratravels.com/sitemap.xml
 `;
 
 export const Route = createFileRoute("/robots.txt")({
