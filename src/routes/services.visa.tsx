@@ -1,8 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { CountryCard } from "@/components/cards";
+import { Button } from "@/components/ui/button";
 import { RelatedServices } from "@/components/RelatedServices";
 import { BookingForm } from "@/components/BookingForm";
 import { countries, popularVisaDestinations } from "@/data/countries";
@@ -11,7 +12,7 @@ import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
 import { visaArticle, visaFaqs } from "@/data/content";
 import { CountryFlag } from "@/components/CountryFlag";
-import { BadgeCheck, Clock, FileCheck2, PhoneCall, ShieldCheck, Stamp } from "lucide-react";
+import { ArrowRight, BadgeCheck, Clock, FileCheck2, Globe2, PhoneCall, ShieldCheck, Stamp } from "lucide-react";
 import { contactInfo } from "@/data/site";
 import { ServicePageSkeleton } from "@/components/ServicePageSkeleton";
 
@@ -272,6 +273,20 @@ function VisaPage() {
           {popular.map((c) => (
             <CountryCard key={c.slug} country={c} />
           ))}
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <Button asChild size="lg" variant="outline" className="border-border/80 bg-card/60">
+            <Link to="/countries">
+              <Globe2 className="mr-2 h-4 w-4 text-primary" /> Browse All 50+ Visa Destinations
+            </Link>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="border-cyan-500/30 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20">
+            <Link to="/guides/visa-free-asian-destinations">
+              <span>Visa-Free Asian Guide 2026</span>
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
 

@@ -72,12 +72,12 @@ export const Route = createFileRoute("/flight-reservation")({
 });
 
 const routes = [
-  { from: "Lahore", to: "Dubai" },
-  { from: "Karachi", to: "Jeddah" },
-  { from: "Islamabad", to: "Istanbul" },
-  { from: "Lahore", to: "Kuala Lumpur" },
-  { from: "Karachi", to: "Doha" },
-  { from: "Islamabad", to: "Baku" },
+  { from: "Lahore", to: "Dubai", slug: "uae" },
+  { from: "Karachi", to: "Jeddah", slug: "saudi-arabia" },
+  { from: "Islamabad", to: "Istanbul", slug: "turkey" },
+  { from: "Lahore", to: "Kuala Lumpur", slug: "malaysia" },
+  { from: "Karachi", to: "Doha", slug: "qatar" },
+  { from: "Islamabad", to: "Baku", slug: "azerbaijan" },
 ];
 
 function FlightReservation() {
@@ -175,11 +175,22 @@ function FlightReservation() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {routes.map((r, i) => (
             <Reveal key={`${r.from}-${r.to}`} delay={i * 50}>
-              <div className="card-elevate flex items-center gap-3 rounded-xl border border-border bg-card/70 p-4">
-                <PlaneTakeoff className="h-5 w-5 shrink-0 text-primary" aria-hidden />
-                <p className="min-w-0 truncate text-sm font-medium">
-                  {r.from} → {r.to}
-                </p>
+              <div className="card-elevate flex items-center justify-between gap-3 rounded-xl border border-border bg-card/70 p-4">
+                <div className="flex items-center gap-3 min-w-0">
+                  <PlaneTakeoff className="h-5 w-5 shrink-0 text-primary" aria-hidden />
+                  <p className="min-w-0 truncate text-sm font-medium">
+                    {r.from} → {r.to}
+                  </p>
+                </div>
+                {r.slug && (
+                  <Link
+                    to="/countries/$slug"
+                    params={{ slug: r.slug }}
+                    className="text-xs text-primary hover:underline shrink-0"
+                  >
+                    Visa Guide →
+                  </Link>
+                )}
               </div>
             </Reveal>
           ))}

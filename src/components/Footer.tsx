@@ -38,69 +38,64 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 lg:col-span-3">
             <h3 className="mb-3 text-xs font-semibold tracking-wider text-primary">
-              Services
+              Core Services
             </h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               {services.map((s) => (
                 <li key={s.slug}>
-                  <Link to={s.path as never} className="hover:text-foreground">
+                  <Link to={s.path as never} className="hover:text-foreground transition-colors">
                     {s.title}
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link to="/services" className="text-xs font-medium text-cyan-400 hover:underline">
+                  View All Services Overview →
+                </Link>
+              </li>
             </ul>
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 lg:col-span-3">
             <h3 className="mb-3 text-xs font-semibold tracking-wider text-primary">
-              Company
+              Travel Intelligence & Hubs
             </h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link to="/about" className="hover:text-foreground">
-                    About Areera Travel and Tours
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="hover:text-foreground">
-                    Contact our travel consultants
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/countries" className="hover:text-foreground">
-                    All visa destinations
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/guides/visa-free-asian-destinations" className="hover:text-foreground font-medium text-primary/90">
-                    Visa-Free Asian Guide 2026
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/hotel-booking" className="hover:text-foreground">
-                    Hotel booking inquiries
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/flight-reservation" className="hover:text-foreground">
-                    Flight reservation requests
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/privacy-policy" className="hover:text-foreground">
-                    Privacy Policy & Data Security
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/terms-and-conditions" className="hover:text-foreground">
-                    Terms & Conditions
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>
+                <Link to="/countries" className="hover:text-foreground transition-colors font-medium">
+                  Global Visa Directory (50+ Destinations)
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/visa-free-asian-destinations" className="hover:text-foreground transition-colors text-cyan-300 font-medium">
+                  Visa-Free Asian Guide 2026
+                </Link>
+              </li>
+              <li>
+                <Link to="/flight-reservation" className="hover:text-foreground transition-colors">
+                  Flight Reservations (Embassy PNR)
+                </Link>
+              </li>
+              <li>
+                <Link to="/hotel-booking" className="hover:text-foreground transition-colors">
+                  Hotel Booking Vouchers
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-foreground transition-colors">
+                  About Areera Travel & Team
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-foreground transition-colors">
+                  Contact Travel Desk
+                </Link>
+              </li>
+            </ul>
           </div>
+        </div>
 
         {/* Regional Destinations Grid — 5 balanced columns on desktop */}
         <div className="mt-12 grid grid-cols-2 gap-8 border-t border-border pt-10 sm:grid-cols-3 lg:grid-cols-5">

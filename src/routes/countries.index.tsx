@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
-import { CheckCircle2, Clock, Globe2, Search, ShieldCheck, X } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, CheckCircle2, Clock, FileCheck2, Globe2, Hotel, Plane, Search, ShieldCheck, X } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/Section";
 import { CountryCard } from "@/components/cards";
@@ -100,6 +100,65 @@ function CountriesHub() {
             <span className="inline-flex items-center gap-1.5 font-medium text-foreground/90">
               <Clock className="h-4 w-4 text-amber-400" /> Fast-Track E-Visa Support
             </span>
+          </div>
+
+          {/* Quick Cross-Links to Travel Services & Intelligence */}
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 border-t border-white/10 pt-6">
+            <Link
+              to="/guides/visa-free-asian-destinations"
+              className="flex items-center gap-2.5 rounded-xl border border-cyan-500/25 bg-cyan-500/10 p-3 text-xs text-cyan-300 hover:bg-cyan-500/20 transition-colors group"
+            >
+              <Globe2 className="h-4 w-4 shrink-0 text-cyan-400" />
+              <div className="min-w-0 flex-1">
+                <p className="font-semibold text-white group-hover:text-cyan-300 truncate">
+                  2026 Asian Travel Guide
+                </p>
+                <p className="text-[10px] text-cyan-200/70 truncate">Visa-free & e-visa strategy</p>
+              </div>
+              <ArrowRight className="h-3 w-3 text-cyan-400 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+
+            <Link
+              to="/services/visa"
+              className="flex items-center gap-2.5 rounded-xl border border-border/60 bg-background/40 p-3 text-xs text-foreground/90 hover:border-primary/40 hover:bg-background/80 transition-colors group"
+            >
+              <ShieldCheck className="h-4 w-4 shrink-0 text-emerald-400" />
+              <div className="min-w-0 flex-1">
+                <p className="font-semibold text-white group-hover:text-primary truncate">
+                  Visa Filing Support
+                </p>
+                <p className="text-[10px] text-muted-foreground truncate">End-to-end embassy compliance</p>
+              </div>
+              <ArrowRight className="h-3 w-3 text-primary shrink-0 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+
+            <Link
+              to="/flight-reservation"
+              className="flex items-center gap-2.5 rounded-xl border border-border/60 bg-background/40 p-3 text-xs text-foreground/90 hover:border-primary/40 hover:bg-background/80 transition-colors group"
+            >
+              <Plane className="h-4 w-4 shrink-0 text-primary" />
+              <div className="min-w-0 flex-1">
+                <p className="font-semibold text-white group-hover:text-primary truncate">
+                  Flight Reservations
+                </p>
+                <p className="text-[10px] text-muted-foreground truncate">Verifiable embassy PNRs</p>
+              </div>
+              <ArrowRight className="h-3 w-3 text-primary shrink-0 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+
+            <Link
+              to="/hotel-booking"
+              className="flex items-center gap-2.5 rounded-xl border border-border/60 bg-background/40 p-3 text-xs text-foreground/90 hover:border-primary/40 hover:bg-background/80 transition-colors group"
+            >
+              <Hotel className="h-4 w-4 shrink-0 text-amber-400" />
+              <div className="min-w-0 flex-1">
+                <p className="font-semibold text-white group-hover:text-amber-300 truncate">
+                  Hotel Vouchers
+                </p>
+                <p className="text-[10px] text-muted-foreground truncate">Confirmed embassy bookings</p>
+              </div>
+              <ArrowRight className="h-3 w-3 text-amber-400 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
           </div>
         </div>
       </div>

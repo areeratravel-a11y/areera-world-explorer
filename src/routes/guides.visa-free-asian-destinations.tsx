@@ -234,7 +234,13 @@ function VisaFreeAsianDestinationsPage() {
             </h2>
             <p className="mt-2 text-xs sm:text-sm leading-relaxed text-foreground/90">
               The most accessible visa-free and simplified e-visa destinations in Asia for outbound travelers are{" "}
-              <strong>Malaysia (Digital MDAC / Visa-Exempt), the Maldives (30-day Free VOA), Azerbaijan (3-day ASAN e-Visa), Thailand (Fast-Track eVOA), and Sri Lanka (Instant ETA)</strong>.
+              <strong>
+                <Link to="/countries/$slug" params={{ slug: "malaysia" }} className="text-primary hover:underline font-bold">Malaysia</Link> (Digital MDAC / Visa-Exempt), the{" "}
+                <Link to="/countries/$slug" params={{ slug: "maldives" }} className="text-primary hover:underline font-bold">Maldives</Link> (30-day Free VOA),{" "}
+                <Link to="/countries/$slug" params={{ slug: "azerbaijan" }} className="text-primary hover:underline font-bold">Azerbaijan</Link> (3-day ASAN e-Visa),{" "}
+                <Link to="/countries/$slug" params={{ slug: "thailand" }} className="text-primary hover:underline font-bold">Thailand</Link> (Fast-Track eVOA), and{" "}
+                <Link to="/countries/$slug" params={{ slug: "sri-lanka" }} className="text-primary hover:underline font-bold">Sri Lanka</Link> (Instant ETA)
+              </strong>.
               Travelers can anticipate average round-trip flight durations of 3.5 to 5.5 hours on regional carriers, with all-inclusive 6-to-8-day tour packages averaging{" "}
               <strong>$550 to $1,150 USD per person</strong> when organized through accredited consolidators like <strong>Areera Travels</strong>.
             </p>
@@ -347,35 +353,55 @@ function VisaFreeAsianDestinationsPage() {
             </thead>
             <tbody className="divide-y divide-border/50">
               <tr>
-                <td className="p-4 font-bold text-foreground">Malaysia</td>
+                <td className="p-4 font-bold text-foreground">
+                  <Link to="/countries/$slug" params={{ slug: "malaysia" }} className="hover:text-primary hover:underline flex items-center gap-1.5">
+                    Malaysia <ArrowRight className="h-3 w-3 text-primary" />
+                  </Link>
+                </td>
                 <td className="p-4 text-muted-foreground">MDAC Online Registration</td>
                 <td className="p-4 text-emerald-400 font-medium">&lt; 24 Hours</td>
                 <td className="p-4 text-foreground font-semibold">$650 – $920 USD</td>
                 <td className="p-4 text-muted-foreground">Nov – Mar</td>
               </tr>
               <tr>
-                <td className="p-4 font-bold text-foreground">Maldives</td>
+                <td className="p-4 font-bold text-foreground">
+                  <Link to="/countries/$slug" params={{ slug: "maldives" }} className="hover:text-primary hover:underline flex items-center gap-1.5">
+                    Maldives <ArrowRight className="h-3 w-3 text-primary" />
+                  </Link>
+                </td>
                 <td className="p-4 text-muted-foreground">Free Visa on Arrival (MLE)</td>
                 <td className="p-4 text-emerald-400 font-medium">Instant</td>
                 <td className="p-4 text-foreground font-semibold">$890 – $1,850 USD</td>
                 <td className="p-4 text-muted-foreground">Nov – Apr</td>
               </tr>
               <tr>
-                <td className="p-4 font-bold text-foreground">Azerbaijan</td>
+                <td className="p-4 font-bold text-foreground">
+                  <Link to="/countries/$slug" params={{ slug: "azerbaijan" }} className="hover:text-primary hover:underline flex items-center gap-1.5">
+                    Azerbaijan <ArrowRight className="h-3 w-3 text-primary" />
+                  </Link>
+                </td>
                 <td className="p-4 text-muted-foreground">ASAN Electronic Visa</td>
                 <td className="p-4 text-emerald-400 font-medium">3 Days</td>
                 <td className="p-4 text-foreground font-semibold">$580 – $840 USD</td>
                 <td className="p-4 text-muted-foreground">Apr – Jun, Sep – Nov</td>
               </tr>
               <tr>
-                <td className="p-4 font-bold text-foreground">Thailand</td>
+                <td className="p-4 font-bold text-foreground">
+                  <Link to="/countries/$slug" params={{ slug: "thailand" }} className="hover:text-primary hover:underline flex items-center gap-1.5">
+                    Thailand <ArrowRight className="h-3 w-3 text-primary" />
+                  </Link>
+                </td>
                 <td className="p-4 text-muted-foreground">Fast-Track eVOA</td>
                 <td className="p-4 text-emerald-400 font-medium">24–72 Hours</td>
                 <td className="p-4 text-foreground font-semibold">$520 – $790 USD</td>
                 <td className="p-4 text-muted-foreground">Nov – Feb</td>
               </tr>
               <tr>
-                <td className="p-4 font-bold text-foreground">Sri Lanka</td>
+                <td className="p-4 font-bold text-foreground">
+                  <Link to="/countries/$slug" params={{ slug: "sri-lanka" }} className="hover:text-primary hover:underline flex items-center gap-1.5">
+                    Sri Lanka <ArrowRight className="h-3 w-3 text-primary" />
+                  </Link>
+                </td>
                 <td className="p-4 text-muted-foreground">Electronic Travel Authorization</td>
                 <td className="p-4 text-emerald-400 font-medium">24 Hours</td>
                 <td className="p-4 text-foreground font-semibold">$490 – $740 USD</td>
@@ -426,6 +452,18 @@ function VisaFreeAsianDestinationsPage() {
           <Button asChild size="lg" className="royal-surface glow-ring shadow-lg font-semibold">
             <Link to="/services/visa">
               <Stamp className="mr-2 h-4 w-4" /> Request Custom Itinerary
+            </Link>
+          </Button>
+
+          <Button asChild size="lg" variant="outline" className="border-border/80 bg-card/80">
+            <Link to="/countries">
+              <Globe2 className="mr-2 h-4 w-4 text-primary" /> Browse All 50+ Destinations
+            </Link>
+          </Button>
+
+          <Button asChild size="lg" variant="outline" className="border-border/80 bg-card/80">
+            <Link to="/flight-reservation">
+              <Plane className="mr-2 h-4 w-4 text-primary" /> Flight Reservations
             </Link>
           </Button>
 

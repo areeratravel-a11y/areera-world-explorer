@@ -131,14 +131,22 @@ function Contact() {
             detailPlaceholder="e.g. Turkey tourist visa"
             submitLabel="Send message"
           />
-          <p className="mt-4 text-sm text-muted-foreground">
-            Looking for a specific destination? Browse{" "}
-            <Link to="/countries" className="text-primary hover:underline">
-              visa destinations by region
-            </Link>{" "}
-            or start with{" "}
-            <Link to="/services/visa" className="text-primary hover:underline">
-              our visa assistance service
+          <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+            Looking for a specific service? Browse{" "}
+            <Link to="/countries" className="text-primary hover:underline font-medium">
+              50+ visa destinations
+            </Link>
+            , request{" "}
+            <Link to="/flight-reservation" className="text-primary hover:underline font-medium">
+              embassy flight reservations
+            </Link>
+            , book{" "}
+            <Link to="/hotel-booking" className="text-primary hover:underline font-medium">
+              hotel vouchers
+            </Link>
+            , or start{" "}
+            <Link to="/services/attestation" className="text-primary hover:underline font-medium">
+              document attestation
             </Link>
             .
           </p>

@@ -73,20 +73,22 @@ export const Route = createFileRoute("/hotel-booking")({
 });
 
 const featured = [
-  { name: "Marina Skyline Suites", city: "Dubai, UAE", tag: "City view · Metro nearby" },
+  { name: "Marina Skyline Suites", city: "Dubai, UAE", tag: "City view · Metro nearby", slug: "uae" },
   {
     name: "Bosphorus Heritage Hotel",
     city: "Istanbul, Turkey",
     tag: "Old town · Breakfast included",
+    slug: "turkey",
   },
   {
     name: "Al Haram Residence",
     city: "Makkah, Saudi Arabia",
     tag: "Walking distance · Family rooms",
+    slug: "saudi-arabia",
   },
-  { name: "Bukit Bintang Grand", city: "Kuala Lumpur, Malaysia", tag: "Shopping district · Pool" },
-  { name: "Nile Court Cairo", city: "Cairo, Egypt", tag: "Riverside · Airport transfer" },
-  { name: "Sukhumvit Garden Inn", city: "Bangkok, Thailand", tag: "BTS access · Rooftop" },
+  { name: "Bukit Bintang Grand", city: "Kuala Lumpur, Malaysia", tag: "Shopping district · Pool", slug: "malaysia" },
+  { name: "Nile Court Cairo", city: "Cairo, Egypt", tag: "Riverside · Airport transfer", slug: "egypt" },
+  { name: "Sukhumvit Garden Inn", city: "Bangkok, Thailand", tag: "BTS access · Rooftop", slug: "thailand" },
 ];
 
 function HotelBooking() {
@@ -178,6 +180,24 @@ function HotelBooking() {
                   <Star className="h-3.5 w-3.5 text-primary" aria-hidden />
                   {h.tag}
                 </p>
+                {h.slug && (
+                  <div className="mt-4 pt-3 border-t border-border/50 flex items-center justify-between text-xs">
+                    <Link
+                      to="/countries/$slug"
+                      params={{ slug: h.slug }}
+                      className="text-primary hover:underline font-medium"
+                    >
+                      Visa Requirements &rarr;
+                    </Link>
+                    <Link
+                      to="/flight-reservation"
+                      search={{ destination: h.slug }}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      Flights &rarr;
+                    </Link>
+                  </div>
+                )}
               </article>
             </Reveal>
           ))}

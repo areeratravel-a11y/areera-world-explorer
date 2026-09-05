@@ -140,11 +140,17 @@ function About() {
       </div>
 
       <div className="mt-16 flex flex-wrap gap-3">
-        <Button asChild>
+        <Button asChild className="royal-surface glow-ring shadow-md">
           <Link to="/contact">Talk to a consultant</Link>
         </Button>
         <Button asChild variant="outline">
           <Link to="/services">See our travel services</Link>
+        </Button>
+        <Button asChild variant="outline">
+          <Link to="/countries">Browse 50+ visa destinations</Link>
+        </Button>
+        <Button asChild variant="outline" className="border-cyan-500/30 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20">
+          <Link to="/guides/visa-free-asian-destinations">Asian Travel Guide 2026</Link>
         </Button>
       </div>
       <ContentArticle {...aboutArticle} />

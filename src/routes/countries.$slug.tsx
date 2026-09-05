@@ -150,6 +150,52 @@ function CountryOrRegion() {
             <CountryCard key={c.slug} country={c} />
           ))}
         </div>
+
+        {data.region === "Asia" && (
+          <div className="mt-10 rounded-2xl border border-cyan-500/30 bg-gradient-to-r from-blue-950/60 via-slate-900/80 to-cyan-950/40 p-5 sm:p-6 shadow-md backdrop-blur-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3.5">
+              <div className="h-10 w-10 rounded-xl bg-cyan-500/15 border border-cyan-400/20 flex items-center justify-center text-cyan-400 shrink-0">
+                <Globe2 className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-wider text-cyan-400">
+                  Featured 2026 Travel Guide
+                </p>
+                <p className="mt-0.5 text-sm font-semibold text-white">
+                  Visa-Free & Easy-Visa Asian Destinations Strategy
+                </p>
+                <p className="mt-0.5 text-xs text-slate-300">
+                  Explore side-by-side package budgets, flight timings, and streamlined e-visa rules across Asia.
+                </p>
+              </div>
+            </div>
+            <Button asChild size="sm" className="shrink-0 royal-surface glow-ring shadow-md">
+              <Link to="/guides/visa-free-asian-destinations">
+                <span>Read Asian Guide</span>
+                <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+              </Link>
+            </Button>
+          </div>
+        )}
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <Button asChild variant="outline" className="border-border/80 bg-card/60">
+            <Link to="/countries">
+              <Globe2 className="mr-2 h-4 w-4 text-primary" /> Browse All 50+ Destinations
+            </Link>
+          </Button>
+          <Button asChild variant="outline" className="border-border/80 bg-card/60">
+            <Link to="/flight-reservation">
+              <Plane className="mr-2 h-4 w-4 text-primary" /> Flight Reservations
+            </Link>
+          </Button>
+          <Button asChild variant="outline" className="border-border/80 bg-card/60">
+            <Link to="/hotel-booking">
+              <Hotel className="mr-2 h-4 w-4 text-amber-400" /> Hotel Bookings
+            </Link>
+          </Button>
+        </div>
+
         <div className="mt-16">
           <ContentArticle {...regionArticle(data.region, list.length)} />
         </div>
@@ -562,7 +608,8 @@ function CountryOrRegion() {
             </Link>
 
             <Link
-              to="/services/ticket"
+              to="/flight-reservation"
+              search={{ destination: country.slug }}
               className="card-elevate flex flex-col rounded-2xl border border-border/70 bg-background/50 p-4 hover:border-primary/50"
             >
               <Plane className="h-5 w-5 text-primary" />
@@ -570,7 +617,7 @@ function CountryOrRegion() {
                 Flights to {country.capital}
               </span>
               <span className="mt-1 text-xs text-muted-foreground">
-                Best airfares on leading carriers
+                Verifiable PNR & confirmed airfares
               </span>
             </Link>
 
@@ -625,6 +672,14 @@ function CountryOrRegion() {
             {related.map((c) => (
               <CountryCard key={c.slug} country={c} />
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Button asChild size="lg" variant="outline" className="border-border/80 bg-card/60">
+              <Link to="/countries">
+                <Globe2 className="mr-2 h-4 w-4 text-primary" /> Explore All 50+ Global Visa Destinations
+              </Link>
+            </Button>
           </div>
         </div>
       </Section>

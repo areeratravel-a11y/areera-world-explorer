@@ -1,8 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Globe2 } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { CountryCard } from "@/components/cards";
+import { Button } from "@/components/ui/button";
 import { RelatedServices } from "@/components/RelatedServices";
 import { BookingForm } from "@/components/BookingForm";
 import { attestationCountries, countries } from "@/data/countries";
@@ -172,6 +174,14 @@ function AttestationPage() {
           {list.map((c) => (
             <CountryCard key={c.slug} country={c} />
           ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <Button asChild variant="outline" className="border-border/80 bg-card/60">
+            <Link to="/countries">
+              <Globe2 className="mr-2 h-4 w-4 text-primary" /> Browse All 50+ Visa Destinations
+            </Link>
+          </Button>
         </div>
       </div>
 
