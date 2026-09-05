@@ -18,6 +18,11 @@ export const Route = createFileRoute("/about")({
         content:
           "Learn about Areera Travel and Tours: certified travel consultants providing reliable visa filing, flight booking, and consular attestation with 100% compliance.",
       },
+      {
+        name: "keywords",
+        content:
+          "about areera travel and tours, arslan ahmed areera travel, hareera areera travel, registered travel agency islamabad, licensed visa consultancy blue area, trusted travel agency pakistan",
+      },
       { property: "og:title", content: "About Areera Travel and Tours — Our Story & Team" },
       {
         property: "og:description",

@@ -22,6 +22,11 @@ export const Route = createFileRoute("/services/attestation")({
         content:
           "Fast document attestation for educational, personal & commercial papers: HEC, MOFA, Notary, and foreign embassy legalization handled with complete tracking.",
       },
+      {
+        name: "keywords",
+        content:
+          "mofa attestation islamabad, hec degree attestation pakistan, saudi embassy attestation pakistan, uae embassy attestation islamabad, qatar embassy attestation, document attestation blue area islamabad, nikahnama mofa attestation, birth certificate attestation nadra, ibcc attestation agent",
+      },
       { property: "og:title", content: "Document Attestation Services — MOFA, HEC & Embassy Legalization | Areera Travel and Tours" },
       {
         property: "og:description",

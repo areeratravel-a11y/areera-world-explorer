@@ -18,6 +18,11 @@ export const Route = createFileRoute("/contact")({
         content:
           "Contact Areera Travel and Tours for expert visa filing, air tickets, document attestation, and flight booking. Reach us via Phone, WhatsApp, or at our office.",
       },
+      {
+        name: "keywords",
+        content:
+          "areera travel contact number, areera travels whatsapp, travel agency blue area islamabad address, visa consultants contact islamabad, flight booking office phone number",
+      },
       { property: "og:title", content: "Contact Areera Travel and Tours — Phone, WhatsApp & Office" },
       {
         property: "og:description",

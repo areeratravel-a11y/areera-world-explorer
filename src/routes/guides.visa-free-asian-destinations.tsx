@@ -19,6 +19,7 @@ import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/data/site";
 import { CountryFlag } from "@/components/CountryFlag";
+import { breadcrumbSchema } from "@/lib/json-ld";
 
 export const Route = createFileRoute("/guides/visa-free-asian-destinations")({
   head: () => ({
@@ -28,6 +29,11 @@ export const Route = createFileRoute("/guides/visa-free-asian-destinations")({
         name: "description",
         content:
           "Explore top visa-free and e-visa Asian destinations. Curated itineraries, flight times, verified costs, and tour packages from Areera Travels.",
+      },
+      {
+        name: "keywords",
+        content:
+          "visa free countries for pakistani passport 2026, easy evisa countries for pakistan, malaysia evisa pakistan, azerbaijan asan visa pakistan, maldives visa on arrival pakistani citizen, sri lanka eta pakistan, thailand evoa pakistan, budget international travel from pakistan",
       },
       {
         property: "og:title",
@@ -44,6 +50,19 @@ export const Route = createFileRoute("/guides/visa-free-asian-destinations")({
     ],
     links: [{ rel: "canonical", href: "/guides/visa-free-asian-destinations" }],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(
+          breadcrumbSchema([
+            { name: "Home", item: "/" },
+            { name: "Countries", item: "/countries" },
+            {
+              name: "Visa-Free Asian Destinations",
+              item: "/guides/visa-free-asian-destinations",
+            },
+          ]),
+        ),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({

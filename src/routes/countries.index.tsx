@@ -20,6 +20,11 @@ export const Route = createFileRoute("/countries/")({
         content:
           "Browse visa requirements, embassy fees, processing times, and document checklists for 100+ global destinations with Areera Travel and Tours.",
       },
+      {
+        name: "keywords",
+        content:
+          "visa destinations for pakistani passport, list of visa countries from pakistan, tourist visa requirements 2026, evisa countries for pakistani citizens, international travel visa guides, visa fees and processing times pakistan",
+      },
       { property: "og:title", content: "Visa Destinations & Requirements by Country | Areera Travel and Tours" },
       {
         property: "og:description",

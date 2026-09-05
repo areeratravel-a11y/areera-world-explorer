@@ -19,6 +19,11 @@ export const Route = createFileRoute("/services/")({
         content:
           "Explore travel services by Areera Travel and Tours: professional visa filing, domestic and international ticketing, document attestation, and hotel bookings.",
       },
+      {
+        name: "keywords",
+        content:
+          "travel and visa services islamabad, visa filing ticketing attestation pakistan, flight reservations hotel vouchers, overseas travel consultancy pakistan, areera travel services",
+      },
       { property: "og:title", content: "Travel Services — Visa, Ticketing & Attestation | Areera Travel and Tours" },
       {
         property: "og:description",

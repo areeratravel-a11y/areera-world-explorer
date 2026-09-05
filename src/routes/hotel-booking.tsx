@@ -33,6 +33,11 @@ export const Route = createFileRoute("/hotel-booking")({
         content:
           "Book verified, embassy-compliant hotel reservations for your visa application, plus luxury and budget hotel accommodations worldwide with Areera Travel.",
       },
+      {
+        name: "keywords",
+        content:
+          "confirmed hotel booking for visa, hotel voucher for embassy submission, proof of accommodation visa application, schengen visa hotel booking pakistan, hotel reservation voucher islamabad, embassy compliant hotel booking, genuine hotel voucher with confirmation number",
+      },
       { property: "og:title", content: "Hotel Booking — Verified Stays & Visa-Ready Reservations | Areera Travel and Tours" },
       {
         property: "og:description",

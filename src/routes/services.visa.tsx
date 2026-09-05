@@ -32,6 +32,11 @@ export const Route = createFileRoute("/services/visa")({
         content:
           "End-to-end visa filing support for tourist, business, student, and work visas: eligibility assessment, document checklist, form filling, and embassy submission.",
       },
+      {
+        name: "keywords",
+        content:
+          "visa assistance pakistan, visa consultancy services islamabad, tourist visa filing pakistan, business visa consultants islamabad, schengen visa file preparation, uk visitor visa agent, usa ds160 visa filing, evisa application pakistan, embassy appointment booking islamabad, visit visa documentation",
+      },
       { property: "og:title", content: "Visa Services — Tourist, Business, Student & Work Visas | Areera Travel and Tours" },
       {
         property: "og:description",

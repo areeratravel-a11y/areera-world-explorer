@@ -348,6 +348,7 @@ export function touristDestinationSchema(country: Country, origin = DEFAULT_ORIG
     name: `${country.name} Visa Requirements & Travel Guide`,
     alternateName: country.name,
     description: country.blurb,
+    keywords: `${country.name} visa from pakistan, ${country.name} visa requirements for pakistani citizens, ${country.name} tourist visa, ${country.name} evisa application, ${country.name} embassy fees`,
     url: `${base}/countries/${country.slug}`,
     image: `${base}${OG_IMAGE_URL}`,
     ...(wikidataUri ? { sameAs: wikidataUri } : {}),

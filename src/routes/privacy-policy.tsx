@@ -28,6 +28,11 @@ export const Route = createFileRoute("/privacy-policy")({
         content:
           "Read the Areera Travel and Tours Privacy Policy. Learn how we handle passport details, visa files, flight bookings, and personal data with strict confidentiality.",
       },
+      {
+        name: "keywords",
+        content:
+          "privacy policy areera travel and tours, client data protection, travel documentation security",
+      },
       { property: "og:title", content: "Privacy Policy | Areera Travel and Tours" },
       {
         property: "og:description",

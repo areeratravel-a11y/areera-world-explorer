@@ -29,6 +29,11 @@ export const Route = createFileRoute("/terms-and-conditions")({
         content:
           "Read the Terms and Conditions for Areera Travel and Tours. Clear guidelines on visa filing, flight booking, hotel vouchers, and consular attestation services.",
       },
+      {
+        name: "keywords",
+        content:
+          "terms and conditions areera travel, visa filing terms, flight booking and attestation policy",
+      },
       { property: "og:title", content: "Terms and Conditions | Areera Travel and Tours" },
       {
         property: "og:description",

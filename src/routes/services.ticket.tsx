@@ -19,6 +19,11 @@ export const Route = createFileRoute("/services/ticket")({
         content:
           "Book domestic and international flight tickets at competitive fares. Enjoy instant booking, flexible date changes, and 24/7 itinerary support with Areera.",
       },
+      {
+        name: "keywords",
+        content:
+          "air ticketing agency islamabad, international flight tickets pakistan, cheap airline tickets islamabad, umrah flight tickets, pia tickets agent blue area, emirates qatar airways flights, domestic air ticketing pakistan",
+      },
       { property: "og:title", content: "Air Ticket Booking — Domestic & International Routes | Areera Travel and Tours" },
       {
         property: "og:description",

@@ -3,7 +3,7 @@ import { _ as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { D as Mail, E as MapPin, K as CircleCheck, O as Lock, W as Clock, a as Trash2, d as Shield, rt as ArrowRight, x as Phone, z as Eye } from "../_libs/lucide-react.mjs";
 import { t as Breadcrumbs } from "./Breadcrumbs-_GnoNGyX.mjs";
 import { n as Reveal, r as Section } from "./Reveal-3UjQit6f.mjs";
-import { f as contactInfo } from "./router-6UWHtjA-2.mjs";
+import { f as contactInfo } from "./router-CHnD0jOi2.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/privacy-policy-CoSMHcZ6.js
 var import_jsx_runtime = require_jsx_runtime();
 var keyGuarantees = [

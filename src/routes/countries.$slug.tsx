@@ -94,10 +94,16 @@ export const Route = createFileRoute("/countries/$slug")({
 
     const faqQuestions = loaderData.kind === "country" ? countryFaqs(loaderData.country) : null;
 
+    const keywords =
+      loaderData.kind === "region"
+        ? `${loaderData.region} visa destinations from pakistan, ${loaderData.region} tourist visas for pakistani citizens, travel to ${loaderData.region} from pakistan, ${loaderData.region} evisa guidelines, areera travel ${loaderData.region}`
+        : `${loaderData.country.name} visa from pakistan, ${loaderData.country.name} visa requirements for pakistani citizens, ${loaderData.country.name} tourist visa fees pakistan, ${loaderData.country.name} evisa application islamabad, ${loaderData.country.name} visa processing time, ${loaderData.country.name} flight reservation live pnr, ${loaderData.country.name} hotel voucher for visa, visit ${loaderData.country.name} from pakistan, areera travels`;
+
     return {
       meta: [
         { title },
         { name: "description", content: description },
+        { name: "keywords", content: keywords },
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:type", content: "article" },

@@ -35,6 +35,11 @@ export const Route = createFileRoute("/")({
         content:
           "Professional visa assistance, air ticketing, official document attestation, verified hotel reservations, and travel support for 40+ global destinations.",
       },
+      {
+        name: "keywords",
+        content:
+          "visa consultants in islamabad, travel agency islamabad, visa assistance pakistan, flight reservation for visa, live pnr flight itinerary, confirmed hotel booking voucher, mofa attestation islamabad, hec degree attestation, tourist visa pakistan, air ticketing agency blue area, areera travel and tours",
+      },
       { property: "og:title", content: "Areera Travel and Tours — Visa & Travel Experts" },
       {
         property: "og:description",

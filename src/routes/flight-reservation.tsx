@@ -32,6 +32,11 @@ export const Route = createFileRoute("/flight-reservation")({
         content:
           "Get verifiable flight reservations with active PNR for embassy visa submission, plus confirmed airline tickets upon approval on domestic and global routes.",
       },
+      {
+        name: "keywords",
+        content:
+          "verifiable flight reservation for visa, flight itinerary for visa application, live pnr flight booking for embassy, dummy ticket for visa pakistan, airline reservation with gds pnr, schengen visa flight itinerary, sabre amadeus pnr verification, verifiable flight booking islamabad",
+      },
       { property: "og:title", content: "Flight Reservation — Visa-Ready Bookings & Ticketing | Areera Travel and Tours" },
       {
         property: "og:description",
