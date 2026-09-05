@@ -91,6 +91,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "/og-image.jpg" },
       { name: "theme-color", content: "#090d16" },
+      { name: "geo.region", content: "PK-IS" },
+      { name: "geo.placename", content: "Islamabad, Pakistan" },
+      { name: "geo.position", content: "33.7167;73.0667" },
+      { name: "ICBM", content: "33.7167, 73.0667" },
+      { name: "author", content: "Arslan Ahmed & Hareera — Areera Travel and Tours" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

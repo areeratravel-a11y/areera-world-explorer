@@ -4,6 +4,22 @@ const robotsTxt = `User-agent: *
 Allow: /
 Disallow: /thank-you
 
+# Generative AI & Answer Engine Crawlers (AEO / GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://www.areeratravels.com/sitemap.xml
 `;
 

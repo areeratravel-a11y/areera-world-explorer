@@ -101,4 +101,15 @@ for (const dir of targetDirs) {
   }
 }
 
+// Also mirror robots.txt
+const robotsSrc = path.join(rootDir, "public", "robots.txt");
+if (fs.existsSync(robotsSrc)) {
+  const robotsContent = fs.readFileSync(robotsSrc, "utf8");
+  for (const dir of targetDirs) {
+    if (fs.existsSync(dir)) {
+      fs.writeFileSync(path.join(dir, "robots.txt"), robotsContent, "utf8");
+    }
+  }
+}
+
 console.log(`[Sitemap] Generated sitemap.xml with ${staticRoutes.length + regionalRoutes.length + countrySlugs.length} URLs for ${baseUrl}.`);
