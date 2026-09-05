@@ -38,7 +38,7 @@ import {
   getRegionBySlug,
   type Country,
 } from "@/data/countries";
-import { breadcrumbSchema, faqPageSchema } from "@/lib/json-ld";
+import { breadcrumbSchema, faqPageSchema, touristDestinationSchema } from "@/lib/json-ld";
 import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
 import { countryArticle, countryFaqs, regionArticle } from "@/data/content";
@@ -109,6 +109,14 @@ export const Route = createFileRoute("/countries/$slug")({
           type: "application/ld+json",
           children: JSON.stringify(breadcrumbSchema(breadcrumbItems)),
         },
+        ...(loaderData.kind === "country"
+          ? [
+              {
+                type: "application/ld+json" as const,
+                children: JSON.stringify(touristDestinationSchema(loaderData.country)),
+              },
+            ]
+          : []),
         ...(faqQuestions
           ? [
               {

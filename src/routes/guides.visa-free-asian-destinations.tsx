@@ -51,11 +51,23 @@ export const Route = createFileRoute("/guides/visa-free-asian-destinations")({
           "@graph": [
             {
               "@type": "TravelAgency",
-              "@id": "https://areeratravels.com/#agency",
-              name: "Areera Travels",
-              url: "https://areeratravels.com",
-              logo: "https://areeratravels.com/areera-logo.png",
+              "@id": "https://www.areeratravels.com/#agency",
+              name: "Areera Travel and Tours",
+              url: "https://www.areeratravels.com",
+              logo: "https://www.areeratravels.com/areera-logo.png",
               telephone: siteConfig.phone,
+              founder: [
+                {
+                  "@type": "Person",
+                  name: "Arslan Ahmed",
+                  jobTitle: "Founder & Managing Director",
+                },
+                {
+                  "@type": "Person",
+                  name: "Hareera",
+                  jobTitle: "Co-Founder & Director",
+                },
+              ],
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Blue Area",
@@ -67,19 +79,20 @@ export const Route = createFileRoute("/guides/visa-free-asian-destinations")({
                 "Southeast Asia",
                 "Middle East",
                 "East Asia",
+                "Worldwide",
               ],
             },
             {
               "@type": "TouristTrip",
-              "@id": "https://areeratravels.com/guides/visa-free-asian-destinations#trip",
+              "@id": "https://www.areeratravels.com/guides/visa-free-asian-destinations#trip",
               name: "Southeast & Central Asia Gateway Tour",
               description:
                 "Comprehensive travel and visa route covering Malaysia, Thailand, Azerbaijan, and the Maldives for Asian outbound travelers.",
-              provider: { "@id": "https://areeratravels.com/#agency" },
+              provider: { "@id": "https://www.areeratravels.com/#agency" },
             },
             {
               "@type": "FAQPage",
-              "@id": "https://areeratravels.com/guides/visa-free-asian-destinations#faq",
+              "@id": "https://www.areeratravels.com/guides/visa-free-asian-destinations#faq",
               mainEntity: [
                 {
                   "@type": "Question",
