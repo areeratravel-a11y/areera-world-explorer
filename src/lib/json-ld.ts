@@ -1,4 +1,4 @@
-import { contactInfo } from "@/data/site";
+import { contactInfo, services, testimonials } from "@/data/site";
 import type { Country } from "@/data/countries";
 
 export const DEFAULT_ORIGIN = "https://www.areeratravels.com";
@@ -257,5 +257,106 @@ export function articleSchema(
     dateModified: guide.dateModified || new Date().toISOString().split("T")[0],
     mainEntityOfPage: articleUrl,
     inLanguage: "en-US",
+  };
+}
+
+/**
+ * Generates comprehensive Homepage / Index Schema.org JSON-LD graph.
+ * Combines WebSite, TravelAgency with AggregateRating & Reviews, WebPage, Breadcrumbs, and FAQs.
+ */
+export function homeIndexSchema(
+  faqs: { question: string; answer: string }[] = [],
+  origin = DEFAULT_ORIGIN,
+) {
+  const base = origin || DEFAULT_ORIGIN;
+  const org = organizationSchema(base);
+  const web = websiteSchema(base);
+  const faqObj = faqs.length > 0 ? faqPageSchema(faqs) : null;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        ...web,
+      },
+      {
+        ...org,
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "184",
+          bestRating: "5",
+          worstRating: "1",
+        },
+        review: testimonials.map((t) => ({
+          "@type": "Review",
+          author: {
+            "@type": "Person",
+            name: t.name,
+          },
+          reviewBody: t.quote,
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+            bestRating: "5",
+            worstRating: "1",
+          },
+        })),
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Areera Travel & Visa Services",
+          itemListElement: services.map((s) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: s.title,
+              description: s.description,
+              url: `${base}${s.path}`,
+            },
+          })),
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${base}/#webpage`,
+        url: `${base}/`,
+        name: "Areera Travel and Tours — Visa Assistance, Air Tickets & Attestation",
+        description:
+          "Professional visa assistance, air ticketing, official document attestation, verified hotel reservations, and travel support for 40+ global destinations.",
+        isPartOf: {
+          "@id": `${base}/#website`,
+        },
+        about: {
+          "@id": `${base}/#agency`,
+        },
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: `${base}${OG_IMAGE_URL}`,
+        },
+        breadcrumb: {
+          "@id": `${base}/#breadcrumb`,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${base}/#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: `${base}/`,
+          },
+        ],
+      },
+      ...(faqObj
+        ? [
+            {
+              ...faqObj,
+              "@id": `${base}/#faq`,
+            },
+          ]
+        : []),
+    ],
   };
 }

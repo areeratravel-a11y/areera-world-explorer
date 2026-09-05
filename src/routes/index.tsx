@@ -21,7 +21,7 @@ import { countries, popularDestinations } from "@/data/countries";
 import { services, siteConfig, testimonials } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { HeroBookingCard } from "@/components/HeroBookingCard";
-import { breadcrumbSchema, faqPageSchema } from "@/lib/json-ld";
+import { homeIndexSchema } from "@/lib/json-ld";
 import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
 import { homeArticle, homeFaqs } from "@/data/content";
@@ -53,11 +53,7 @@ export const Route = createFileRoute("/")({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify(breadcrumbSchema([{ name: "Home", item: "/" }])),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(faqPageSchema(homeFaqs)),
+        children: JSON.stringify(homeIndexSchema(homeFaqs)),
       },
     ],
   }),
