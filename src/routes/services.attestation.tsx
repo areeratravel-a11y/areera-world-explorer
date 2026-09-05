@@ -14,17 +14,17 @@ import { attestationArticle, attestationFaqs } from "@/data/content";
 export const Route = createFileRoute("/services/attestation")({
   head: () => ({
     meta: [
-      { title: "Document Attestation Services — Educational & Commercial | Areera" },
+      { title: "Document Attestation Services — MOFA, HEC & Embassy Legalization | Areera Travel and Tours" },
       {
         name: "description",
         content:
-          "Educational, personal and commercial document attestation: notary, board/HEC, Ministry of Foreign Affairs and embassy stages handled in the correct order.",
+          "Fast document attestation for educational, personal & commercial papers: HEC, MOFA, Notary, and foreign embassy legalization handled with complete tracking.",
       },
-      { property: "og:title", content: "Attestation Services | Areera Travel and Tours" },
+      { property: "og:title", content: "Document Attestation Services — MOFA, HEC & Embassy Legalization | Areera Travel and Tours" },
       {
         property: "og:description",
         content:
-          "Degree, marriage certificate and commercial document attestation for Gulf employment and residency.",
+          "Degree, diploma, marriage certificate, and commercial attestation for Gulf employment and global residency handled securely by Areera Travel and Tours.",
       },
       { property: "og:url", content: "/services/attestation" },
     ],
@@ -175,7 +175,7 @@ function AttestationPage() {
         </div>
       </div>
 
-      <div className="mt-16">
+      <div id="inquiry-form" className="mt-16 scroll-mt-24">
         <BookingForm
           title="Attestation inquiry"
           description="Tell us which document you need attested and for which country."

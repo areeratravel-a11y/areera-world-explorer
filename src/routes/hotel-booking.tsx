@@ -14,27 +14,30 @@ import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/json-ld";
 import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
 import { hotelArticle, hotelFaqs } from "@/data/content";
+import { ServicePageSkeleton } from "@/components/ServicePageSkeleton";
 
 type HotelSearch = { destination?: string | undefined };
 
 export const Route = createFileRoute("/hotel-booking")({
+  pendingComponent: ServicePageSkeleton,
+  pendingMs: 150,
   validateSearch: (search: Record<string, unknown>): HotelSearch => ({
     destination:
       typeof search["destination"] === "string" ? search["destination"].slice(0, 60) : undefined,
   }),
   head: () => ({
     meta: [
-      { title: "Hotel Booking — Verified Stays & Visa-Ready Reservations | Areera" },
+      { title: "Hotel Booking — Verified Stays & Visa-Ready Reservations | Areera Travel and Tours" },
       {
         name: "description",
         content:
-          "Request hotel bookings across Asia, the Middle East and Africa, including confirmed reservations suitable for visa applications.",
+          "Book verified, embassy-compliant hotel reservations for your visa application, plus luxury and budget hotel accommodations worldwide with Areera Travel.",
       },
-      { property: "og:title", content: "Hotel Booking | Areera Travel and Tours" },
+      { property: "og:title", content: "Hotel Booking — Verified Stays & Visa-Ready Reservations | Areera Travel and Tours" },
       {
         property: "og:description",
         content:
-          "Hand-picked hotels and visa-compliant reservations arranged by our travel consultants.",
+          "Hand-picked hotels and confirmed embassy-approved hotel vouchers arranged by Areera Travel and Tours consultants across 100+ global destinations.",
       },
       { property: "og:url", content: "/hotel-booking" },
     ],
@@ -184,7 +187,7 @@ function HotelBooking() {
         </p>
       </div>
 
-      <div className="mt-16">
+      <div id="inquiry-form" className="mt-16 scroll-mt-24">
         <BookingForm
           title="Hotel booking inquiry"
           detailLabel="Destination & dates"

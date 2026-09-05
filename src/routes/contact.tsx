@@ -16,12 +16,13 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Areera Travel and Tours for visa, ticketing, attestation and booking support. Office address, phone, WhatsApp, email and business hours.",
+          "Contact Areera Travel and Tours for expert visa filing, air tickets, document attestation, and flight booking. Reach us via Phone, WhatsApp, or at our office.",
       },
-      { property: "og:title", content: "Contact Areera Travel and Tours" },
+      { property: "og:title", content: "Contact Areera Travel and Tours — Phone, WhatsApp & Office" },
       {
         property: "og:description",
-        content: "Reach our travel consultants by phone, WhatsApp, email or at our office.",
+        content:
+          "Connect with Areera Travel consultants by phone, WhatsApp, email, or visit our office for prompt, personalized travel assistance.",
       },
       { property: "og:url", content: "/contact" },
     ],

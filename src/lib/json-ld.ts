@@ -16,6 +16,9 @@ export function organizationSchema(origin = "") {
     address: {
       "@type": "PostalAddress",
       streetAddress: contactInfo.address,
+      addressLocality: "Islamabad",
+      addressRegion: "Islamabad Capital Territory",
+      postalCode: "44000",
       addressCountry: "PK",
     },
   };

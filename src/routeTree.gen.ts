@@ -15,6 +15,9 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CountriesRouteImport } from './routes/countries'
 import { Route as FlightReservationRouteImport } from './routes/flight-reservation'
 import { Route as HotelBookingRouteImport } from './routes/hotel-booking'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
+import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as CountriesIndexRouteImport } from './routes/countries.index'
 import { Route as CountriesSlugRouteImport } from './routes/countries.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
@@ -50,6 +53,21 @@ const FlightReservationRoute = FlightReservationRouteImport.update({
 const HotelBookingRoute = HotelBookingRouteImport.update({
   id: '/hotel-booking',
   path: '/hotel-booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThankYouRoute = ThankYouRouteImport.update({
+  id: '/thank-you',
+  path: '/thank-you',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CountriesIndexRoute = CountriesIndexRouteImport.update({
@@ -90,6 +108,9 @@ export interface FileRoutesByFullPath {
   '/countries': typeof CountriesRouteWithChildren
   '/flight-reservation': typeof FlightReservationRoute
   '/hotel-booking': typeof HotelBookingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/thank-you': typeof ThankYouRoute
   '/countries/$slug': typeof CountriesSlugRoute
   '/services/attestation': typeof ServicesAttestationRoute
   '/services/ticket': typeof ServicesTicketRoute
@@ -103,6 +124,9 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/flight-reservation': typeof FlightReservationRoute
   '/hotel-booking': typeof HotelBookingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/thank-you': typeof ThankYouRoute
   '/countries/$slug': typeof CountriesSlugRoute
   '/services/attestation': typeof ServicesAttestationRoute
   '/services/ticket': typeof ServicesTicketRoute
@@ -118,6 +142,9 @@ export interface FileRoutesById {
   '/countries': typeof CountriesRouteWithChildren
   '/flight-reservation': typeof FlightReservationRoute
   '/hotel-booking': typeof HotelBookingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/thank-you': typeof ThankYouRoute
   '/countries/$slug': typeof CountriesSlugRoute
   '/services/attestation': typeof ServicesAttestationRoute
   '/services/ticket': typeof ServicesTicketRoute
@@ -134,6 +161,9 @@ export interface FileRouteTypes {
     | '/countries'
     | '/flight-reservation'
     | '/hotel-booking'
+    | '/privacy-policy'
+    | '/terms-and-conditions'
+    | '/thank-you'
     | '/countries/$slug'
     | '/services/attestation'
     | '/services/ticket'
@@ -147,6 +177,9 @@ export interface FileRouteTypes {
     | '/contact'
     | '/flight-reservation'
     | '/hotel-booking'
+    | '/privacy-policy'
+    | '/terms-and-conditions'
+    | '/thank-you'
     | '/countries/$slug'
     | '/services/attestation'
     | '/services/ticket'
@@ -161,6 +194,9 @@ export interface FileRouteTypes {
     | '/countries'
     | '/flight-reservation'
     | '/hotel-booking'
+    | '/privacy-policy'
+    | '/terms-and-conditions'
+    | '/thank-you'
     | '/countries/$slug'
     | '/services/attestation'
     | '/services/ticket'
@@ -176,6 +212,9 @@ export interface RootRouteChildren {
   CountriesRoute: typeof CountriesRouteWithChildren
   FlightReservationRoute: typeof FlightReservationRoute
   HotelBookingRoute: typeof HotelBookingRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
+  ThankYouRoute: typeof ThankYouRoute
   ServicesAttestationRoute: typeof ServicesAttestationRoute
   ServicesTicketRoute: typeof ServicesTicketRoute
   ServicesVisaRoute: typeof ServicesVisaRoute
@@ -224,6 +263,27 @@ declare module '@tanstack/react-router' {
       path: '/hotel-booking'
       fullPath: '/hotel-booking'
       preLoaderRoute: typeof HotelBookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thank-you': {
+      id: '/thank-you'
+      path: '/thank-you'
+      fullPath: '/thank-you'
+      preLoaderRoute: typeof ThankYouRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/countries/': {
@@ -292,6 +352,9 @@ const rootRouteChildren: RootRouteChildren = {
   CountriesRoute: CountriesRouteWithChildren,
   FlightReservationRoute: FlightReservationRoute,
   HotelBookingRoute: HotelBookingRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
+  ThankYouRoute: ThankYouRoute,
   ServicesAttestationRoute: ServicesAttestationRoute,
   ServicesTicketRoute: ServicesTicketRoute,
   ServicesVisaRoute: ServicesVisaRoute,
@@ -302,11 +365,10 @@ export const routeTree = rootRouteImport
   ._addFileTypes<FileRouteTypes>()
 
 import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
+import type { createStart } from '@tanstack/react-start'
 declare module '@tanstack/react-start' {
   interface Register {
     ssr: true
     router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
   }
 }

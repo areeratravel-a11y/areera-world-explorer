@@ -11,27 +11,31 @@ import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
 import { visaArticle, visaFaqs } from "@/data/content";
 import { CountryFlag } from "@/components/CountryFlag";
-import { BadgeCheck, Clock, FileCheck2, ShieldCheck, Sparkles, Stamp } from "lucide-react";
+import { BadgeCheck, Clock, FileCheck2, PhoneCall, ShieldCheck, Sparkles, Stamp } from "lucide-react";
+import { contactInfo } from "@/data/site";
+import { ServicePageSkeleton } from "@/components/ServicePageSkeleton";
 
 type VisaSearch = { country?: string | undefined };
 
 export const Route = createFileRoute("/services/visa")({
+  pendingComponent: ServicePageSkeleton,
+  pendingMs: 150,
   validateSearch: (search: Record<string, unknown>): VisaSearch => ({
     country: typeof search["country"] === "string" ? search["country"].slice(0, 60) : undefined,
   }),
   head: () => ({
     meta: [
-      { title: "Visa Services — Tourist, Business, Student & Work Visas | Areera" },
+      { title: "Visa Services — Tourist, Business, Student & Work Visas | Areera Travel and Tours" },
       {
         name: "description",
         content:
-          "Visa filing support for tourist, business, student and work visas: eligibility review, document checklists, form filling and appointment scheduling.",
+          "End-to-end visa filing support for tourist, business, student, and work visas: eligibility assessment, document checklist, form filling, and embassy submission.",
       },
-      { property: "og:title", content: "Visa Services | Areera Travel and Tours" },
+      { property: "og:title", content: "Visa Services — Tourist, Business, Student & Work Visas | Areera Travel and Tours" },
       {
         property: "og:description",
         content:
-          "Document-first visa assistance for destinations across Asia, the Middle East, Europe and Africa.",
+          "Professional visa filing support for 100+ countries: document verification, biometric appointment scheduling, and complete embassy compliance.",
       },
       { property: "og:url", content: "/services/visa" },
     ],
@@ -125,6 +129,47 @@ function VisaPage() {
         title="Visa applications, prepared properly"
         description="Embassies decide; we make sure your file gives them nothing to question. Accurate paperwork, verified itineraries, and transparent timelines from start to finish."
       />
+
+      {/* Above-the-fold Immediate Action CTA Bar */}
+      <div className="mb-10 flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-white/15 bg-gradient-to-r from-card/90 via-card/70 to-primary/10 p-5 sm:p-6 shadow-xl backdrop-blur-xl">
+        <div className="flex items-center gap-3.5">
+          <div className="h-12 w-12 rounded-2xl bg-emerald-500/15 border border-emerald-400/20 flex items-center justify-center text-emerald-400 shrink-0">
+            <Sparkles className="h-6 w-6" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              </span>
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+                Instant File Evaluation Available
+              </span>
+            </div>
+            <p className="mt-1 text-sm font-medium text-foreground/90">
+              Get your custom document checklist and embassy approval roadmap in under 15 minutes.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3">
+          <a
+            href="#visa-application-form"
+            className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-2.5 text-xs sm:text-sm font-bold text-primary-foreground shadow-md hover:bg-primary/90 transition-colors"
+          >
+            Start Application Now
+          </a>
+          <a
+            href={`https://wa.me/${contactInfo.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hello Areera Travel, I need urgent visa assistance and document evaluation.")}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/15 px-4 py-2.5 text-xs sm:text-sm font-semibold text-emerald-300 hover:bg-emerald-500/25 transition-colors"
+          >
+            <PhoneCall className="h-3.5 w-3.5 text-emerald-400" />
+            WhatsApp Specialist
+          </a>
+        </div>
+      </div>
 
       {selected ? (
         <div className="mb-10 flex items-center justify-between gap-4 rounded-3xl border border-primary/50 bg-gradient-to-r from-card via-navy/60 to-primary/10 p-6 shadow-md backdrop-blur-md">
@@ -230,7 +275,7 @@ function VisaPage() {
         </div>
       </div>
 
-      <div className="mt-16">
+      <div id="visa-application-form" className="mt-16 scroll-mt-24">
         <BookingForm
           title="Start your visa application"
           description="Send us your target country and travel details. Our specialist will prepare your file and verify all checklist items."

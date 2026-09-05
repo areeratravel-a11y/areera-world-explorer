@@ -13,27 +13,30 @@ import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/json-ld";
 import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
 import { flightArticle, flightFaqs } from "@/data/content";
+import { ServicePageSkeleton } from "@/components/ServicePageSkeleton";
 
 type FlightSearch = { destination?: string | undefined };
 
 export const Route = createFileRoute("/flight-reservation")({
+  pendingComponent: ServicePageSkeleton,
+  pendingMs: 150,
   validateSearch: (search: Record<string, unknown>): FlightSearch => ({
     destination:
       typeof search["destination"] === "string" ? search["destination"].slice(0, 60) : undefined,
   }),
   head: () => ({
     meta: [
-      { title: "Flight Reservation — Visa-Ready Bookings & Ticketing | Areera" },
+      { title: "Flight Reservation — Visa-Ready Bookings & Ticketing | Areera Travel and Tours" },
       {
         name: "description",
         content:
-          "Request verifiable flight reservations for embassy submission and confirmed tickets after approval, on domestic and international routes.",
+          "Get verifiable flight reservations with active PNR for embassy visa submission, plus confirmed airline tickets upon approval on domestic and global routes.",
       },
-      { property: "og:title", content: "Flight Reservation | Areera Travel and Tours" },
+      { property: "og:title", content: "Flight Reservation — Visa-Ready Bookings & Ticketing | Areera Travel and Tours" },
       {
         property: "og:description",
         content:
-          "Verifiable flight reservations for visa files, plus confirmed ticketing when you are ready to fly.",
+          "Embassy-compliant flight itineraries with verifiable PNR codes, plus confirmed ticketing across all major international airlines.",
       },
       { property: "og:url", content: "/flight-reservation" },
     ],
@@ -183,7 +186,7 @@ function FlightReservation() {
         </div>
       </div>
 
-      <div className="mt-16">
+      <div id="inquiry-form" className="mt-16 scroll-mt-24">
         <BookingForm
           title="Flight reservation inquiry"
           detailLabel="Route & travel dates"

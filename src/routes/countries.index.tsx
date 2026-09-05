@@ -14,17 +14,17 @@ import { countriesHubArticle, countriesHubFaqs } from "@/data/content";
 export const Route = createFileRoute("/countries/")({
   head: () => ({
     meta: [
-      { title: "Visa Destinations & Requirements by Country | Areera Travel & Tours" },
+      { title: "Visa Destinations & Requirements by Country | Areera Travel and Tours" },
       {
         name: "description",
         content:
-          "Explore visa requirements, processing times, fees, and required documents for 40+ countries across Asia, the Middle East, North Africa, Africa and Western destinations.",
+          "Browse visa requirements, embassy fees, processing times, and document checklists for 100+ global destinations with Areera Travel and Tours.",
       },
-      { property: "og:title", content: "Global Visa Destinations | Areera Travel and Tours" },
+      { property: "og:title", content: "Visa Destinations & Requirements by Country | Areera Travel and Tours" },
       {
         property: "og:description",
         content:
-          "Detailed country guides with visa types, required documents and expert filing support.",
+          "Detailed country visa guides with eligibility rules, required documents checklist, and professional filing support for 100+ destinations worldwide.",
       },
       { property: "og:url", content: "/countries" },
     ],

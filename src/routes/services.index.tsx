@@ -13,16 +13,17 @@ import { servicesArticle, servicesFaqs } from "@/data/content";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Travel Services — Visa, Ticketing & Attestation | Areera" },
+      { title: "Travel Services — Visa, Ticketing & Attestation | Areera Travel and Tours" },
       {
         name: "description",
         content:
-          "Explore Areera Travel and Tours services: visa filing support, domestic and international ticketing, document attestation, hotel booking and flight reservations.",
+          "Explore travel services by Areera Travel and Tours: professional visa filing, domestic and international ticketing, document attestation, and hotel bookings.",
       },
-      { property: "og:title", content: "Travel Services | Areera Travel and Tours" },
+      { property: "og:title", content: "Travel Services — Visa, Ticketing & Attestation | Areera Travel and Tours" },
       {
         property: "og:description",
-        content: "Visa, ticketing, attestation, hotel booking and flight reservation services.",
+        content:
+          "Full suite of travel services: expert visa advisory, confirmed flight ticketing, consular document attestation, and visa-compliant hotel reservations.",
       },
       { property: "og:url", content: "/services" },
     ],

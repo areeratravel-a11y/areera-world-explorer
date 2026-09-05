@@ -222,10 +222,17 @@
 @layer base {
   * {
     border-color: var(--color-border);
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -234,6 +241,7 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     min-height: 100vh;
+    overflow-x: hidden;
   }
 
   h1,
@@ -244,4 +252,32 @@
     font-family: var(--font-display);
     letter-spacing: -0.025em;
   }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left {
+  animation: slide-left 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-right {
+  animation: slide-right 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

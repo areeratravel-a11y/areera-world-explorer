@@ -1,0 +1,68 @@
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const rootDir = path.resolve(__dirname, "..");
+
+const baseUrl = "https://areeratravel.com";
+const today = new Date().toISOString().split("T")[0];
+
+// Extract country slugs from src/data/countries.ts
+const countriesFilePath = path.join(rootDir, "src", "data", "countries.ts");
+const countriesContent = fs.readFileSync(countriesFilePath, "utf8");
+const slugRegex = /slug:\s*["']([^"']+)["']/g;
+const countrySlugs = [];
+let match;
+while ((match = slugRegex.exec(countriesContent)) !== null) {
+  if (!countrySlugs.includes(match[1])) {
+    countrySlugs.push(match[1]);
+  }
+}
+
+const staticRoutes = [
+  { path: "/", priority: "1.0", changefreq: "daily" },
+  { path: "/services", priority: "0.9", changefreq: "weekly" },
+  { path: "/services/visa", priority: "0.9", changefreq: "weekly" },
+  { path: "/services/ticket", priority: "0.9", changefreq: "weekly" },
+  { path: "/services/attestation", priority: "0.9", changefreq: "weekly" },
+  { path: "/flight-reservation", priority: "0.9", changefreq: "weekly" },
+  { path: "/hotel-booking", priority: "0.9", changefreq: "weekly" },
+  { path: "/countries", priority: "0.9", changefreq: "daily" },
+  { path: "/about", priority: "0.7", changefreq: "monthly" },
+  { path: "/contact", priority: "0.8", changefreq: "weekly" },
+  { path: "/privacy-policy", priority: "0.5", changefreq: "monthly" },
+  { path: "/terms-and-conditions", priority: "0.5", changefreq: "monthly" },
+];
+
+let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+
+// Static pages
+xml += `  <!-- Core Navigation & Services -->\n`;
+for (const route of staticRoutes) {
+  xml += `  <url>\n`;
+  xml += `    <loc>${baseUrl}${route.path}</loc>\n`;
+  xml += `    <lastmod>${today}</lastmod>\n`;
+  xml += `    <changefreq>${route.changefreq}</changefreq>\n`;
+  xml += `    <priority>${route.priority}</priority>\n`;
+  xml += `  </url>\n`;
+}
+
+// Dynamic country routes
+xml += `\n  <!-- ${countrySlugs.length} Destination Country Visa Guides -->\n`;
+for (const slug of countrySlugs) {
+  xml += `  <url>\n`;
+  xml += `    <loc>${baseUrl}/countries/${slug}</loc>\n`;
+  xml += `    <lastmod>${today}</lastmod>\n`;
+  xml += `    <changefreq>weekly</changefreq>\n`;
+  xml += `    <priority>0.8</priority>\n`;
+  xml += `  </url>\n`;
+}
+
+xml += `</urlset>\n`;
+
+const sitemapPath = path.join(rootDir, "public", "sitemap.xml");
+fs.writeFileSync(sitemapPath, xml, "utf8");
+console.log(`[Sitemap] Generated public/sitemap.xml with ${staticRoutes.length + countrySlugs.length} URLs.`);

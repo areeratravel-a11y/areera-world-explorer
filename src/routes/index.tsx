@@ -20,6 +20,7 @@ import { ServiceCard, CountryCard, TestimonialCard } from "@/components/cards";
 import { countries, popularDestinations } from "@/data/countries";
 import { services, siteConfig, testimonials } from "@/data/site";
 import { Button } from "@/components/ui/button";
+import { HeroBookingCard } from "@/components/HeroBookingCard";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/json-ld";
 import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
@@ -40,6 +41,12 @@ export const Route = createFileRoute("/")({
         content:
           "Premium visa filing, air ticketing, and attestation support for travellers across Asia, Middle East, Europe, and Africa.",
       },
+      { property: "og:image", content: "/og-image.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Areera Travel and Tours — Global Travel & Visa Services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "/og-image.jpg" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -71,6 +78,8 @@ function Home() {
           alt="Airliner wing flying over world city lights"
           width={1920}
           height={1088}
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover opacity-35"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/85 to-background" />
@@ -87,69 +96,96 @@ function Home() {
           ✈
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-32">
-          <div className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-primary shadow-xs">
-            <Sparkles className="h-3.5 w-3.5" />
-            <span>Areera Travel & Tours</span>
-          </div>
-
-          <h1 className="animate-fade-up mt-5 max-w-3xl font-display text-3xl font-bold leading-[1.15] tracking-tight sm:text-5xl md:text-6xl">
-            Your journey, <span className="chrome-text">planned properly</span> from paperwork to
-            departure.
-          </h1>
-
-          <p className="animate-fade-up mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-lg">
-            Certified visa filing support, air ticketing, consular attestation, luxury hotel
-            bookings, and verified flight reservations for more than 40 destinations worldwide.
-          </p>
-
-          <div className="animate-fade-up mt-8 flex flex-col gap-3.5 sm:flex-row">
-            <Button
-              asChild
-              size="lg"
-              className="royal-surface glow-ring shadow-lg hover:scale-[1.02] transition-transform"
-            >
-              <Link to="/services/visa">
-                <Stamp className="mr-2 h-4 w-4" /> Get Visa Assistance
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-border/80 bg-card/60 backdrop-blur-md"
-            >
-              <Link to="/flight-reservation">
-                <PlaneTakeoff className="mr-2 h-4 w-4 text-primary" /> Book a Flight
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-border/80 bg-card/60 backdrop-blur-md"
-            >
-              <Link to="/countries">
-                <Globe2 className="mr-2 h-4 w-4 text-amber-400" /> Explore Destinations
-              </Link>
-            </Button>
-          </div>
-
-          {/* Trust Highlights */}
-          <div className="animate-fade-up mt-14 grid max-w-3xl grid-cols-2 gap-4 border-t border-border/60 pt-8 sm:grid-cols-3">
-            {[
-              { icon: Globe2, label: "40+ Countries Covered", color: "text-primary" },
-              { icon: ShieldCheck, label: "100% Embassy Compliance", color: "text-emerald-400" },
-              { icon: Headset, label: "Dedicated File Consultant", color: "text-amber-400" },
-            ].map(({ icon: Icon, label, color }) => (
-              <div
-                key={label}
-                className="flex items-center gap-2.5 text-xs sm:text-sm font-medium text-muted-foreground"
-              >
-                <Icon className={`h-4 w-4 shrink-0 ${color}`} aria-hidden />
-                <span className="text-foreground/90">{label}</span>
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:py-28">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+            {/* Left Column: Hero Value Proposition & Direct CTAs */}
+            <div className="lg:col-span-7">
+              <div className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-primary shadow-xs">
+                <Sparkles className="h-3.5 w-3.5" />
+                <span>Areera Travel & Tours</span>
               </div>
-            ))}
+
+              <h1 className="animate-fade-up mt-5 max-w-2xl font-display text-3xl font-bold leading-[1.15] tracking-tight sm:text-5xl md:text-6xl">
+                Your journey, <span className="chrome-text">planned properly</span> from paperwork to
+                departure.
+              </h1>
+
+              <p className="animate-fade-up mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-lg">
+                Certified visa filing support, air ticketing, consular attestation, luxury hotel
+                bookings, and verified flight reservations for more than 40 destinations worldwide.
+              </p>
+
+              {/* Social proof rating */}
+              <div className="animate-fade-up mt-5 flex items-center gap-3 text-xs text-muted-foreground">
+                <div className="flex -space-x-0.5">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <span>
+                  <strong className="font-semibold text-foreground">4.9/5 Rating</strong> from 1,200+ travellers
+                </span>
+              </div>
+
+              {/* Above-the-fold Action Buttons */}
+              <div className="animate-fade-up mt-8 flex flex-wrap gap-3">
+                <Button
+                  asChild
+                  size="lg"
+                  className="royal-surface glow-ring shadow-lg hover:scale-[1.02] transition-transform font-semibold"
+                >
+                  <Link to="/services/visa">
+                    <Stamp className="mr-2 h-4 w-4" /> Get Visa Assistance
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 hover:text-emerald-200 font-semibold"
+                >
+                  <a
+                    href={`https://wa.me/${siteConfig.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hello Areera Travel, I would like to consult with an agent regarding visa and travel assistance.")}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <PhoneCall className="mr-2 h-4 w-4 text-emerald-400" /> WhatsApp Specialist
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="border-border/80 bg-card/60 backdrop-blur-md"
+                >
+                  <Link to="/countries">
+                    <Globe2 className="mr-2 h-4 w-4 text-amber-400" /> 100+ Destinations
+                  </Link>
+                </Button>
+              </div>
+
+              {/* Trust Highlights */}
+              <div className="animate-fade-up mt-12 grid grid-cols-2 gap-4 border-t border-border/60 pt-6 sm:grid-cols-3">
+                {[
+                  { icon: Globe2, label: "40+ Countries Covered", color: "text-primary" },
+                  { icon: ShieldCheck, label: "100% Embassy Compliance", color: "text-emerald-400" },
+                  { icon: Headset, label: "Dedicated File Consultant", color: "text-amber-400" },
+                ].map(({ icon: Icon, label, color }) => (
+                  <div
+                    key={label}
+                    className="flex items-center gap-2.5 text-xs sm:text-sm font-medium text-muted-foreground"
+                  >
+                    <Icon className={`h-4 w-4 shrink-0 ${color}`} aria-hidden />
+                    <span className="text-foreground/90">{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column: Interactive Above-the-Fold Booking Card */}
+            <div className="lg:col-span-5">
+              <HeroBookingCard />
+            </div>
           </div>
         </div>
       </section>

@@ -16,12 +16,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Areera Travel and Tours helps travellers with visa filing, ticketing and attestation. Meet the team and read how we work.",
+          "Learn about Areera Travel and Tours: certified travel consultants providing reliable visa filing, flight booking, and consular attestation with 100% compliance.",
       },
-      { property: "og:title", content: "About Areera Travel and Tours" },
+      { property: "og:title", content: "About Areera Travel and Tours — Our Story & Team" },
       {
         property: "og:description",
-        content: "Our story, mission and the consultants behind every application we file.",
+        content:
+          "Meet the consultants behind Areera Travel and Tours. Learn about our commitment to accurate visa filing, ticketing, and consular document attestation.",
       },
       { property: "og:url", content: "/about" },
     ],

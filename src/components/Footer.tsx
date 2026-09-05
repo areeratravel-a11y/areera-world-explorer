@@ -83,6 +83,16 @@ export function Footer() {
                     Flight reservation requests
                   </Link>
                 </li>
+                <li>
+                  <Link to="/privacy-policy" className="hover:text-foreground">
+                    Privacy Policy & Data Security
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/terms-and-conditions" className="hover:text-foreground">
+                    Terms & Conditions
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -115,10 +125,25 @@ export function Footer() {
           ))}
         </div>
 
-        <p className="mt-10 border-t border-border pt-6 text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Areera Travel and Tours. Visa decisions rest solely with the
-          relevant embassy or consulate; we provide documentation and filing support only.
-        </p>
+        <div className="mt-10 border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
+          <p>
+            © {new Date().getFullYear()} Areera Travel and Tours. Visa decisions rest solely with the
+            relevant embassy or consulate; we provide documentation and filing support only.
+          </p>
+          <div className="flex items-center gap-3 shrink-0">
+            <Link to="/privacy-policy" className="hover:text-foreground transition-colors underline-offset-4 hover:underline">
+              Privacy Policy
+            </Link>
+            <span>·</span>
+            <Link to="/terms-and-conditions" className="hover:text-foreground transition-colors underline-offset-4 hover:underline">
+              Terms & Conditions
+            </Link>
+            <span>·</span>
+            <Link to="/contact" className="hover:text-foreground transition-colors underline-offset-4 hover:underline">
+              Contact Desk
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );

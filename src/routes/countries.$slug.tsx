@@ -44,8 +44,13 @@ import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
 import { countryArticle, countryFaqs, regionArticle } from "@/data/content";
 import { siteConfig } from "@/data/site";
+import { NotFoundPage } from "@/components/NotFoundPage";
+import { CountryDetailSkeleton } from "@/components/CountryDetailSkeleton";
 
 export const Route = createFileRoute("/countries/$slug")({
+  notFoundComponent: NotFoundPage,
+  pendingComponent: CountryDetailSkeleton,
+  pendingMs: 150,
   loader: ({ params }) => {
     const region = getRegionBySlug(params.slug);
     if (region) return { kind: "region" as const, region };
@@ -64,12 +69,12 @@ export const Route = createFileRoute("/countries/$slug")({
     }
     const title =
       loaderData.kind === "region"
-        ? `${loaderData.region} Visa Destinations — Country Guides & Requirements | Areera`
-        : `${loaderData.country.name} Visa Requirements, Fees & Application Guide | Areera`;
+        ? `${loaderData.region} Visa Destinations — Country Guides & Requirements | Areera Travel and Tours`
+        : `${loaderData.country.name} Visa Requirements, Fees & Application Guide | Areera Travel and Tours`;
     const description =
       loaderData.kind === "region"
         ? `Visa guidelines for all countries in ${loaderData.region}: required documents, e-visa processing timeframes, and flight booking assistance.`
-        : `Apply for your ${loaderData.country.name} visa with Areera Travel and Tours. Detailed requirements, documents checklist, processing times, fees, and application support.`;
+        : `Apply for your ${loaderData.country.name} visa with Areera Travel. Complete document checklist, embassy fees, processing times, and certified application filing support.`;
 
     const breadcrumbItems =
       loaderData.kind === "region"

@@ -9,10 +9,13 @@ import {
   Clock,
   FileCheck2,
   Globe2,
+  Home,
+  LayoutGrid,
   Mail,
   MapPin,
   Menu,
   MessageSquare,
+  Moon,
   Phone,
   PlaneTakeoff,
   Search,
@@ -44,6 +47,7 @@ const serviceIcons = {
 export function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<"services" | "destinations" | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileDropdown, setMobileDropdown] = useState<"services" | "destinations" | null>(null);
   const [query, setQuery] = useState("");
   const [selectedRegion, setSelectedRegion] = useState<Region>("Asia");
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,6 +58,7 @@ export function Navbar() {
   useEffect(() => {
     setOpenDropdown(null);
     setMobileOpen(false);
+    setMobileDropdown(null);
     setQuery("");
   }, [pathname]);
 
@@ -91,58 +96,50 @@ export function Navbar() {
   }, [query, selectedRegion]);
 
   return (
-    <header
-      ref={dropdownRef}
-      className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        isScrolled
-          ? "border-b border-white/20 bg-slate-800/45 shadow-xl shadow-black/25 backdrop-blur-2xl backdrop-saturate-180"
-          : "border-b border-white/15 bg-slate-800/25 backdrop-blur-xl backdrop-saturate-150",
-      )}
-    >
+    <>
       {/* ========================================================================= */}
-      {/* TOP HEADER BAR (Smoothly disappears when scrolled)                         */}
+      {/* TOP HEADER BAR — solid color, vanishes on scroll                          */}
       {/* ========================================================================= */}
       <div
         className={cn(
-          "bg-slate-200/5 px-4 text-xs text-slate-200 backdrop-blur-md transition-all duration-300 overflow-hidden",
+          "hidden md:block w-full bg-slate-950 text-xs text-slate-300 transition-all duration-300 overflow-hidden z-50",
           isScrolled
-            ? "max-h-0 opacity-0 -translate-y-4 py-0 border-b-0 pointer-events-none"
-            : "max-h-12 opacity-100 translate-y-0 py-1.5 border-b border-white/10",
+            ? "max-h-0 opacity-0 py-0 pointer-events-none"
+            : "max-h-12 opacity-100 py-2 border-b border-white/10",
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between flex-nowrap whitespace-nowrap gap-4 overflow-x-auto text-[11px] sm:text-xs">
-          {/* Left Info: Location & Working Hours */}
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 flex-nowrap whitespace-nowrap gap-4 text-[11px] sm:text-xs">
+          {/* Left Info */}
           <div className="flex items-center gap-3 sm:gap-5 shrink-0 whitespace-nowrap">
-            <span className="flex items-center gap-1.5 text-slate-100 font-medium whitespace-nowrap">
-              <MapPin className="h-3.5 w-3.5 text-blue-300 shrink-0" />
+            <span className="flex items-center gap-1.5 text-slate-200 font-medium whitespace-nowrap">
+              <MapPin className="h-3.5 w-3.5 text-blue-400 shrink-0" />
               <span>{contactInfo.address}</span>
             </span>
-            <span className="hidden sm:inline text-white/25">|</span>
-            <span className="hidden sm:flex items-center gap-1.5 text-slate-200/90 whitespace-nowrap">
-              <Clock className="h-3.5 w-3.5 text-blue-300 shrink-0" />
+            <span className="hidden sm:inline text-white/20">|</span>
+            <span className="hidden sm:flex items-center gap-1.5 text-slate-300 whitespace-nowrap">
+              <Clock className="h-3.5 w-3.5 text-blue-400 shrink-0" />
               <span>Mon – Sat: 9:00 AM – 7:00 PM</span>
             </span>
           </div>
 
-          {/* Right Info: Phone, Email, WhatsApp Desk */}
+          {/* Right Info */}
           <div className="flex items-center gap-3 sm:gap-5 shrink-0 whitespace-nowrap">
             <a
               href={`mailto:${contactInfo.email}`}
-              className="hidden md:flex items-center gap-1.5 text-slate-200 hover:text-white transition-colors whitespace-nowrap"
+              className="hidden md:flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors whitespace-nowrap"
             >
-              <Mail className="h-3.5 w-3.5 text-blue-300 shrink-0" />
+              <Mail className="h-3.5 w-3.5 text-blue-400 shrink-0" />
               <span>{contactInfo.email}</span>
             </a>
-            <span className="hidden md:inline text-white/25">|</span>
+            <span className="hidden md:inline text-white/20">|</span>
             <a
               href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, "")}`}
-              className="flex items-center gap-1.5 text-slate-100 font-semibold hover:text-white transition-colors whitespace-nowrap"
+              className="flex items-center gap-1.5 text-slate-200 font-semibold hover:text-white transition-colors whitespace-nowrap"
             >
-              <Phone className="h-3.5 w-3.5 text-blue-300 shrink-0" />
+              <Phone className="h-3.5 w-3.5 text-blue-400 shrink-0" />
               <span>{contactInfo.phone}</span>
             </a>
-            <span className="hidden sm:inline text-white/25">|</span>
+            <span className="hidden sm:inline text-white/20">|</span>
             <a
               href={`https://wa.me/${contactInfo.whatsapp.replace(/[^0-9]/g, "")}?text=Hello%20Areera%20Travel%2C%20I%20would%20like%20to%20inquire%20about%20visa%20services.`}
               target="_blank"
@@ -161,10 +158,20 @@ export function Navbar() {
       </div>
 
       {/* ========================================================================= */}
-      {/* FROSTED LIGHT GRAY GLASS MAIN NAVBAR (Single Line)                        */}
+      {/* STICKY FLOATING NAVBAR                                                     */}
       {/* ========================================================================= */}
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 flex-nowrap whitespace-nowrap w-full">
-        {/* Left: Brand Logo in single line */}
+      <header
+        ref={dropdownRef}
+        className={cn(
+          "sticky top-0 z-50 w-full transition-all duration-300",
+          isScrolled
+            ? "border-b border-white/20 bg-slate-800/60 shadow-xl shadow-black/25 backdrop-blur-2xl backdrop-saturate-180"
+            : "border-b border-white/15 bg-slate-800/25 backdrop-blur-xl backdrop-saturate-150",
+        )}
+      >
+      {/* Main Navbar Row */}
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 flex-nowrap whitespace-nowrap w-full">
+        {/* Left: Brand Logo */}
         <Link
           to="/"
           className="flex items-center shrink-0 whitespace-nowrap transition-opacity hover:opacity-95"
@@ -172,7 +179,7 @@ export function Navbar() {
           <Logo size="md" />
         </Link>
 
-        {/* Center: Desktop Navigation in a Single Line */}
+        {/* Center: Desktop Navigation */}
         <nav className="hidden items-center gap-1 lg:gap-1.5 lg:flex shrink-0 whitespace-nowrap">
           <Link
             to="/"
@@ -253,37 +260,45 @@ export function Navbar() {
           </Link>
         </nav>
 
-        {/* Right: Actions in a Single Line */}
-        <div className="hidden items-center gap-3 md:flex shrink-0 whitespace-nowrap">
+        {/* Right: Actions */}
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0 whitespace-nowrap">
+          {/* WhatsApp — appears on scroll for all screens */}
           <a
             href={`https://wa.me/${contactInfo.whatsapp.replace(/[^0-9]/g, "")}?text=Hello%20Areera%20Travel%2C%20I%20would%20like%20to%20inquire%20about%20visa%20assistance.`}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1.5 rounded-xl border border-emerald-400/30 bg-emerald-500/15 px-3 py-2 text-xs font-semibold text-emerald-300 hover:bg-emerald-500 hover:text-white transition-all whitespace-nowrap shadow-xs backdrop-blur-md"
+            className={cn(
+              "flex items-center gap-1.5 rounded-xl border border-emerald-400/30 bg-emerald-500/15 px-3 py-2 text-xs font-semibold text-emerald-300 hover:bg-emerald-500 hover:text-white transition-all whitespace-nowrap shadow-xs backdrop-blur-md",
+              isScrolled ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none hidden md:flex"
+            )}
             title="Chat directly on WhatsApp"
           >
             <MessageSquare className="h-3.5 w-3.5" />
-            <span className="hidden xl:inline">WhatsApp Help</span>
+            <span className="hidden sm:inline">WhatsApp</span>
           </a>
 
+          {/* Apply for Visa — desktop only */}
           <Link
             to="/services/visa"
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 border border-white/25 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-blue-500/25 transition-all duration-200 hover:scale-[1.02] hover:shadow-blue-500/40 shrink-0 whitespace-nowrap"
+            className="hidden md:inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600 border border-white/25 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-blue-500/25 transition-all duration-200 hover:scale-[1.02] hover:shadow-blue-500/40 shrink-0 whitespace-nowrap"
           >
             <span>Apply For Visa</span>
             <ArrowRight className="h-3.5 w-3.5" />
           </Link>
-        </div>
 
-        {/* Mobile Hamburger Button */}
-        <button
-          type="button"
-          onClick={() => setMobileOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white lg:hidden hover:bg-white/20 shrink-0 backdrop-blur-md"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          {/* Mobile Hamburger Button */}
+          <button
+            type="button"
+            onClick={() => {
+              setMobileOpen((v) => !v);
+              setOpenDropdown(null);
+            }}
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white lg:hidden hover:bg-white/20 shrink-0 backdrop-blur-md"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {/* ========================================================================= */}
@@ -486,122 +501,169 @@ export function Navbar() {
         </div>
       )}
 
+      </header>
+
       {/* ========================================================================= */}
-      {/* FROSTED MOBILE DRAWER                                                     */}
+      {/* PRO SIDEBAR MENU — slides from RIGHT                                      */}
       {/* ========================================================================= */}
       {mobileOpen && (
-        <div
-          className={cn(
-            "fixed inset-x-0 bottom-0 z-50 overflow-y-auto border-b border-white/20 bg-slate-900/95 p-5 backdrop-blur-3xl lg:hidden animate-fade-up transition-all duration-300",
-            isScrolled ? "top-[72px]" : "top-[108px]",
-          )}
-        >
-          <div className="relative mb-5">
-            <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-300" />
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search 44+ countries..."
-              aria-label="Search countries"
-              maxLength={50}
-              className="h-10 w-full rounded-xl border border-white/20 bg-white/10 pl-10 pr-4 text-xs text-white placeholder:text-slate-400 outline-none focus:border-white/40"
-            />
-          </div>
+        <div className="fixed inset-0 z-[100] lg:hidden">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={() => setMobileOpen(false)}
+          />
 
-          {query ? (
-            <div className="space-y-2 mb-6">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
-                Matching Countries ({filteredCountries.length})
-              </span>
-              <div className="space-y-1.5 max-h-72 overflow-y-auto">
-                {filteredCountries.slice(0, 12).map((c) => (
-                  <Link
-                    key={c.slug}
-                    to="/countries/$slug"
-                    params={{ slug: c.slug }}
-                    className="flex items-center gap-3 rounded-xl border border-white/15 bg-white/10 p-2.5 text-xs font-medium text-white hover:border-white/40 backdrop-blur-md"
-                  >
-                    <CountryFlag isoCode={c.isoCode} countryName={c.name} size="sm" />
-                    <div>
-                      <p className="font-semibold text-white">{c.name}</p>
-                      <p className="text-[10px] text-slate-300">
-                        {c.region} · {c.processingTime}
-                      </p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+          {/* Sidebar — right side */}
+          <div className="absolute inset-y-0 right-0 w-[280px] bg-slate-900/95 backdrop-blur-3xl border-l border-white/10 shadow-2xl shadow-black/50 animate-slide-left flex flex-col overflow-hidden">
+            {/* Header */}
+            <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
+              <Link to="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-blue-600 text-white font-bold text-sm shadow-lg shadow-indigo-500/20">
+                  AT
+                </div>
+                <div>
+                  <h2 className="text-sm font-bold text-white leading-tight">Areera Travel</h2>
+                  <p className="text-[10px] font-medium text-slate-400">World Explorer</p>
+                </div>
+              </Link>
+              <button
+                type="button"
+                onClick={() => setMobileOpen(false)}
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="h-4 w-4" />
+              </button>
             </div>
-          ) : (
-            <div className="space-y-6">
-              <div className="space-y-1 border-b border-white/15 pb-4">
+
+            {/* Content Area */}
+            <div className="flex-1 flex flex-col overflow-y-auto px-4 py-4">
+              {/* Search */}
+              <div className="relative mb-4">
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                <input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search..."
+                  className="h-10 w-full rounded-lg border border-white/10 bg-white/5 pl-9 pr-4 text-sm text-white placeholder:text-slate-500 outline-none focus:bg-white/10 focus:border-white/20 transition-all"
+                />
+              </div>
+
+              {/* Nav Links */}
+              <nav className="space-y-0.5 flex-1">
                 <Link
                   to="/"
-                  className="block rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  onClick={() => setMobileOpen(false)}
+                  className={cn(
+                    "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                    pathname === "/"
+                      ? "bg-indigo-500/15 text-indigo-400 border border-indigo-500/20"
+                      : "text-slate-300 hover:bg-white/5 hover:text-white"
+                  )}
                 >
+                  <Home className={cn("h-[18px] w-[18px]", pathname === "/" ? "text-indigo-400" : "text-slate-500")} />
                   Home
                 </Link>
-                <Link
-                  to="/services"
-                  className="block rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
-                >
-                  Services
-                </Link>
-                <Link
-                  to="/countries"
-                  className="block rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
-                >
-                  All Destinations (44+)
-                </Link>
+
+                <div>
+                  <button
+                    onClick={() => setMobileDropdown(mobileDropdown === "services" ? null : "services")}
+                    className={cn(
+                      "flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                      pathname.startsWith("/services") || mobileDropdown === "services"
+                        ? "bg-indigo-500/15 text-indigo-400 border border-indigo-500/20"
+                        : "text-slate-300 hover:bg-white/5 hover:text-white"
+                    )}
+                  >
+                    <div className="flex items-center gap-3">
+                      <LayoutGrid className={cn("h-[18px] w-[18px]", pathname.startsWith("/services") || mobileDropdown === "services" ? "text-indigo-400" : "text-slate-500")} />
+                      Services
+                    </div>
+                    <ChevronDown className={cn("h-4 w-4 transition-transform", mobileDropdown === "services" && "rotate-180")} />
+                  </button>
+                  {mobileDropdown === "services" && (
+                    <div className="mt-1 mb-1 space-y-0.5 ml-8 pl-3 border-l border-white/10">
+                      {services.map((s) => (
+                        <Link key={s.slug} to={s.path as never} onClick={() => setMobileOpen(false)} className="block py-1.5 text-xs font-medium text-slate-400 hover:text-indigo-400 transition-colors">
+                          {s.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <div>
+                  <button
+                    onClick={() => setMobileDropdown(mobileDropdown === "destinations" ? null : "destinations")}
+                    className={cn(
+                      "flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                      pathname.startsWith("/countries") || mobileDropdown === "destinations"
+                        ? "bg-indigo-500/15 text-indigo-400 border border-indigo-500/20"
+                        : "text-slate-300 hover:bg-white/5 hover:text-white"
+                    )}
+                  >
+                    <div className="flex items-center gap-3">
+                      <Globe2 className={cn("h-[18px] w-[18px]", pathname.startsWith("/countries") || mobileDropdown === "destinations" ? "text-indigo-400" : "text-slate-500")} />
+                      Destinations
+                    </div>
+                    <ChevronDown className={cn("h-4 w-4 transition-transform", mobileDropdown === "destinations" && "rotate-180")} />
+                  </button>
+                  {mobileDropdown === "destinations" && (
+                    <div className="mt-1 mb-1 space-y-0.5 ml-8 pl-3 border-l border-white/10 max-h-[28vh] overflow-y-auto">
+                      {REGIONS.map((r) => (
+                        <Link key={r} to="/countries/$slug" params={{ slug: REGION_SLUGS[r] }} onClick={() => setMobileOpen(false)} className="block py-1.5 text-xs font-medium text-slate-400 hover:text-indigo-400 transition-colors">
+                          {r}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
                 <Link
                   to="/about"
-                  className="block rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  onClick={() => setMobileOpen(false)}
+                  className={cn(
+                    "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                    pathname === "/about"
+                      ? "bg-indigo-500/15 text-indigo-400 border border-indigo-500/20"
+                      : "text-slate-300 hover:bg-white/5 hover:text-white"
+                  )}
                 >
+                  <Building2 className={cn("h-[18px] w-[18px]", pathname === "/about" ? "text-indigo-400" : "text-slate-500")} />
                   About Us
                 </Link>
+
                 <Link
                   to="/contact"
-                  className="block rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  onClick={() => setMobileOpen(false)}
+                  className={cn(
+                    "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                    pathname === "/contact"
+                      ? "bg-indigo-500/15 text-indigo-400 border border-indigo-500/20"
+                      : "text-slate-300 hover:bg-white/5 hover:text-white"
+                  )}
                 >
+                  <Phone className={cn("h-[18px] w-[18px]", pathname === "/contact" ? "text-indigo-400" : "text-slate-500")} />
                   Contact
                 </Link>
-              </div>
+              </nav>
 
-              <div className="grid grid-cols-2 gap-3">
-                <a
-                  href={`tel:${contactInfo.phone.replace(/[^0-9+]/g, "")}`}
-                  className="flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 py-2.5 text-xs font-semibold text-white backdrop-blur-md"
+              {/* Footer */}
+              <div className="mt-auto pt-3 border-t border-white/10 space-y-1">
+                <Link
+                  to="/services/visa"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white transition-colors"
                 >
-                  <Phone className="h-3.5 w-3.5 text-blue-300" /> Direct Call
-                </a>
-                <a
-                  href={`https://wa.me/${contactInfo.whatsapp.replace(/[^0-9]/g, "")}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl border border-emerald-400/30 bg-emerald-500/20 py-2.5 text-xs font-semibold text-emerald-300 backdrop-blur-md"
-                >
-                  <MessageSquare className="h-3.5 w-3.5" /> WhatsApp
-                </a>
+                  <FileCheck2 className="h-[18px] w-[18px] text-emerald-400" />
+                  Apply for Visa
+                </Link>
               </div>
-
-              <Link
-                to="/services/visa"
-                className="block w-full rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 border border-white/25 py-3 text-center text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-blue-500/30"
-              >
-                Apply For Visa Online
-              </Link>
             </div>
-          )}
-
-          <button
-            type="button"
-            onClick={() => setMobileOpen(false)}
-            className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 py-2.5 text-xs font-semibold text-slate-300 hover:text-white backdrop-blur-md"
-          >
-            <X className="h-4 w-4" /> Close Menu
-          </button>
+          </div>
         </div>
       )}
-    </header>
+    </>
   );
 }

@@ -13,17 +13,17 @@ import { ticketArticle, ticketFaqs } from "@/data/content";
 export const Route = createFileRoute("/services/ticket")({
   head: () => ({
     meta: [
-      { title: "Air Ticket Booking — Domestic & International | Areera" },
+      { title: "Air Ticket Booking — Domestic & International Routes | Areera Travel and Tours" },
       {
         name: "description",
         content:
-          "Domestic and international air ticketing with fare comparison, group bookings, date changes and itinerary support from Areera Travel and Tours.",
+          "Book domestic and international flight tickets at competitive fares. Enjoy instant booking, flexible date changes, and 24/7 itinerary support with Areera.",
       },
-      { property: "og:title", content: "Ticket Booking | Areera Travel and Tours" },
+      { property: "og:title", content: "Air Ticket Booking — Domestic & International Routes | Areera Travel and Tours" },
       {
         property: "og:description",
         content:
-          "Compare fares, book group travel and manage changes with a dedicated ticketing consultant.",
+          "Compare airline fares across hundreds of routes, book group departures, and manage date changes with 24/7 support from Areera Travel and Tours.",
       },
       { property: "og:url", content: "/services/ticket" },
     ],
