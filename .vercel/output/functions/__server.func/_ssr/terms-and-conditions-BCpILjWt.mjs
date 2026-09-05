@@ -3,7 +3,7 @@ import { _ as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { K as CircleCheck, W as Clock, g as Scale, i as TriangleAlert, p as ShieldAlert, rt as ArrowRight, y as Plane } from "../_libs/lucide-react.mjs";
 import { t as Breadcrumbs } from "./Breadcrumbs-_GnoNGyX.mjs";
 import { n as Reveal, r as Section } from "./Reveal-3UjQit6f.mjs";
-import { f as contactInfo } from "./router-BBvjGGPB2.mjs";
+import { f as contactInfo } from "./router-6UWHtjA-2.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/terms-and-conditions-BCpILjWt.js
 var import_jsx_runtime = require_jsx_runtime();
 var keyPrinciples = [

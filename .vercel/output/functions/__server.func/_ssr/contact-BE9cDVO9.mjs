@@ -4,9 +4,9 @@ import { D as Mail, E as MapPin, W as Clock, w as MessageCircle, x as Phone } fr
 import { t as Breadcrumbs } from "./Breadcrumbs-_GnoNGyX.mjs";
 import { i as SectionHeading, r as Section } from "./Reveal-3UjQit6f.mjs";
 import { n as FaqSection, t as ContentArticle } from "./FaqSection-C2Lyxuf-.mjs";
-import { b as contactArticle, f as contactInfo, x as contactFaqs } from "./router-BBvjGGPB2.mjs";
-import { t as BookingForm } from "./BookingForm-DyETzn_9.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/contact-CxC_AgXZ.js
+import { b as contactArticle, f as contactInfo, x as contactFaqs } from "./router-6UWHtjA-2.mjs";
+import { t as BookingForm } from "./BookingForm-4-nXXUMJ.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/contact-BE9cDVO9.js
 var import_jsx_runtime = require_jsx_runtime();
 function Contact() {
 	const tel = contactInfo.phone.replace(/\s/g, "");

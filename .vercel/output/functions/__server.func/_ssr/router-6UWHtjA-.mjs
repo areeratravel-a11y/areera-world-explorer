@@ -6,7 +6,7 @@ import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
 import { t as SpeedInsights } from "../_libs/vercel__speed-insights.mjs";
-import { B as cn, C as countriesHubFaqs, D as flightFaqs, I as ticketFaqs, P as servicesFaqs, R as visaFaqs, T as countryFaqs, _ as aboutFaqs, c as getCountry, f as contactInfo, h as testimonials, i as REGION_SLUGS, j as hotelFaqs, k as homeFaqs, l as getRegionBySlug, m as siteConfig, n as CountryFlag, o as countries, p as services, r as REGIONS, s as countriesByRegion, u as popularDestinations, x as contactFaqs, y as attestationFaqs, z as Button } from "./router-BBvjGGPB2.mjs";
+import { B as cn, C as countriesHubFaqs, D as flightFaqs, I as ticketFaqs, P as servicesFaqs, R as visaFaqs, T as countryFaqs, _ as aboutFaqs, c as getCountry, f as contactInfo, h as testimonials, i as REGION_SLUGS, j as hotelFaqs, k as homeFaqs, l as getRegionBySlug, m as siteConfig, n as CountryFlag, o as countries, p as services, r as REGIONS, s as countriesByRegion, u as popularDestinations, x as contactFaqs, y as attestationFaqs, z as Button } from "./router-6UWHtjA-2.mjs";
 import fs from "fs";
 import path from "path";
 //#region node_modules/.nitro/vite/services/ssr/assets/json-ld-f66xyV3o.js
@@ -681,7 +681,7 @@ function ServicePageSkeleton() {
 	});
 }
 //#endregion
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BBvjGGPB.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-6UWHtjA-.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
@@ -2756,7 +2756,7 @@ function RootComponent() {
 		]
 	});
 }
-var $$splitComponentImporter$15 = () => import("./routes-CwfE-5vS.mjs");
+var $$splitComponentImporter$15 = () => import("./routes-CvJx8jIA.mjs");
 var Route$19 = createFileRoute("/")({
 	head: () => ({
 		meta: [
@@ -2855,7 +2855,7 @@ var Route$18 = createFileRoute("/about")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$14, "component")
 });
-var $$splitComponentImporter$13 = () => import("./contact-CxC_AgXZ.mjs");
+var $$splitComponentImporter$13 = () => import("./contact-BE9cDVO9.mjs");
 var Route$17 = createFileRoute("/contact")({
 	head: () => ({
 		meta: [
@@ -2934,7 +2934,7 @@ function CountriesSkeleton({ cards = 6 }) {
 		]
 	});
 }
-var $$splitErrorComponentImporter = () => import("./countries-C_FAQjE6.mjs");
+var $$splitErrorComponentImporter = () => import("./countries-COR6Uuva.mjs");
 var $$splitComponentImporter$12 = () => import("./countries-fHxncJ_y.mjs");
 var Route$16 = createFileRoute("/countries")({
 	component: lazyRouteComponent($$splitComponentImporter$12, "component"),
@@ -2945,7 +2945,7 @@ var Route$16 = createFileRoute("/countries")({
 function CountriesPending() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountriesSkeleton, {});
 }
-var $$splitComponentImporter$11 = () => import("./flight-reservation-D3ZNbYkU.mjs");
+var $$splitComponentImporter$11 = () => import("./flight-reservation-CQLSezje.mjs");
 var Route$15 = createFileRoute("/flight-reservation")({
 	pendingComponent: ServicePageSkeleton,
 	pendingMs: 150,
@@ -3001,7 +3001,7 @@ var Route$15 = createFileRoute("/flight-reservation")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$11, "component")
 });
-var $$splitComponentImporter$10 = () => import("./hotel-booking-CwIYTvs7.mjs");
+var $$splitComponentImporter$10 = () => import("./hotel-booking-DW3kIthd.mjs");
 var Route$14 = createFileRoute("/hotel-booking")({
 	pendingComponent: ServicePageSkeleton,
 	pendingMs: 150,
@@ -3164,17 +3164,42 @@ var Route$11 = createFileRoute("/privacy-policy")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$9, "component")
 });
-var robotsTxt = `User-agent: *
+var robotsTxt = `# ==============================================================================
+# Areera Travel and Tours - Official Robots.txt
+# Website: https://www.areeratravels.com
+# Unblocking: Google, Bing, ChatGPT, Gemini, Perplexity, Claude & All AI Engines
+# ==============================================================================
+
+User-agent: *
 Allow: /
 Disallow: /thank-you
 
-# Major Search Engines (Explicit Directives)
+# --- GOOGLE & GEMINI ---
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /
 
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: GoogleOther-Image
+Allow: /
+
+User-agent: GoogleOther-Video
+Allow: /
+
+# --- BING & MICROSOFT COPILOT ---
 User-agent: Bingbot
 Allow: /
 
@@ -3190,6 +3215,43 @@ Allow: /
 User-agent: Microsoft-Bing-Bot
 Allow: /
 
+User-agent: Copilot
+Allow: /
+
+# --- CHATGPT & OPENAI ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# --- PERPLEXITY AI ---
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-Search
+Allow: /
+
+# --- CLAUDE & ANTHROPIC ---
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# --- OTHER MAJOR SEARCH ENGINES & AI ---
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 User-agent: DuckDuckBot
 Allow: /
 
@@ -3199,35 +3261,6 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# Generative AI, Answer Engines & Copilot (AEO / GEO)
-User-agent: Copilot
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-# Social Crawlers
 User-agent: Twitterbot
 Allow: /
 
@@ -3240,9 +3273,8 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
+# --- SITEMAP & LLM PROTOCOL ---
 Sitemap: https://www.areeratravels.com/sitemap.xml
-
-# LLM Web Discovery (llmstxt.org)
 # LLM-Index: https://www.areeratravels.com/llms.txt
 # LLM-Full: https://www.areeratravels.com/llms-full.txt
 `;
@@ -3452,7 +3484,7 @@ var Route$8 = createFileRoute("/terms-and-conditions")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$8, "component")
 });
-var $$splitComponentImporter$7 = () => import("./thank-you-Bqy929rx.mjs");
+var $$splitComponentImporter$7 = () => import("./thank-you-CPCUI5D0.mjs");
 var Route$7 = createFileRoute("/thank-you")({
 	validateSearch: (search) => ({
 		service: typeof search["service"] === "string" ? search["service"].slice(0, 80) : void 0,
@@ -3622,8 +3654,8 @@ function CountryDetailSkeleton() {
 		]
 	});
 }
-var $$splitComponentImporter$5 = () => import("./countries._slug-DDgK2LGK.mjs");
-var $$splitNotFoundComponentImporter = () => import("./countries._slug-CXkjWeBH.mjs");
+var $$splitComponentImporter$5 = () => import("./countries._slug-Ct0Yrub5.mjs");
+var $$splitNotFoundComponentImporter = () => import("./countries._slug-DTmKOsVP.mjs");
 var Route$5 = createFileRoute("/countries/$slug")({
 	notFoundComponent: lazyRouteComponent($$splitNotFoundComponentImporter, "notFoundComponent"),
 	pendingComponent: CountryDetailSkeleton,
@@ -3895,7 +3927,7 @@ var Route$3 = createFileRoute("/services/")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./services.attestation-ClkDA4Qf.mjs");
+var $$splitComponentImporter$2 = () => import("./services.attestation-BMuQUqLL.mjs");
 var Route$2 = createFileRoute("/services/attestation")({
 	head: () => ({
 		meta: [
@@ -3955,7 +3987,7 @@ var Route$2 = createFileRoute("/services/attestation")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./services.ticket-DIsexB5a.mjs");
+var $$splitComponentImporter$1 = () => import("./services.ticket-CNYyF0Ak.mjs");
 var Route$1 = createFileRoute("/services/ticket")({
 	head: () => ({
 		meta: [
@@ -4015,7 +4047,7 @@ var Route$1 = createFileRoute("/services/ticket")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./services.visa-DvEqpw3E.mjs");
+var $$splitComponentImporter = () => import("./services.visa-Bb3jdf0f.mjs");
 var Route = createFileRoute("/services/visa")({
 	pendingComponent: ServicePageSkeleton,
 	pendingMs: 150,
