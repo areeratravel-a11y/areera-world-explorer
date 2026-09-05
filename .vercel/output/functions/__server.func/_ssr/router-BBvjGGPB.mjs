@@ -6,7 +6,7 @@ import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
 import { t as SpeedInsights } from "../_libs/vercel__speed-insights.mjs";
-import { B as cn, C as countriesHubFaqs, D as flightFaqs, I as ticketFaqs, P as servicesFaqs, R as visaFaqs, T as countryFaqs, _ as aboutFaqs, c as getCountry, f as contactInfo, h as testimonials, i as REGION_SLUGS, j as hotelFaqs, k as homeFaqs, l as getRegionBySlug, m as siteConfig, n as CountryFlag, o as countries, p as services, r as REGIONS, s as countriesByRegion, u as popularDestinations, x as contactFaqs, y as attestationFaqs, z as Button } from "./router-6JreJWcH2.mjs";
+import { B as cn, C as countriesHubFaqs, D as flightFaqs, I as ticketFaqs, P as servicesFaqs, R as visaFaqs, T as countryFaqs, _ as aboutFaqs, c as getCountry, f as contactInfo, h as testimonials, i as REGION_SLUGS, j as hotelFaqs, k as homeFaqs, l as getRegionBySlug, m as siteConfig, n as CountryFlag, o as countries, p as services, r as REGIONS, s as countriesByRegion, u as popularDestinations, x as contactFaqs, y as attestationFaqs, z as Button } from "./router-BBvjGGPB2.mjs";
 import fs from "fs";
 import path from "path";
 //#region node_modules/.nitro/vite/services/ssr/assets/json-ld-f66xyV3o.js
@@ -681,7 +681,7 @@ function ServicePageSkeleton() {
 	});
 }
 //#endregion
-//#region node_modules/.nitro/vite/services/ssr/assets/router-6JreJWcH.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BBvjGGPB.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
@@ -2756,7 +2756,7 @@ function RootComponent() {
 		]
 	});
 }
-var $$splitComponentImporter$15 = () => import("./routes-BWXVtihq.mjs");
+var $$splitComponentImporter$15 = () => import("./routes-CwfE-5vS.mjs");
 var Route$19 = createFileRoute("/")({
 	head: () => ({
 		meta: [
@@ -2855,7 +2855,7 @@ var Route$18 = createFileRoute("/about")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$14, "component")
 });
-var $$splitComponentImporter$13 = () => import("./contact-Cald-t9m.mjs");
+var $$splitComponentImporter$13 = () => import("./contact-CxC_AgXZ.mjs");
 var Route$17 = createFileRoute("/contact")({
 	head: () => ({
 		meta: [
@@ -2934,7 +2934,7 @@ function CountriesSkeleton({ cards = 6 }) {
 		]
 	});
 }
-var $$splitErrorComponentImporter = () => import("./countries-BFeAcCHU.mjs");
+var $$splitErrorComponentImporter = () => import("./countries-C_FAQjE6.mjs");
 var $$splitComponentImporter$12 = () => import("./countries-fHxncJ_y.mjs");
 var Route$16 = createFileRoute("/countries")({
 	component: lazyRouteComponent($$splitComponentImporter$12, "component"),
@@ -2945,7 +2945,7 @@ var Route$16 = createFileRoute("/countries")({
 function CountriesPending() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountriesSkeleton, {});
 }
-var $$splitComponentImporter$11 = () => import("./flight-reservation-_GrL7zmJ.mjs");
+var $$splitComponentImporter$11 = () => import("./flight-reservation-D3ZNbYkU.mjs");
 var Route$15 = createFileRoute("/flight-reservation")({
 	pendingComponent: ServicePageSkeleton,
 	pendingMs: 150,
@@ -3001,7 +3001,7 @@ var Route$15 = createFileRoute("/flight-reservation")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$11, "component")
 });
-var $$splitComponentImporter$10 = () => import("./hotel-booking-96quvuh7.mjs");
+var $$splitComponentImporter$10 = () => import("./hotel-booking-CwIYTvs7.mjs");
 var Route$14 = createFileRoute("/hotel-booking")({
 	pendingComponent: ServicePageSkeleton,
 	pendingMs: 150,
@@ -3068,16 +3068,27 @@ function getLlmsFullContent() {
 > WhatsApp: +92 314 5556024 | Email: areeratravel@gmail.com | Website: https://www.areeratravels.com
 `;
 }
-var Route$13 = createFileRoute("/llms-full.txt")({ server: { handlers: { GET: async () => {
-	const content = getLlmsFullContent();
-	return new Response(content, {
-		status: 200,
-		headers: {
-			"Content-Type": "text/markdown; charset=utf-8",
-			"Cache-Control": "public, max-age=3600, s-maxage=86400"
-		}
-	});
-} } } });
+var Route$13 = createFileRoute("/llms-full.txt")({ server: { handlers: {
+	GET: async () => {
+		const content = getLlmsFullContent();
+		return new Response(content, {
+			status: 200,
+			headers: {
+				"Content-Type": "text/markdown; charset=utf-8",
+				"Cache-Control": "public, max-age=3600, s-maxage=86400"
+			}
+		});
+	},
+	HEAD: async () => {
+		return new Response(null, {
+			status: 200,
+			headers: {
+				"Content-Type": "text/markdown; charset=utf-8",
+				"Cache-Control": "public, max-age=3600, s-maxage=86400"
+			}
+		});
+	}
+} } });
 function getLlmsContent() {
 	try {
 		const filePath = path.join(process.cwd(), "public", "llms.txt");
@@ -3093,16 +3104,27 @@ function getLlmsContent() {
 - Full Documentation: https://www.areeratravels.com/llms-full.txt
 `;
 }
-var Route$12 = createFileRoute("/llms.txt")({ server: { handlers: { GET: async () => {
-	const content = getLlmsContent();
-	return new Response(content, {
-		status: 200,
-		headers: {
-			"Content-Type": "text/markdown; charset=utf-8",
-			"Cache-Control": "public, max-age=3600, s-maxage=86400"
-		}
-	});
-} } } });
+var Route$12 = createFileRoute("/llms.txt")({ server: { handlers: {
+	GET: async () => {
+		const content = getLlmsContent();
+		return new Response(content, {
+			status: 200,
+			headers: {
+				"Content-Type": "text/markdown; charset=utf-8",
+				"Cache-Control": "public, max-age=3600, s-maxage=86400"
+			}
+		});
+	},
+	HEAD: async () => {
+		return new Response(null, {
+			status: 200,
+			headers: {
+				"Content-Type": "text/markdown; charset=utf-8",
+				"Cache-Control": "public, max-age=3600, s-maxage=86400"
+			}
+		});
+	}
+} } });
 var $$splitComponentImporter$9 = () => import("./privacy-policy-CoSMHcZ6.mjs");
 var Route$11 = createFileRoute("/privacy-policy")({
 	head: () => ({
@@ -3146,8 +3168,45 @@ var robotsTxt = `User-agent: *
 Allow: /
 Disallow: /thank-you
 
-# Generative AI & Answer Engine Crawlers (AEO / GEO)
+# Major Search Engines (Explicit Directives)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: Microsoft-Bing-Bot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Generative AI, Answer Engines & Copilot (AEO / GEO)
+User-agent: Copilot
+Allow: /
+
 User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: PerplexityBot
@@ -3156,26 +3215,57 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
 User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
 
+# Social Crawlers
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
 Sitemap: https://www.areeratravels.com/sitemap.xml
+
 # LLM Web Discovery (llmstxt.org)
 # LLM-Index: https://www.areeratravels.com/llms.txt
 # LLM-Full: https://www.areeratravels.com/llms-full.txt
 `;
-var Route$10 = createFileRoute("/robots.txt")({ server: { handlers: { GET: async () => {
-	return new Response(robotsTxt, {
-		status: 200,
-		headers: {
-			"Content-Type": "text/plain; charset=utf-8",
-			"Cache-Control": "public, max-age=3600, s-maxage=86400"
-		}
-	});
-} } } });
+var Route$10 = createFileRoute("/robots.txt")({ server: { handlers: {
+	GET: async () => {
+		return new Response(robotsTxt, {
+			status: 200,
+			headers: {
+				"Content-Type": "text/plain; charset=utf-8",
+				"Cache-Control": "public, max-age=3600, s-maxage=86400"
+			}
+		});
+	},
+	HEAD: async () => {
+		return new Response(null, {
+			status: 200,
+			headers: {
+				"Content-Type": "text/plain; charset=utf-8",
+				"Cache-Control": "public, max-age=3600, s-maxage=86400"
+			}
+		});
+	}
+} } });
 var baseUrl = "https://www.areeratravels.com";
 var staticRoutes = [
 	{
@@ -3302,16 +3392,27 @@ function generateSitemap() {
 	xml += `</urlset>\n`;
 	return xml;
 }
-var Route$9 = createFileRoute("/sitemap.xml")({ server: { handlers: { GET: async () => {
-	const sitemap = generateSitemap();
-	return new Response(sitemap, {
-		status: 200,
-		headers: {
-			"Content-Type": "application/xml; charset=utf-8",
-			"Cache-Control": "public, max-age=3600, s-maxage=86400"
-		}
-	});
-} } } });
+var Route$9 = createFileRoute("/sitemap.xml")({ server: { handlers: {
+	GET: async () => {
+		const sitemap = generateSitemap();
+		return new Response(sitemap, {
+			status: 200,
+			headers: {
+				"Content-Type": "application/xml; charset=utf-8",
+				"Cache-Control": "public, max-age=3600, s-maxage=86400"
+			}
+		});
+	},
+	HEAD: async () => {
+		return new Response(null, {
+			status: 200,
+			headers: {
+				"Content-Type": "application/xml; charset=utf-8",
+				"Cache-Control": "public, max-age=3600, s-maxage=86400"
+			}
+		});
+	}
+} } });
 var $$splitComponentImporter$8 = () => import("./terms-and-conditions-BCpILjWt.mjs");
 var Route$8 = createFileRoute("/terms-and-conditions")({
 	head: () => ({
@@ -3351,7 +3452,7 @@ var Route$8 = createFileRoute("/terms-and-conditions")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$8, "component")
 });
-var $$splitComponentImporter$7 = () => import("./thank-you-B3050yUK.mjs");
+var $$splitComponentImporter$7 = () => import("./thank-you-Bqy929rx.mjs");
 var Route$7 = createFileRoute("/thank-you")({
 	validateSearch: (search) => ({
 		service: typeof search["service"] === "string" ? search["service"].slice(0, 80) : void 0,
@@ -3521,8 +3622,8 @@ function CountryDetailSkeleton() {
 		]
 	});
 }
-var $$splitComponentImporter$5 = () => import("./countries._slug-wyzzMpG2.mjs");
-var $$splitNotFoundComponentImporter = () => import("./countries._slug-D_gz82h4.mjs");
+var $$splitComponentImporter$5 = () => import("./countries._slug-DDgK2LGK.mjs");
+var $$splitNotFoundComponentImporter = () => import("./countries._slug-CXkjWeBH.mjs");
 var Route$5 = createFileRoute("/countries/$slug")({
 	notFoundComponent: lazyRouteComponent($$splitNotFoundComponentImporter, "notFoundComponent"),
 	pendingComponent: CountryDetailSkeleton,
@@ -3794,7 +3895,7 @@ var Route$3 = createFileRoute("/services/")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./services.attestation-CyKWdlTJ.mjs");
+var $$splitComponentImporter$2 = () => import("./services.attestation-ClkDA4Qf.mjs");
 var Route$2 = createFileRoute("/services/attestation")({
 	head: () => ({
 		meta: [
@@ -3854,7 +3955,7 @@ var Route$2 = createFileRoute("/services/attestation")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./services.ticket-DSH2KIOo.mjs");
+var $$splitComponentImporter$1 = () => import("./services.ticket-DIsexB5a.mjs");
 var Route$1 = createFileRoute("/services/ticket")({
 	head: () => ({
 		meta: [
@@ -3914,7 +4015,7 @@ var Route$1 = createFileRoute("/services/ticket")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./services.visa-Cx8Qgedf.mjs");
+var $$splitComponentImporter = () => import("./services.visa-DvEqpw3E.mjs");
 var Route = createFileRoute("/services/visa")({
 	pendingComponent: ServicePageSkeleton,
 	pendingMs: 150,
