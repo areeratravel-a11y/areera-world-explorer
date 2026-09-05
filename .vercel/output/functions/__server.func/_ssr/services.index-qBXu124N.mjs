@@ -2,7 +2,7 @@ import { l as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[..
 import { t as Breadcrumbs } from "./Breadcrumbs-_GnoNGyX.mjs";
 import { i as SectionHeading, n as Reveal, r as Section } from "./Reveal-3UjQit6f.mjs";
 import { n as FaqSection, t as ContentArticle } from "./FaqSection-C2Lyxuf-.mjs";
-import { N as servicesArticle, P as servicesFaqs, d as popularVisaDestinations, o as countries, p as services } from "./router-DFN211Mt2.mjs";
+import { N as servicesArticle, P as servicesFaqs, d as popularVisaDestinations, o as countries, p as services } from "./router-6JreJWcH2.mjs";
 import { n as ServiceCard, t as CountryCard } from "./cards-D2DLrXXK.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/services.index-qBXu124N.js
 var import_jsx_runtime = require_jsx_runtime();

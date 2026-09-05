@@ -101,13 +101,15 @@ for (const dir of targetDirs) {
   }
 }
 
-// Also mirror robots.txt
-const robotsSrc = path.join(rootDir, "public", "robots.txt");
-if (fs.existsSync(robotsSrc)) {
-  const robotsContent = fs.readFileSync(robotsSrc, "utf8");
-  for (const dir of targetDirs) {
-    if (fs.existsSync(dir)) {
-      fs.writeFileSync(path.join(dir, "robots.txt"), robotsContent, "utf8");
+// Also mirror robots.txt, llms.txt, and llms-full.txt
+for (const filename of ["robots.txt", "llms.txt", "llms-full.txt"]) {
+  const src = path.join(rootDir, "public", filename);
+  if (fs.existsSync(src)) {
+    const content = fs.readFileSync(src, "utf8");
+    for (const dir of targetDirs) {
+      if (fs.existsSync(dir)) {
+        fs.writeFileSync(path.join(dir, filename), content, "utf8");
+      }
     }
   }
 }

@@ -1,10 +1,10 @@
 import { l as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { _ as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { B as Compass, N as HeartHandshake, s as Target } from "../_libs/lucide-react.mjs";
+import { H as Compass, P as HeartHandshake, s as Target } from "../_libs/lucide-react.mjs";
 import { t as Breadcrumbs } from "./Breadcrumbs-_GnoNGyX.mjs";
 import { i as SectionHeading, n as Reveal, r as Section } from "./Reveal-3UjQit6f.mjs";
 import { n as FaqSection, t as ContentArticle } from "./FaqSection-C2Lyxuf-.mjs";
-import { _ as aboutFaqs, g as aboutArticle, z as Button } from "./router-DFN211Mt2.mjs";
+import { _ as aboutFaqs, g as aboutArticle, z as Button } from "./router-6JreJWcH2.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/about-73fqBY40.js
 var import_jsx_runtime = require_jsx_runtime();
 var team = [

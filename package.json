@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite dev",
     "sitemap": "node scripts/generate-sitemap.mjs",
-    "build": "npm run sitemap && vite build && npm run sitemap",
-    "build:dev": "npm run sitemap && vite build --mode development",
+    "llms": "node scripts/generate-llms.mjs",
+    "build": "npm run sitemap && npm run llms && vite build && npm run sitemap && npm run llms",
+    "build:dev": "npm run sitemap && npm run llms && vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."

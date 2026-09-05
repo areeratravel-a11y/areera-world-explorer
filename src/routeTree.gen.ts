@@ -15,6 +15,8 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CountriesRouteImport } from './routes/countries'
 import { Route as FlightReservationRouteImport } from './routes/flight-reservation'
 import { Route as HotelBookingRouteImport } from './routes/hotel-booking'
+import { Route as LlmsFullDottxtRouteImport } from './routes/llms-full[.]txt'
+import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -56,6 +58,16 @@ const FlightReservationRoute = FlightReservationRouteImport.update({
 const HotelBookingRoute = HotelBookingRouteImport.update({
   id: '/hotel-booking',
   path: '/hotel-booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LlmsFullDottxtRoute = LlmsFullDottxtRouteImport.update({
+  id: '/llms-full.txt',
+  path: '/llms-full.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
+  id: '/llms.txt',
+  path: '/llms.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -127,6 +139,8 @@ export interface FileRoutesByFullPath {
   '/countries': typeof CountriesRouteWithChildren
   '/flight-reservation': typeof FlightReservationRoute
   '/hotel-booking': typeof HotelBookingRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -146,6 +160,8 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/flight-reservation': typeof FlightReservationRoute
   '/hotel-booking': typeof HotelBookingRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -167,6 +183,8 @@ export interface FileRoutesById {
   '/countries': typeof CountriesRouteWithChildren
   '/flight-reservation': typeof FlightReservationRoute
   '/hotel-booking': typeof HotelBookingRoute
+  '/llms-full.txt': typeof LlmsFullDottxtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -189,6 +207,8 @@ export interface FileRouteTypes {
     | '/countries'
     | '/flight-reservation'
     | '/hotel-booking'
+    | '/llms-full.txt'
+    | '/llms.txt'
     | '/privacy-policy'
     | '/robots.txt'
     | '/sitemap.xml'
@@ -208,6 +228,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/flight-reservation'
     | '/hotel-booking'
+    | '/llms-full.txt'
+    | '/llms.txt'
     | '/privacy-policy'
     | '/robots.txt'
     | '/sitemap.xml'
@@ -228,6 +250,8 @@ export interface FileRouteTypes {
     | '/countries'
     | '/flight-reservation'
     | '/hotel-booking'
+    | '/llms-full.txt'
+    | '/llms.txt'
     | '/privacy-policy'
     | '/robots.txt'
     | '/sitemap.xml'
@@ -249,6 +273,8 @@ export interface RootRouteChildren {
   CountriesRoute: typeof CountriesRouteWithChildren
   FlightReservationRoute: typeof FlightReservationRoute
   HotelBookingRoute: typeof HotelBookingRoute
+  LlmsFullDottxtRoute: typeof LlmsFullDottxtRoute
+  LlmsDottxtRoute: typeof LlmsDottxtRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -303,6 +329,20 @@ declare module '@tanstack/react-router' {
       path: '/hotel-booking'
       fullPath: '/hotel-booking'
       preLoaderRoute: typeof HotelBookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms-full.txt': {
+      id: '/llms-full.txt'
+      path: '/llms-full.txt'
+      fullPath: '/llms-full.txt'
+      preLoaderRoute: typeof LlmsFullDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms.txt': {
+      id: '/llms.txt'
+      path: '/llms.txt'
+      fullPath: '/llms.txt'
+      preLoaderRoute: typeof LlmsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -413,6 +453,8 @@ const rootRouteChildren: RootRouteChildren = {
   CountriesRoute: CountriesRouteWithChildren,
   FlightReservationRoute: FlightReservationRoute,
   HotelBookingRoute: HotelBookingRoute,
+  LlmsFullDottxtRoute: LlmsFullDottxtRoute,
+  LlmsDottxtRoute: LlmsDottxtRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

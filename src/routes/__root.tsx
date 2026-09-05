@@ -14,6 +14,7 @@ import { organizationSchema, websiteSchema } from "@/lib/json-ld";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
+import { AiTravelAdvisor } from "@/components/AiTravelAdvisor";
 import { Toaster } from "@/components/ui/sonner";
 import { NotFoundPage } from "@/components/NotFoundPage";
 import { GlobalLoadingBar } from "@/components/GlobalLoadingBar";
@@ -111,6 +112,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap",
       },
+      {
+        rel: "alternate",
+        type: "text/markdown",
+        title: "LLM Context (llms.txt)",
+        href: "/llms.txt",
+      },
     ],
     scripts: [
       {
@@ -158,6 +165,7 @@ function RootComponent() {
       </main>
       <Footer />
       <MobileStickyCTA />
+      <AiTravelAdvisor />
       <Toaster position="top-center" />
     </QueryClientProvider>
   );

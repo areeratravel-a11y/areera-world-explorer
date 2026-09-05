@@ -165,6 +165,42 @@ var BedDouble = createLucideIcon("bed-double", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Bot = createLucideIcon("bot", [
+	["path", {
+		d: "M12 8V4H8",
+		key: "hb8ula"
+	}],
+	["rect", {
+		width: "16",
+		height: "12",
+		x: "4",
+		y: "8",
+		rx: "2",
+		key: "enze0r"
+	}],
+	["path", {
+		d: "M2 14h2",
+		key: "vft8re"
+	}],
+	["path", {
+		d: "M20 14h2",
+		key: "4cs60a"
+	}],
+	["path", {
+		d: "M15 13v2",
+		key: "1xurst"
+	}],
+	["path", {
+		d: "M9 13v2",
+		key: "rq6x2g"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Building2 = createLucideIcon("building-2", [
 	["path", {
 		d: "M10 12h4",
@@ -424,6 +460,26 @@ var Earth = createLucideIcon("earth", [
 		cy: "12",
 		r: "10",
 		key: "1mglay"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var ExternalLink = createLucideIcon("external-link", [
+	["path", {
+		d: "M15 3h6v6",
+		key: "1q9fwt"
+	}],
+	["path", {
+		d: "M10 14 21 3",
+		key: "gplh6r"
+	}],
+	["path", {
+		d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",
+		key: "a6xqqp"
 	}]
 ]);
 /**
@@ -946,6 +1002,32 @@ var Shield = createLucideIcon("shield", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Sparkles = createLucideIcon("sparkles", [
+	["path", {
+		d: "M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z",
+		key: "1s2grr"
+	}],
+	["path", {
+		d: "M20 2v4",
+		key: "1rf3ol"
+	}],
+	["path", {
+		d: "M22 4h-4",
+		key: "gwowj6"
+	}],
+	["circle", {
+		cx: "4",
+		cy: "20",
+		r: "2",
+		key: "6kqj1y"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Stamp = createLucideIcon("stamp", [
 	["path", {
 		d: "M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-6 0c0 2 1 2 1 3.5V13",
@@ -1147,4 +1229,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { BadgeCheck as $, Landmark as A, Compass as B, MessageCircle as C, Lock as D, Mail as E, Headphones as F, CircleAlert as G, Clock as H, FileCheck as I, Check as J, ChevronRight as K, FileCheckCorner as L, Hotel as M, HeartHandshake as N, LoaderCircle as O, Headset as P, BedDouble as Q, Eye as R, MessageSquare as S, MapPin as T, CircleQuestionMark as U, Coins as V, CircleCheck as W, CalendarClock as X, Calendar as Y, Building2 as Z, Quote as _, Trash2 as a, Phone as b, Star as c, ShieldCheck as d, ArrowRight as et, ShieldAlert as f, RefreshCw as g, Scale as h, TriangleAlert as i, House as j, LayoutGrid as k, Stamp as l, Search as m, WifiOff as n, TicketsPlane as o, Send as p, ChevronDown as q, Wallet as r, Target as s, X as t, Shield as u, Plane as v, Menu as w, PhoneCall as x, PlaneTakeoff as y, Earth as z };
+export { Building2 as $, LayoutGrid as A, ExternalLink as B, MessageSquare as C, Mail as D, MapPin as E, Headset as F, CircleQuestionMark as G, Compass as H, Headphones as I, ChevronRight as J, CircleCheck as K, FileCheck as L, House as M, Hotel as N, Lock as O, HeartHandshake as P, CalendarClock as Q, FileCheckCorner as R, PhoneCall as S, Menu as T, Coins as U, Earth as V, Clock as W, Check as X, ChevronDown as Y, Calendar as Z, RefreshCw as _, Trash2 as a, PlaneTakeoff as b, Star as c, Shield as d, Bot as et, ShieldCheck as f, Scale as g, Search as h, TriangleAlert as i, Landmark as j, LoaderCircle as k, Stamp as l, Send as m, WifiOff as n, BadgeCheck as nt, TicketsPlane as o, ShieldAlert as p, CircleAlert as q, Wallet as r, ArrowRight as rt, Target as s, X as t, BedDouble as tt, Sparkles as u, Quote as v, MessageCircle as w, Phone as x, Plane as y, Eye as z };

@@ -21,6 +21,9 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://www.areeratravels.com/sitemap.xml
+# LLM Web Discovery (llmstxt.org)
+# LLM-Index: https://www.areeratravels.com/llms.txt
+# LLM-Full: https://www.areeratravels.com/llms-full.txt
 `;
 
 export const Route = createFileRoute("/robots.txt")({
