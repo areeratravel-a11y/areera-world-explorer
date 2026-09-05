@@ -111,27 +111,6 @@ const seeds: Seed[] = [
       "Majestic Himalayan and Karakoram peaks, ancient Mughal heritage, vibrant cultural capitals, and a streamlined official e-visa portal.",
   },
   {
-    name: "India",
-    slug: "india",
-    isoCode: "in",
-    region: "Asia",
-    flag: "🇮🇳",
-    capital: "New Delhi",
-    currency: "INR",
-    processingTime: "3-7 working days",
-    popularCities: ["New Delhi", "Mumbai", "Jaipur", "Bengaluru", "Goa"],
-    highlights: ["Taj Mahal", "Rajasthan Forts", "Kerala Backwaters", "Varanasi Ghats"],
-    bestSeason: "October to March",
-    visaTypes: [
-      "e-Tourist Visa (30 Days / 1 Year)",
-      "e-Business Visa",
-      "e-Medical Visa",
-      "Conference Visa",
-    ],
-    blurb:
-      "From the timeless Taj Mahal to bustling tech hubs and tropical coastal backwaters, India provides versatile e-visa routes for tourism and trade.",
-  },
-  {
     name: "China",
     slug: "china",
     isoCode: "cn",
@@ -739,27 +718,6 @@ const seeds: Seed[] = [
     ],
     blurb:
       "Cradle of civilization, holy shrines of Najaf and Karbala for Ziyarat travelers, and growing business delegations.",
-  },
-  {
-    name: "Israel",
-    slug: "israel",
-    isoCode: "il",
-    region: "Middle East",
-    flag: "🇮🇱",
-    capital: "Jerusalem",
-    currency: "ILS",
-    processingTime: "10-20 working days",
-    popularCities: ["Jerusalem", "Tel Aviv", "Haifa", "Eilat", "Nazareth"],
-    highlights: [
-      "Old City Jerusalem",
-      "Western Wall & Dome of the Rock",
-      "Tel Aviv Promenade",
-      "Dead Sea",
-    ],
-    bestSeason: "March to May & October to November",
-    visaTypes: ["B/2 Visitor Visa", "B/1 Work Visa", "Official / Religious Visa"],
-    blurb:
-      "Sacred historical sites, Mediterranean coastlines, and thorough documentation requirements.",
   },
   {
     name: "Yemen",

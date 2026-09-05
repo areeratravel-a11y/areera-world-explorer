@@ -8,8 +8,8 @@ export function Footer() {
   return (
     <footer className="mt-16 border-t border-border/80 bg-card/60 backdrop-blur-md">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
-          <div>
+        <div className="grid gap-8 md:grid-cols-12 lg:gap-12">
+          <div className="md:col-span-6">
             <Logo size="lg" />
             <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
               Visa filing support, air ticketing, document attestation, hotel bookings and flight
@@ -38,25 +38,25 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2">
-            <div>
-              <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                Services
-              </h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                {services.map((s) => (
-                  <li key={s.slug}>
-                    <Link to={s.path as never} className="hover:text-foreground">
-                      {s.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                Company
-              </h3>
+          <div className="md:col-span-3">
+            <h3 className="mb-3 text-xs font-semibold tracking-wider text-primary">
+              Services
+            </h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link to={s.path as never} className="hover:text-foreground">
+                    {s.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:col-span-3">
+            <h3 className="mb-3 text-xs font-semibold tracking-wider text-primary">
+              Company
+            </h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <Link to="/about" className="hover:text-foreground">
@@ -71,6 +71,11 @@ export function Footer() {
                 <li>
                   <Link to="/countries" className="hover:text-foreground">
                     All visa destinations
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/guides/visa-free-asian-destinations" className="hover:text-foreground font-medium text-primary/90">
+                    Visa-Free Asian Guide 2026
                   </Link>
                 </li>
                 <li>
@@ -96,33 +101,50 @@ export function Footer() {
               </ul>
             </div>
           </div>
-        </div>
 
-        <div className="mt-12 grid gap-8 border-t border-border pt-10 md:grid-cols-4">
-          {REGIONS.map((region) => (
-            <div key={region}>
-              <Link
-                to="/countries/$slug"
-                params={{ slug: REGION_SLUGS[region] }}
-                className="mb-3 block text-xs font-semibold uppercase tracking-[0.18em] text-primary"
-              >
-                {region}
-              </Link>
-              <ul className="space-y-1.5 text-sm text-muted-foreground">
-                {countriesByRegion(region).map((c) => (
-                  <li key={c.slug}>
-                    <Link
-                      to="/countries/$slug"
-                      params={{ slug: c.slug }}
-                      className="hover:text-foreground"
-                    >
-                      {c.name} visa
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        {/* Regional Destinations Grid — 5 balanced columns on desktop */}
+        <div className="mt-12 grid grid-cols-2 gap-8 border-t border-border pt-10 sm:grid-cols-3 lg:grid-cols-5">
+          {REGIONS.map((region) => {
+            const list = countriesByRegion(region);
+            const displayed = list.slice(0, 6);
+            const remaining = list.length - displayed.length;
+
+            return (
+              <div key={region}>
+                <Link
+                  to="/countries/$slug"
+                  params={{ slug: REGION_SLUGS[region] }}
+                  className="mb-3 block text-xs font-semibold tracking-wider text-primary hover:underline"
+                >
+                  {region}
+                </Link>
+                <ul className="space-y-1.5 text-xs text-muted-foreground">
+                  {displayed.map((c) => (
+                    <li key={c.slug}>
+                      <Link
+                        to="/countries/$slug"
+                        params={{ slug: c.slug }}
+                        className="hover:text-foreground transition-colors truncate block"
+                      >
+                        {c.name}
+                      </Link>
+                    </li>
+                  ))}
+                  {remaining > 0 && (
+                    <li className="pt-1">
+                      <Link
+                        to="/countries/$slug"
+                        params={{ slug: REGION_SLUGS[region] }}
+                        className="text-xs font-medium text-primary hover:underline"
+                      >
+                        +{remaining} more &rarr;
+                      </Link>
+                    </li>
+                  )}
+                </ul>
+              </div>
+            );
+          })}
         </div>
 
         <div className="mt-10 border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">

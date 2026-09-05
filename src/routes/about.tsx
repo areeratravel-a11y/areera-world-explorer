@@ -47,7 +47,8 @@ export const Route = createFileRoute("/about")({
 });
 
 const team = [
-  { name: "Ahmed Hassan", role: "Founder & Managing Director", initials: "AH" },
+  { name: "Arslan Ahmed", role: "Founder & Managing Director", initials: "AA" },
+  { name: "Hareera", role: "Co-Founder & Director", initials: "H" },
   { name: "Rabia Khan", role: "Head of Visa Documentation", initials: "RK" },
   { name: "Usman Tariq", role: "Senior Ticketing Consultant", initials: "UT" },
   { name: "Mariam Shah", role: "Attestation Coordinator", initials: "MS" },
@@ -101,7 +102,7 @@ function About() {
           <Reveal key={c.title} delay={i * 70}>
             <div className="card-elevate h-full rounded-2xl border border-border bg-card/70 p-6">
               <c.icon className="mb-3 h-6 w-6 text-primary" aria-hidden />
-              <h2 className="font-semibold">{c.title}</h2>
+              <h3 className="font-semibold text-foreground text-lg">{c.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
             </div>
           </Reveal>
@@ -123,7 +124,7 @@ function About() {
 
       <div className="mt-16">
         <SectionHeading align="left" eyebrow="Team" title="The people on your file" />
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {team.map((t, i) => (
             <Reveal key={t.name} delay={i * 60}>
               <div className="card-elevate h-full rounded-2xl border border-border bg-card/70 p-6 text-center">

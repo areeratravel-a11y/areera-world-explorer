@@ -11,6 +11,18 @@ export function organizationSchema(origin = "") {
     logo: `${origin}${LOGO_URL}`,
     description:
       "Visa assistance, air ticketing, document attestation, hotel booking and flight reservation services.",
+    founder: [
+      {
+        "@type": "Person",
+        name: "Arslan Ahmed",
+        jobTitle: "Founder & Managing Director",
+      },
+      {
+        "@type": "Person",
+        name: "Hareera",
+        jobTitle: "Co-Founder & Director",
+      },
+    ],
     telephone: contactInfo.phone,
     email: contactInfo.email,
     address: {

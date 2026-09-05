@@ -11,7 +11,7 @@ import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
 import { visaArticle, visaFaqs } from "@/data/content";
 import { CountryFlag } from "@/components/CountryFlag";
-import { BadgeCheck, Clock, FileCheck2, PhoneCall, ShieldCheck, Sparkles, Stamp } from "lucide-react";
+import { BadgeCheck, Clock, FileCheck2, PhoneCall, ShieldCheck, Stamp } from "lucide-react";
 import { contactInfo } from "@/data/site";
 import { ServicePageSkeleton } from "@/components/ServicePageSkeleton";
 
@@ -131,10 +131,10 @@ function VisaPage() {
       />
 
       {/* Above-the-fold Immediate Action CTA Bar */}
-      <div className="mb-10 flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-white/15 bg-gradient-to-r from-card/90 via-card/70 to-primary/10 p-5 sm:p-6 shadow-xl backdrop-blur-xl">
+      <div className="mb-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/15 bg-gradient-to-r from-card/90 via-card/70 to-primary/10 p-5 sm:p-6 shadow-xl backdrop-blur-xl">
         <div className="flex items-center gap-3.5">
           <div className="h-12 w-12 rounded-2xl bg-emerald-500/15 border border-emerald-400/20 flex items-center justify-center text-emerald-400 shrink-0">
-            <Sparkles className="h-6 w-6" />
+            <BadgeCheck className="h-6 w-6" />
           </div>
           <div>
             <div className="flex items-center gap-2">
@@ -172,7 +172,7 @@ function VisaPage() {
       </div>
 
       {selected ? (
-        <div className="mb-10 flex items-center justify-between gap-4 rounded-3xl border border-primary/50 bg-gradient-to-r from-card via-navy/60 to-primary/10 p-6 shadow-md backdrop-blur-md">
+        <div className="mb-10 flex items-center justify-between gap-4 rounded-2xl border border-primary/50 bg-gradient-to-r from-card via-navy/60 to-primary/10 p-6 shadow-md backdrop-blur-md">
           <div className="flex items-center gap-4">
             <CountryFlag
               isoCode={selected.isoCode}
@@ -196,7 +196,7 @@ function VisaPage() {
             </div>
           </div>
           <span className="hidden sm:inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">
-            <Sparkles className="h-3.5 w-3.5" /> Direct Support
+            <BadgeCheck className="h-3.5 w-3.5" /> Direct Support
           </span>
         </div>
       ) : null}
@@ -216,7 +216,7 @@ function VisaPage() {
       </div>
 
       <div className="mt-16 grid gap-10 lg:grid-cols-2">
-        <div className="rounded-3xl border border-border/80 bg-card/75 p-6 sm:p-8 shadow-sm backdrop-blur-md">
+        <div className="rounded-2xl border border-border/80 bg-card/75 p-6 sm:p-8 shadow-sm backdrop-blur-md">
           <div className="flex items-center justify-between">
             <h2 className="font-display text-xl font-bold text-foreground">
               Visa Categories We Handle
@@ -236,7 +236,7 @@ function VisaPage() {
           </div>
         </div>
 
-        <div className="rounded-3xl border border-border/80 bg-card/75 p-6 sm:p-8 shadow-sm backdrop-blur-md">
+        <div className="rounded-2xl border border-border/80 bg-card/75 p-6 sm:p-8 shadow-sm backdrop-blur-md">
           <div className="flex items-center justify-between">
             <h2 className="font-display text-xl font-bold text-foreground">
               Standard Document Checklist

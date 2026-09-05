@@ -18,6 +18,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { NotFoundPage } from "@/components/NotFoundPage";
 import { GlobalLoadingBar } from "@/components/GlobalLoadingBar";
 import { AnalyticsTracker } from "@/components/AnalyticsTracker";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function NotFoundComponent() {
   return <NotFoundPage />;
@@ -142,6 +143,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <AnalyticsTracker />
+      <SpeedInsights />
       <GlobalLoadingBar />
       <Navbar />
       <main className="min-h-[60vh] pb-24 md:pb-0">

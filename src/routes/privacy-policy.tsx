@@ -12,7 +12,6 @@ import {
   CheckCircle2,
   ExternalLink,
   ArrowRight,
-  Sparkles,
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/Section";
@@ -95,9 +94,8 @@ function PrivacyPolicyPage() {
       <Breadcrumbs items={[{ label: "Privacy Policy" }]} />
 
       {/* Header Banner */}
-      <div className="relative rounded-3xl border border-white/20 bg-card/80 p-6 sm:p-12 shadow-xl backdrop-blur-xl mb-12">
+      <div className="relative rounded-2xl border border-white/20 bg-card/80 p-6 sm:p-12 shadow-xl backdrop-blur-xl mb-12">
         <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary mb-4">
-          <Sparkles className="h-3.5 w-3.5" />
           <span>Client Confidentiality Guarantee</span>
         </div>
 

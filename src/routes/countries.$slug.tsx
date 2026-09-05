@@ -21,7 +21,6 @@ import {
   PlaneTakeoff,
   ShieldAlert,
   ShieldCheck,
-  Sparkles,
   Stamp,
   Wallet,
 } from "lucide-react";
@@ -133,7 +132,7 @@ function CountryOrRegion() {
       <Section>
         <Breadcrumbs items={[{ label: "Countries", to: "/countries" }, { label: data.region }]} />
 
-        <div className="relative mb-10 overflow-hidden rounded-3xl border border-border/80 bg-gradient-to-br from-card/90 via-navy/70 to-navy-deep p-6 sm:p-10 shadow-lg backdrop-blur-xl">
+        <div className="relative mb-10 overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-br from-card/90 via-navy/70 to-navy-deep p-6 sm:p-10 shadow-lg backdrop-blur-xl">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
             <Globe2 className="h-3.5 w-3.5" /> Regional Hub
           </span>
@@ -327,7 +326,7 @@ function CountryOrRegion() {
                           : "bg-primary/15 text-primary border border-primary/30"
                       }`}
                     >
-                      <Sparkles className="h-3 w-3" /> {vc.typeBadge}
+                      {vc.typeBadge}
                     </span>
                     <span className="text-[11px] font-medium text-muted-foreground">
                       {vc.entryType}
@@ -374,7 +373,7 @@ function CountryOrRegion() {
         <div className="mt-16 grid gap-10 lg:grid-cols-2">
           {/* Documents */}
           <Reveal>
-            <div className="h-full rounded-3xl border border-border/80 bg-card/75 p-6 sm:p-8 shadow-sm backdrop-blur-md">
+            <div className="h-full rounded-2xl border border-border/80 bg-card/75 p-6 sm:p-8 shadow-sm backdrop-blur-md">
               <div className="flex items-center justify-between">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-primary">
@@ -415,7 +414,7 @@ function CountryOrRegion() {
 
           {/* 4-Step Process */}
           <Reveal delay={100}>
-            <div className="h-full rounded-3xl border border-border/80 bg-card/75 p-6 sm:p-8 shadow-sm backdrop-blur-md">
+            <div className="h-full rounded-2xl border border-border/80 bg-card/75 p-6 sm:p-8 shadow-sm backdrop-blur-md">
               <div className="flex items-center justify-between">
                 <div>
                   <span className="text-xs font-bold uppercase tracking-wider text-primary">
@@ -456,7 +455,7 @@ function CountryOrRegion() {
         </div>
 
         {/* Popular Cities & Attractions */}
-        <div className="mt-16 rounded-3xl border border-border/80 bg-card/60 p-6 sm:p-8 shadow-sm backdrop-blur-md">
+        <div className="mt-16 rounded-2xl border border-border/80 bg-card/60 p-6 sm:p-8 shadow-sm backdrop-blur-md">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-primary">
@@ -497,7 +496,7 @@ function CountryOrRegion() {
         </div>
 
         {/* Dedicated Country Consultation & Inquiry Box */}
-        <div className="mt-16 relative overflow-hidden rounded-3xl border border-primary/40 bg-gradient-to-br from-primary/15 via-card to-navy-deep p-6 sm:p-10 shadow-xl">
+        <div className="mt-16 relative overflow-hidden rounded-2xl border border-primary/40 bg-gradient-to-br from-primary/15 via-card to-navy-deep p-6 sm:p-10 shadow-xl">
           <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="max-w-xl">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/20 px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-primary">
@@ -538,7 +537,7 @@ function CountryOrRegion() {
         </div>
 
         {/* Travel Services Bundle Links */}
-        <div className="mt-16 rounded-3xl border border-border/80 bg-card/60 p-6 sm:p-8 shadow-sm backdrop-blur-md">
+        <div className="mt-16 rounded-2xl border border-border/80 bg-card/60 p-6 sm:p-8 shadow-sm backdrop-blur-md">
           <h2 className="font-display text-xl font-bold text-foreground">
             Complete Travel Services for {country.name}
           </h2>

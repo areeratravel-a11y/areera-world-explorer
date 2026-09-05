@@ -9,12 +9,12 @@ import {
   MessageSquare,
   Phone,
   PlaneTakeoff,
-  Sparkles,
   Stamp,
 } from "lucide-react";
 import { getCountry, countries } from "@/data/countries";
 import { contactInfo } from "@/data/site";
 import { CountryFlag } from "@/components/CountryFlag";
+import logoImg from "@/assets/areera-logo.png";
 import { cn } from "@/lib/utils";
 import { trackWhatsAppContact, trackPhoneContact } from "@/lib/analytics";
 
@@ -45,6 +45,7 @@ export function MobileStickyCTA() {
         subLabel: country.processingTime || "Fast processing",
         flagIso: country.isoCode,
         flagName: country.name,
+        isOnline: true,
         waText: `Hello Areera Travel, I am on your website and would like to apply for a visa for ${country.name}.`,
         primaryAction: {
           label: "Apply Now",
@@ -59,6 +60,7 @@ export function MobileStickyCTA() {
       return {
         contextLabel: "Visa Assistance",
         subLabel: "Certified file review",
+        isOnline: true,
         icon: Stamp,
         waText: "Hello Areera Travel, I need professional visa filing support.",
         primaryAction: {
@@ -73,6 +75,7 @@ export function MobileStickyCTA() {
       return {
         contextLabel: "Flight Reservation",
         subLabel: "Verifiable embassy PNR",
+        isOnline: true,
         icon: PlaneTakeoff,
         waText: "Hello Areera Travel, I would like to request a flight reservation for my visa file.",
         primaryAction: {
@@ -87,6 +90,7 @@ export function MobileStickyCTA() {
       return {
         contextLabel: "Hotel Booking",
         subLabel: "Visa-ready vouchers",
+        isOnline: true,
         icon: BedDouble,
         waText: "Hello Areera Travel, I would like to inquire about hotel reservations.",
         primaryAction: {
@@ -99,24 +103,25 @@ export function MobileStickyCTA() {
 
     if (pathname.startsWith("/services/attestation")) {
       return {
-        contextLabel: "Attestation",
-        subLabel: "MOFA & Embassy legalization",
+        contextLabel: "Document Attestation",
+        subLabel: "MOFA & Embassy stamp",
+        isOnline: true,
         icon: FileCheck2,
-        waText: "Hello Areera Travel, I need document attestation services.",
+        waText: "Hello Areera Travel, I need official document attestation assistance.",
         primaryAction: {
-          label: "Attest Doc",
+          label: "Attest File",
           href: "#inquiry-form",
           icon: FileCheck2,
         },
       };
     }
 
-    // Default: Homepage & other pages
+    // Default global home / fallback
     return {
       contextLabel: "Areera Travel",
       subLabel: "Online Specialist",
       isOnline: true,
-      icon: Sparkles,
+      icon: Globe2,
       waText: "Hello Areera Travel, I would like a free travel consultation.",
       primaryAction: {
         label: "Get Quote",
@@ -126,48 +131,54 @@ export function MobileStickyCTA() {
     };
   }, [pathname, country]);
 
-  const Icon = config.icon || Sparkles;
   const PrimaryIcon = config.primaryAction.icon || ArrowRight;
 
   return (
     <aside
       aria-label="Sticky mobile action bar"
-      className="fixed inset-x-0 bottom-0 z-50 md:hidden border-t border-white/15 bg-card/95 pb-[env(safe-area-inset-bottom,0px)] shadow-[0_-8px_25px_rgba(0,0,0,0.5)] backdrop-blur-2xl transition-all"
+      className="fixed bottom-3 inset-x-0 mx-auto w-[94%] max-w-lg z-50 md:hidden rounded-full border border-blue-500/40 bg-slate-950/90 p-2 shadow-[0_14px_45px_rgba(0,0,0,0.8),0_0_24px_rgba(59,130,246,0.3)] backdrop-blur-2xl transition-all"
     >
-      <div className="mx-auto flex max-w-lg items-center justify-between gap-2 px-3.5 py-2.5">
-        {/* Left: Context / Quick Navigation */}
-        <div className="flex min-w-0 flex-1 items-center gap-2.5">
-          {config.flagIso ? (
-            <CountryFlag
-              isoCode={config.flagIso}
-              countryName={config.flagName || ""}
-              size="sm"
-              className="shrink-0 ring-1 ring-white/20"
-            />
-          ) : (
-            <div className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary border border-primary/30">
-              <Icon className="h-4 w-4" />
-              {config.isOnline && (
-                <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
-                </span>
+      <div className="flex items-center justify-between gap-2 px-1">
+        {/* Left: Logo Emblem & Context Info */}
+        <div className="flex min-w-0 items-center gap-2.5 pl-0.5">
+          {/* Logo with Live Status Dot */}
+          <div className="relative shrink-0 flex items-center justify-center">
+            <div className="h-9 w-9 overflow-hidden rounded-full border border-blue-400/40 bg-slate-900 shadow-sm ring-2 ring-blue-500/20 flex items-center justify-center">
+              {config.flagIso ? (
+                <CountryFlag
+                  isoCode={config.flagIso}
+                  countryName={config.flagName || ""}
+                  size="sm"
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <img
+                  src={logoImg}
+                  alt="Areera Travel & Tours"
+                  className="h-full w-full object-cover"
+                />
               )}
             </div>
-          )}
+            {config.isOnline && (
+              <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+              </span>
+            )}
+          </div>
 
-          <div className="min-w-0 flex-1">
-            <div className="truncate text-xs font-bold text-foreground">
+          <div className="min-w-0">
+            <div className="truncate text-xs font-bold text-white leading-tight">
               {config.contextLabel}
             </div>
-            <div className="truncate text-[10px] font-medium text-emerald-400">
+            <div className="truncate text-[10px] font-medium text-cyan-400">
               {config.subLabel}
             </div>
           </div>
         </div>
 
-        {/* Right: Dual High-Conversion CTA Buttons */}
-        <div className="flex shrink-0 items-center gap-2">
+        {/* Right: Actions (Call, WhatsApp, Primary CTA) */}
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           {/* Quick Call Button */}
           <a
             href={`tel:${cleanPhone}`}
@@ -178,9 +189,9 @@ export function MobileStickyCTA() {
               })
             }
             aria-label="Call Areera Travel"
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-slate-200 transition-colors hover:bg-white/15 active:scale-95"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-blue-400/30 bg-white/5 text-cyan-300 transition-colors hover:bg-blue-500/20 active:scale-95"
           >
-            <Phone className="h-4 w-4 text-blue-400" />
+            <Phone className="h-4 w-4 text-cyan-400" />
           </a>
 
           {/* WhatsApp Direct Button */}
@@ -195,10 +206,10 @@ export function MobileStickyCTA() {
             }
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1.5 rounded-xl border border-emerald-500/40 bg-emerald-500/15 px-3 py-2 text-xs font-semibold text-emerald-300 transition-all hover:bg-emerald-500/25 active:scale-95"
+            className="flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/15 px-3 py-2 text-xs font-semibold text-emerald-300 transition-all hover:bg-emerald-500/25 active:scale-95 whitespace-nowrap"
           >
             <MessageSquare className="h-3.5 w-3.5 text-emerald-400" />
-            <span>WhatsApp</span>
+            <span className="hidden xs:inline sm:inline">WhatsApp</span>
           </a>
 
           {/* Primary CTA (Apply / Inquire) */}
@@ -207,7 +218,7 @@ export function MobileStickyCTA() {
               <Link
                 to="/services/visa"
                 search={config.primaryAction.search}
-                className="flex items-center gap-1.5 rounded-xl bg-primary px-3.5 py-2 text-xs font-bold text-primary-foreground shadow-md transition-all hover:bg-primary/90 active:scale-95 royal-surface"
+                className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 border border-cyan-400/40 px-3.5 py-2 text-xs font-bold text-white shadow-md shadow-blue-500/25 transition-all hover:shadow-cyan-400/30 active:scale-95 whitespace-nowrap"
               >
                 <PrimaryIcon className="h-3.5 w-3.5" />
                 <span>{config.primaryAction.label}</span>
@@ -215,7 +226,7 @@ export function MobileStickyCTA() {
             ) : (
               <Link
                 to="/services/visa"
-                className="flex items-center gap-1.5 rounded-xl bg-primary px-3.5 py-2 text-xs font-bold text-primary-foreground shadow-md transition-all hover:bg-primary/90 active:scale-95 royal-surface"
+                className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 border border-cyan-400/40 px-3.5 py-2 text-xs font-bold text-white shadow-md shadow-blue-500/25 transition-all hover:shadow-cyan-400/30 active:scale-95 whitespace-nowrap"
               >
                 <PrimaryIcon className="h-3.5 w-3.5" />
                 <span>{config.primaryAction.label}</span>
@@ -224,7 +235,7 @@ export function MobileStickyCTA() {
           ) : (
             <a
               href={config.primaryAction.href || "#"}
-              className="flex items-center gap-1.5 rounded-xl bg-primary px-3.5 py-2 text-xs font-bold text-primary-foreground shadow-md transition-all hover:bg-primary/90 active:scale-95 royal-surface"
+              className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 border border-cyan-400/40 px-3.5 py-2 text-xs font-bold text-white shadow-md shadow-blue-500/25 transition-all hover:shadow-cyan-400/30 active:scale-95 whitespace-nowrap"
             >
               <PrimaryIcon className="h-3.5 w-3.5" />
               <span>{config.primaryAction.label}</span>

@@ -9,10 +9,10 @@ interface LogoProps {
 }
 
 const sizeMap = {
-  sm: { icon: "h-8 w-8", textTitle: "text-sm", textSub: "text-[9px]" },
-  md: { icon: "h-10 w-10", textTitle: "text-base", textSub: "text-[10px]" },
-  lg: { icon: "h-12 w-12", textTitle: "text-lg", textSub: "text-xs" },
-  xl: { icon: "h-16 w-16", textTitle: "text-2xl", textSub: "text-sm" },
+  sm: { icon: "h-7 w-7 sm:h-8 sm:w-8", textTitle: "text-xs sm:text-sm" },
+  md: { icon: "h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10", textTitle: "text-xs sm:text-sm md:text-base" },
+  lg: { icon: "h-10 w-10 sm:h-12 sm:w-12", textTitle: "text-sm sm:text-base md:text-lg" },
+  xl: { icon: "h-12 w-12 sm:h-16 sm:w-16", textTitle: "text-lg sm:text-xl md:text-2xl" },
 };
 
 export function Logo({ className, size = "md", showText = true, textColor }: LogoProps) {
@@ -21,14 +21,14 @@ export function Logo({ className, size = "md", showText = true, textColor }: Log
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-2.5 select-none shrink-0 whitespace-nowrap",
+        "inline-flex items-center gap-2 sm:gap-2.5 select-none shrink-0 min-w-0",
         className,
       )}
     >
       {/* Official AH Monogram Emblem */}
       <div
         className={cn(
-          "relative shrink-0 flex items-center justify-center overflow-hidden rounded-xl bg-slate-900 border border-slate-700/60 shadow-xs",
+          "relative shrink-0 flex items-center justify-center overflow-hidden rounded-full bg-slate-900 border border-blue-400/40 shadow-xs ring-1 ring-blue-500/20",
           currentSize.icon,
         )}
       >
@@ -41,27 +41,17 @@ export function Logo({ className, size = "md", showText = true, textColor }: Log
         />
       </div>
 
-      {/* Luxury Brand Typography in single line */}
+      {/* Luxury Brand Typography (No slogan as requested) */}
       {showText && (
-        <div className="flex flex-col justify-center whitespace-nowrap shrink-0">
-          <div className="flex items-center leading-none whitespace-nowrap">
-            <span
-              className={cn(
-                "font-display font-bold tracking-tight text-white whitespace-nowrap",
-                currentSize.textTitle,
-                textColor,
-              )}
-            >
-              AREERA <span className="text-blue-400 font-semibold">TRAVEL & TOURS</span>
-            </span>
-          </div>
+        <div className="flex flex-col justify-center min-w-0">
           <span
             className={cn(
-              "mt-1 font-medium tracking-[0.18em] text-slate-400 uppercase whitespace-nowrap",
-              currentSize.textSub,
+              "font-display font-bold tracking-tight text-white whitespace-nowrap leading-none",
+              currentSize.textTitle,
+              textColor,
             )}
           >
-            Visa · Air Tickets · Attestation
+            AREERA <span className="text-blue-400 font-semibold">TRAVEL & TOURS</span>
           </span>
         </div>
       )}

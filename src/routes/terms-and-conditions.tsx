@@ -11,7 +11,6 @@ import {
   Mail,
   MapPin,
   ArrowRight,
-  Sparkles,
   Plane,
   Building,
 } from "lucide-react";
@@ -96,9 +95,8 @@ function TermsPage() {
       <Breadcrumbs items={[{ label: "Terms & Conditions" }]} />
 
       {/* Hero Banner */}
-      <div className="relative rounded-3xl border border-white/20 bg-card/80 p-6 sm:p-12 shadow-xl backdrop-blur-xl mb-12">
+      <div className="relative rounded-2xl border border-white/20 bg-card/80 p-6 sm:p-12 shadow-xl backdrop-blur-xl mb-12">
         <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary mb-4">
-          <Sparkles className="h-3.5 w-3.5" />
           <span>Official Service Terms</span>
         </div>
 

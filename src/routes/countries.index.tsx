@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { CheckCircle2, Globe2, Search, ShieldCheck, Sparkles, X } from "lucide-react";
+import { CheckCircle2, Clock, Globe2, Search, ShieldCheck, X } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/Section";
 import { CountryCard } from "@/components/cards";
@@ -76,7 +76,7 @@ function CountriesHub() {
     <Section>
       <Breadcrumbs items={[{ label: "Countries" }]} />
 
-      <div className="relative mb-8 overflow-hidden rounded-3xl border border-border/80 bg-gradient-to-br from-card/90 via-navy/70 to-navy-deep p-6 sm:p-10 shadow-lg backdrop-blur-xl">
+      <div className="relative mb-8 overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-br from-card/90 via-navy/70 to-navy-deep p-6 sm:p-10 shadow-lg backdrop-blur-xl">
         <div className="relative z-10 max-w-3xl">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
             <Globe2 className="h-3.5 w-3.5" /> Worldwide Visa Hub
@@ -98,7 +98,7 @@ function CountriesHub() {
               <ShieldCheck className="h-4 w-4 text-primary" /> Verified Document Checklists
             </span>
             <span className="inline-flex items-center gap-1.5 font-medium text-foreground/90">
-              <Sparkles className="h-4 w-4 text-amber-400" /> Fast-Track E-Visa Support
+              <Clock className="h-4 w-4 text-amber-400" /> Fast-Track E-Visa Support
             </span>
           </div>
         </div>

@@ -16,10 +16,13 @@ import { Route as CountriesRouteImport } from './routes/countries'
 import { Route as FlightReservationRouteImport } from './routes/flight-reservation'
 import { Route as HotelBookingRouteImport } from './routes/hotel-booking'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as CountriesIndexRouteImport } from './routes/countries.index'
 import { Route as CountriesSlugRouteImport } from './routes/countries.$slug'
+import { Route as GuidesVisaFreeAsianDestinationsRouteImport } from './routes/guides.visa-free-asian-destinations'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesAttestationRouteImport } from './routes/services.attestation'
 import { Route as ServicesTicketRouteImport } from './routes/services.ticket'
@@ -60,6 +63,16 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
   id: '/terms-and-conditions',
   path: '/terms-and-conditions',
@@ -80,6 +93,12 @@ const CountriesSlugRoute = CountriesSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => CountriesRoute,
 } as any)
+const GuidesVisaFreeAsianDestinationsRoute =
+  GuidesVisaFreeAsianDestinationsRouteImport.update({
+    id: '/guides/visa-free-asian-destinations',
+    path: '/guides/visa-free-asian-destinations',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
@@ -109,9 +128,12 @@ export interface FileRoutesByFullPath {
   '/flight-reservation': typeof FlightReservationRoute
   '/hotel-booking': typeof HotelBookingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
   '/countries/$slug': typeof CountriesSlugRoute
+  '/guides/visa-free-asian-destinations': typeof GuidesVisaFreeAsianDestinationsRoute
   '/services/attestation': typeof ServicesAttestationRoute
   '/services/ticket': typeof ServicesTicketRoute
   '/services/visa': typeof ServicesVisaRoute
@@ -125,9 +147,12 @@ export interface FileRoutesByTo {
   '/flight-reservation': typeof FlightReservationRoute
   '/hotel-booking': typeof HotelBookingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
   '/countries/$slug': typeof CountriesSlugRoute
+  '/guides/visa-free-asian-destinations': typeof GuidesVisaFreeAsianDestinationsRoute
   '/services/attestation': typeof ServicesAttestationRoute
   '/services/ticket': typeof ServicesTicketRoute
   '/services/visa': typeof ServicesVisaRoute
@@ -143,9 +168,12 @@ export interface FileRoutesById {
   '/flight-reservation': typeof FlightReservationRoute
   '/hotel-booking': typeof HotelBookingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
   '/countries/$slug': typeof CountriesSlugRoute
+  '/guides/visa-free-asian-destinations': typeof GuidesVisaFreeAsianDestinationsRoute
   '/services/attestation': typeof ServicesAttestationRoute
   '/services/ticket': typeof ServicesTicketRoute
   '/services/visa': typeof ServicesVisaRoute
@@ -162,9 +190,12 @@ export interface FileRouteTypes {
     | '/flight-reservation'
     | '/hotel-booking'
     | '/privacy-policy'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/terms-and-conditions'
     | '/thank-you'
     | '/countries/$slug'
+    | '/guides/visa-free-asian-destinations'
     | '/services/attestation'
     | '/services/ticket'
     | '/services/visa'
@@ -178,9 +209,12 @@ export interface FileRouteTypes {
     | '/flight-reservation'
     | '/hotel-booking'
     | '/privacy-policy'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/terms-and-conditions'
     | '/thank-you'
     | '/countries/$slug'
+    | '/guides/visa-free-asian-destinations'
     | '/services/attestation'
     | '/services/ticket'
     | '/services/visa'
@@ -195,9 +229,12 @@ export interface FileRouteTypes {
     | '/flight-reservation'
     | '/hotel-booking'
     | '/privacy-policy'
+    | '/robots.txt'
+    | '/sitemap.xml'
     | '/terms-and-conditions'
     | '/thank-you'
     | '/countries/$slug'
+    | '/guides/visa-free-asian-destinations'
     | '/services/attestation'
     | '/services/ticket'
     | '/services/visa'
@@ -213,8 +250,11 @@ export interface RootRouteChildren {
   FlightReservationRoute: typeof FlightReservationRoute
   HotelBookingRoute: typeof HotelBookingRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   ThankYouRoute: typeof ThankYouRoute
+  GuidesVisaFreeAsianDestinationsRoute: typeof GuidesVisaFreeAsianDestinationsRoute
   ServicesAttestationRoute: typeof ServicesAttestationRoute
   ServicesTicketRoute: typeof ServicesTicketRoute
   ServicesVisaRoute: typeof ServicesVisaRoute
@@ -272,6 +312,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms-and-conditions': {
       id: '/terms-and-conditions'
       path: '/terms-and-conditions'
@@ -299,6 +353,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/countries/$slug'
       preLoaderRoute: typeof CountriesSlugRouteImport
       parentRoute: typeof CountriesRoute
+    }
+    '/guides/visa-free-asian-destinations': {
+      id: '/guides/visa-free-asian-destinations'
+      path: '/guides/visa-free-asian-destinations'
+      fullPath: '/guides/visa-free-asian-destinations'
+      preLoaderRoute: typeof GuidesVisaFreeAsianDestinationsRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/services/': {
       id: '/services/'
@@ -353,8 +414,11 @@ const rootRouteChildren: RootRouteChildren = {
   FlightReservationRoute: FlightReservationRoute,
   HotelBookingRoute: HotelBookingRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
   ThankYouRoute: ThankYouRoute,
+  GuidesVisaFreeAsianDestinationsRoute: GuidesVisaFreeAsianDestinationsRoute,
   ServicesAttestationRoute: ServicesAttestationRoute,
   ServicesTicketRoute: ServicesTicketRoute,
   ServicesVisaRoute: ServicesVisaRoute,

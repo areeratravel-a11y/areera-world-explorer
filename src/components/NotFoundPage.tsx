@@ -13,7 +13,6 @@ import {
   FileCheck2,
   Phone,
   HelpCircle,
-  Sparkles,
 } from "lucide-react";
 import { countries, popularDestinations, getCountry } from "@/data/countries";
 import { contactInfo } from "@/data/site";
@@ -197,7 +196,6 @@ export function NotFoundPage() {
         {featuredCountries.length > 0 && (
           <div className="mt-10 pt-8 border-t border-white/10">
             <div className="flex items-center justify-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
-              <Sparkles className="h-3.5 w-3.5 text-amber-400" />
               <span>Or jump to popular destinations</span>
             </div>
             <div className="flex flex-wrap justify-center gap-2.5">

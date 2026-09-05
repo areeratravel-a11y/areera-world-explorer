@@ -19,25 +19,33 @@ export function ContentArticle({ title, intro, sections }: ArticleContent) {
       {intro ? (
         <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">{intro}</p>
       ) : null}
-      <div className="mt-8 space-y-9">
+      <div className="mt-10 space-y-8">
         {sections.map((s, i) => (
           <Reveal key={s.heading} delay={i * 50}>
-            <section>
-              <h3 className="text-lg font-semibold">{s.heading}</h3>
+            <section className="relative rounded-2xl border border-border/70 bg-card/50 p-6 sm:p-7 backdrop-blur-xs transition-all hover:border-border">
+              <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-primary">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-[11px] font-bold">
+                  {i + 1}
+                </span>
+                <span>Stage 0{i + 1}</span>
+              </div>
+              <h3 className="mt-2.5 text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+                {s.heading}
+              </h3>
               {s.paragraphs.map((p) => (
-                <p key={p} className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p key={p} className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                   {p}
                 </p>
               ))}
               {s.list ? (
-                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
                   {s.list.map((li) => (
                     <li
                       key={li}
-                      className="flex gap-2 rounded-lg border border-border bg-card/40 px-3 py-2"
+                      className="flex items-start gap-2.5 py-1 text-foreground/90"
                     >
-                      <span className="text-primary">•</span>
-                      <span>{li}</span>
+                      <span className="mt-1.5 flex h-2 w-2 shrink-0 rounded-full bg-primary" aria-hidden />
+                      <span className="leading-normal">{li}</span>
                     </li>
                   ))}
                 </ul>

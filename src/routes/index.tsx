@@ -9,7 +9,6 @@ import {
   PhoneCall,
   PlaneTakeoff,
   ShieldCheck,
-  Sparkles,
   Stamp,
   Star,
 } from "lucide-react";
@@ -100,8 +99,7 @@ function Home() {
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
             {/* Left Column: Hero Value Proposition & Direct CTAs */}
             <div className="lg:col-span-7">
-              <div className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-primary shadow-xs">
-                <Sparkles className="h-3.5 w-3.5" />
+              <div className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-primary shadow-xs">
                 <span>Areera Travel & Tours</span>
               </div>
 
@@ -159,7 +157,7 @@ function Home() {
                   className="border-border/80 bg-card/60 backdrop-blur-md"
                 >
                   <Link to="/countries">
-                    <Globe2 className="mr-2 h-4 w-4 text-amber-400" /> 100+ Destinations
+                    <Globe2 className="mr-2 h-4 w-4 text-amber-400" /> 40+ Destinations
                   </Link>
                 </Button>
               </div>
@@ -234,10 +232,11 @@ function Home() {
           </div>
           <Link
             to="/countries"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline shrink-0"
+            className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-card/60 px-4 py-2 text-xs font-semibold text-foreground hover:border-primary/40 hover:bg-muted hover:text-primary transition-colors shrink-0"
           >
-            View All 40+ Countries
-            <ArrowRight className="h-4 w-4" />
+            <Globe2 className="h-3.5 w-3.5 text-primary" />
+            <span>View All 40+ Countries</span>
+            <ArrowRight className="h-3.5 w-3.5 ml-0.5" />
           </Link>
         </div>
 
@@ -353,12 +352,12 @@ function Home() {
       {/* Bottom CTA Banner */}
       <Section>
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border border-primary/40 bg-gradient-to-br from-primary/20 via-navy/80 to-navy-deep p-8 text-center sm:p-14 shadow-2xl">
+          <div className="relative overflow-hidden rounded-2xl border border-primary/40 bg-gradient-to-br from-primary/20 via-navy/80 to-navy-deep p-8 text-center sm:p-14 shadow-2xl">
             <div aria-hidden className="animate-float absolute right-8 top-8 text-5xl opacity-20">
               ✈
             </div>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/25 px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">
-              <Sparkles className="h-3.5 w-3.5" /> Start Your Journey
+              Start Your Journey
             </span>
             <h2 className="mt-4 font-display text-2xl font-bold text-foreground sm:text-4xl">
               Where would you like to travel next?
