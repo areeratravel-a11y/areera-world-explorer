@@ -80,6 +80,38 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Regional Travel & Visa Hubs -->
+  <url>
+    <loc>https://www.areeratravels.com/countries/asia</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.areeratravels.com/countries/middle-east</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.areeratravels.com/countries/north-africa</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.areeratravels.com/countries/africa</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.areeratravels.com/countries/western</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- 42 Destination Country Visa Guides -->
   <url>
     <loc>https://www.areeratravels.com/countries/pakistan</loc>

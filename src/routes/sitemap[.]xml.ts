@@ -19,6 +19,14 @@ const staticRoutes = [
   { path: "/terms-and-conditions", priority: "0.5", changefreq: "monthly" },
 ];
 
+const regionalRoutes = [
+  { path: "/countries/asia", priority: "0.85", changefreq: "weekly" },
+  { path: "/countries/middle-east", priority: "0.85", changefreq: "weekly" },
+  { path: "/countries/north-africa", priority: "0.85", changefreq: "weekly" },
+  { path: "/countries/africa", priority: "0.85", changefreq: "weekly" },
+  { path: "/countries/western", priority: "0.85", changefreq: "weekly" },
+];
+
 function generateSitemap(): string {
   const today = new Date().toISOString().split("T")[0];
 
@@ -27,6 +35,16 @@ function generateSitemap(): string {
 
   // Static pages
   for (const route of staticRoutes) {
+    xml += `  <url>\n`;
+    xml += `    <loc>${baseUrl}${route.path}</loc>\n`;
+    xml += `    <lastmod>${today}</lastmod>\n`;
+    xml += `    <changefreq>${route.changefreq}</changefreq>\n`;
+    xml += `    <priority>${route.priority}</priority>\n`;
+    xml += `  </url>\n`;
+  }
+
+  // Regional hub routes
+  for (const route of regionalRoutes) {
     xml += `  <url>\n`;
     xml += `    <loc>${baseUrl}${route.path}</loc>\n`;
     xml += `    <lastmod>${today}</lastmod>\n`;

@@ -37,12 +37,31 @@ const staticRoutes = [
   { path: "/terms-and-conditions", priority: "0.5", changefreq: "monthly" },
 ];
 
+const regionalRoutes = [
+  { path: "/countries/asia", priority: "0.85", changefreq: "weekly" },
+  { path: "/countries/middle-east", priority: "0.85", changefreq: "weekly" },
+  { path: "/countries/north-africa", priority: "0.85", changefreq: "weekly" },
+  { path: "/countries/africa", priority: "0.85", changefreq: "weekly" },
+  { path: "/countries/western", priority: "0.85", changefreq: "weekly" },
+];
+
 let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
 xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
 // Static pages
 xml += `  <!-- Core Navigation & Services -->\n`;
 for (const route of staticRoutes) {
+  xml += `  <url>\n`;
+  xml += `    <loc>${baseUrl}${route.path}</loc>\n`;
+  xml += `    <lastmod>${today}</lastmod>\n`;
+  xml += `    <changefreq>${route.changefreq}</changefreq>\n`;
+  xml += `    <priority>${route.priority}</priority>\n`;
+  xml += `  </url>\n`;
+}
+
+// Regional hub routes
+xml += `\n  <!-- Regional Travel & Visa Hubs -->\n`;
+for (const route of regionalRoutes) {
   xml += `  <url>\n`;
   xml += `    <loc>${baseUrl}${route.path}</loc>\n`;
   xml += `    <lastmod>${today}</lastmod>\n`;
@@ -82,4 +101,4 @@ for (const dir of targetDirs) {
   }
 }
 
-console.log(`[Sitemap] Generated sitemap.xml with ${staticRoutes.length + countrySlugs.length} URLs for ${baseUrl}.`);
+console.log(`[Sitemap] Generated sitemap.xml with ${staticRoutes.length + regionalRoutes.length + countrySlugs.length} URLs for ${baseUrl}.`);
