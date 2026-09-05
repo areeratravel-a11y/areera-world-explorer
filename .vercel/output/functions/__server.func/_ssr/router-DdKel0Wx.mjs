@@ -6,7 +6,7 @@ import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
 import { t as SpeedInsights } from "../_libs/vercel__speed-insights.mjs";
-import { B as cn, C as countriesHubFaqs, D as flightFaqs, I as ticketFaqs, P as servicesFaqs, R as visaFaqs, T as countryFaqs, _ as aboutFaqs, c as getCountry, f as contactInfo, i as REGION_SLUGS, j as hotelFaqs, k as homeFaqs, l as getRegionBySlug, m as siteConfig, n as CountryFlag, o as countries, p as services, r as REGIONS, s as countriesByRegion, u as popularDestinations, x as contactFaqs, y as attestationFaqs, z as Button } from "./router-DksWy9w32.mjs";
+import { B as cn, C as countriesHubFaqs, D as flightFaqs, I as ticketFaqs, P as servicesFaqs, R as visaFaqs, T as countryFaqs, _ as aboutFaqs, c as getCountry, f as contactInfo, i as REGION_SLUGS, j as hotelFaqs, k as homeFaqs, l as getRegionBySlug, m as siteConfig, n as CountryFlag, o as countries, p as services, r as REGIONS, s as countriesByRegion, u as popularDestinations, x as contactFaqs, y as attestationFaqs, z as Button } from "./router-DdKel0Wx2.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/json-ld-BKzZtZTC.js
 var LOGO_URL = "/areera-logo.svg";
 function organizationSchema(origin = "") {
@@ -174,7 +174,7 @@ function ServicePageSkeleton() {
 	});
 }
 //#endregion
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DksWy9w3.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DdKel0Wx.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
@@ -1839,7 +1839,7 @@ function RootComponent() {
 		]
 	});
 }
-var $$splitComponentImporter$15 = () => import("./routes-DFpuytdc.mjs");
+var $$splitComponentImporter$15 = () => import("./routes-YbWM3Z14.mjs");
 var Route$17 = createFileRoute("/")({
 	head: () => ({
 		meta: [
@@ -1944,7 +1944,7 @@ var Route$16 = createFileRoute("/about")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$14, "component")
 });
-var $$splitComponentImporter$13 = () => import("./contact-Bykx6mDA.mjs");
+var $$splitComponentImporter$13 = () => import("./contact-BvTCNC-K.mjs");
 var Route$15 = createFileRoute("/contact")({
 	head: () => ({
 		meta: [
@@ -2023,7 +2023,7 @@ function CountriesSkeleton({ cards = 6 }) {
 		]
 	});
 }
-var $$splitErrorComponentImporter = () => import("./countries-BLLbdjnA.mjs");
+var $$splitErrorComponentImporter = () => import("./countries-o7GgNreW.mjs");
 var $$splitComponentImporter$12 = () => import("./countries-fHxncJ_y.mjs");
 var Route$14 = createFileRoute("/countries")({
 	component: lazyRouteComponent($$splitComponentImporter$12, "component"),
@@ -2034,7 +2034,7 @@ var Route$14 = createFileRoute("/countries")({
 function CountriesPending() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CountriesSkeleton, {});
 }
-var $$splitComponentImporter$11 = () => import("./flight-reservation-C29PstCL.mjs");
+var $$splitComponentImporter$11 = () => import("./flight-reservation-Q5C_Z6-R.mjs");
 var Route$13 = createFileRoute("/flight-reservation")({
 	pendingComponent: ServicePageSkeleton,
 	pendingMs: 150,
@@ -2090,7 +2090,7 @@ var Route$13 = createFileRoute("/flight-reservation")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$11, "component")
 });
-var $$splitComponentImporter$10 = () => import("./hotel-booking-DXE47LDE.mjs");
+var $$splitComponentImporter$10 = () => import("./hotel-booking-2pE7QJUw.mjs");
 var Route$12 = createFileRoute("/hotel-booking")({
 	pendingComponent: ServicePageSkeleton,
 	pendingMs: 150,
@@ -2268,11 +2268,46 @@ var staticRoutes = [
 		changefreq: "monthly"
 	}
 ];
+var regionalRoutes = [
+	{
+		path: "/countries/asia",
+		priority: "0.85",
+		changefreq: "weekly"
+	},
+	{
+		path: "/countries/middle-east",
+		priority: "0.85",
+		changefreq: "weekly"
+	},
+	{
+		path: "/countries/north-africa",
+		priority: "0.85",
+		changefreq: "weekly"
+	},
+	{
+		path: "/countries/africa",
+		priority: "0.85",
+		changefreq: "weekly"
+	},
+	{
+		path: "/countries/western",
+		priority: "0.85",
+		changefreq: "weekly"
+	}
+];
 function generateSitemap() {
 	const today = (/* @__PURE__ */ new Date()).toISOString().split("T")[0];
 	let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
 	xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 	for (const route of staticRoutes) {
+		xml += `  <url>\n`;
+		xml += `    <loc>${baseUrl}${route.path}</loc>\n`;
+		xml += `    <lastmod>${today}</lastmod>\n`;
+		xml += `    <changefreq>${route.changefreq}</changefreq>\n`;
+		xml += `    <priority>${route.priority}</priority>\n`;
+		xml += `  </url>\n`;
+	}
+	for (const route of regionalRoutes) {
 		xml += `  <url>\n`;
 		xml += `    <loc>${baseUrl}${route.path}</loc>\n`;
 		xml += `    <lastmod>${today}</lastmod>\n`;
@@ -2340,7 +2375,7 @@ var Route$8 = createFileRoute("/terms-and-conditions")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$8, "component")
 });
-var $$splitComponentImporter$7 = () => import("./thank-you-K5AK6x7w.mjs");
+var $$splitComponentImporter$7 = () => import("./thank-you-BV31kl4t.mjs");
 var Route$7 = createFileRoute("/thank-you")({
 	validateSearch: (search) => ({
 		service: typeof search["service"] === "string" ? search["service"].slice(0, 80) : void 0,
@@ -2510,8 +2545,8 @@ function CountryDetailSkeleton() {
 		]
 	});
 }
-var $$splitComponentImporter$5 = () => import("./countries._slug-Dlgy_bhB.mjs");
-var $$splitNotFoundComponentImporter = () => import("./countries._slug-BCgy26JI.mjs");
+var $$splitComponentImporter$5 = () => import("./countries._slug-D5uf1PcW.mjs");
+var $$splitNotFoundComponentImporter = () => import("./countries._slug-CLAn9f4s.mjs");
 var Route$5 = createFileRoute("/countries/$slug")({
 	notFoundComponent: lazyRouteComponent($$splitNotFoundComponentImporter, "notFoundComponent"),
 	pendingComponent: CountryDetailSkeleton,
@@ -2766,7 +2801,7 @@ var Route$3 = createFileRoute("/services/")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./services.attestation-B7iD6rlx.mjs");
+var $$splitComponentImporter$2 = () => import("./services.attestation-CqeoJmbv.mjs");
 var Route$2 = createFileRoute("/services/attestation")({
 	head: () => ({
 		meta: [
@@ -2826,7 +2861,7 @@ var Route$2 = createFileRoute("/services/attestation")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./services.ticket-YlXFH56E.mjs");
+var $$splitComponentImporter$1 = () => import("./services.ticket-CnTa8rql.mjs");
 var Route$1 = createFileRoute("/services/ticket")({
 	head: () => ({
 		meta: [
@@ -2886,7 +2921,7 @@ var Route$1 = createFileRoute("/services/ticket")({
 	}),
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-var $$splitComponentImporter = () => import("./services.visa-B-WZaqee.mjs");
+var $$splitComponentImporter = () => import("./services.visa-n-zJzxLe.mjs");
 var Route = createFileRoute("/services/visa")({
 	pendingComponent: ServicePageSkeleton,
 	pendingMs: 150,

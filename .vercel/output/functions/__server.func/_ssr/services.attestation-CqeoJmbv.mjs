@@ -4,11 +4,11 @@ import { z as Earth } from "../_libs/lucide-react.mjs";
 import { t as Breadcrumbs } from "./Breadcrumbs-_GnoNGyX.mjs";
 import { i as SectionHeading, n as Reveal, r as Section } from "./Reveal-3UjQit6f.mjs";
 import { n as FaqSection, t as ContentArticle } from "./FaqSection-C2Lyxuf-.mjs";
-import { a as attestationCountries, o as countries, v as attestationArticle, y as attestationFaqs, z as Button } from "./router-DksWy9w32.mjs";
-import { t as BookingForm } from "./BookingForm-hUzsVPI4.mjs";
+import { a as attestationCountries, o as countries, v as attestationArticle, y as attestationFaqs, z as Button } from "./router-DdKel0Wx2.mjs";
+import { t as BookingForm } from "./BookingForm-vapTw-0r.mjs";
 import { t as CountryCard } from "./cards-D2DLrXXK.mjs";
 import { t as RelatedServices } from "./RelatedServices-CV3p7akO.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/services.attestation-B7iD6rlx.js
+//#region node_modules/.nitro/vite/services/ssr/assets/services.attestation-CqeoJmbv.js
 var import_jsx_runtime = require_jsx_runtime();
 var docTypes = [
 	{

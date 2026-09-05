@@ -4,10 +4,10 @@ import { $ as BadgeCheck, A as Landmark, B as Compass, F as Headphones, H as Clo
 import { t as Breadcrumbs } from "./Breadcrumbs-_GnoNGyX.mjs";
 import { i as SectionHeading, n as Reveal, r as Section } from "./Reveal-3UjQit6f.mjs";
 import { n as FaqSection, t as ContentArticle } from "./FaqSection-C2Lyxuf-.mjs";
-import { o as Route$5 } from "./router-DksWy9w3.mjs";
-import { M as regionArticle, T as countryFaqs, i as REGION_SLUGS, m as siteConfig, n as CountryFlag, o as countries, s as countriesByRegion, w as countryArticle, z as Button } from "./router-DksWy9w32.mjs";
+import { o as Route$5 } from "./router-DdKel0Wx.mjs";
+import { M as regionArticle, T as countryFaqs, i as REGION_SLUGS, m as siteConfig, n as CountryFlag, o as countries, s as countriesByRegion, w as countryArticle, z as Button } from "./router-DdKel0Wx2.mjs";
 import { t as CountryCard } from "./cards-D2DLrXXK.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/countries._slug-Dlgy_bhB.js
+//#region node_modules/.nitro/vite/services/ssr/assets/countries._slug-D5uf1PcW.js
 var import_jsx_runtime = require_jsx_runtime();
 function CountryOrRegion() {
 	const data = Route$5.useLoaderData();

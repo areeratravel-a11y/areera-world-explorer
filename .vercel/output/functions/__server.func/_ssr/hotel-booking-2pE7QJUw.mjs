@@ -5,11 +5,11 @@ import { Q as BedDouble, T as MapPin, c as Star } from "../_libs/lucide-react.mj
 import { t as Breadcrumbs } from "./Breadcrumbs-_GnoNGyX.mjs";
 import { i as SectionHeading, n as Reveal, r as Section } from "./Reveal-3UjQit6f.mjs";
 import { n as FaqSection, t as ContentArticle } from "./FaqSection-C2Lyxuf-.mjs";
-import { i as Route$12 } from "./router-DksWy9w3.mjs";
-import { A as hotelArticle, j as hotelFaqs, o as countries, z as Button } from "./router-DksWy9w32.mjs";
-import { n as Input, r as Label, t as BookingForm } from "./BookingForm-hUzsVPI4.mjs";
+import { i as Route$12 } from "./router-DdKel0Wx.mjs";
+import { A as hotelArticle, j as hotelFaqs, o as countries, z as Button } from "./router-DdKel0Wx2.mjs";
+import { n as Input, r as Label, t as BookingForm } from "./BookingForm-vapTw-0r.mjs";
 import { t as RelatedServices } from "./RelatedServices-CV3p7akO.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/hotel-booking-DXE47LDE.js
+//#region node_modules/.nitro/vite/services/ssr/assets/hotel-booking-2pE7QJUw.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var featured = [
