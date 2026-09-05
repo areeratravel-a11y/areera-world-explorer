@@ -54,14 +54,14 @@ export const WIKIDATA_ENTITIES: Record<string, string> = {
 };
 
 /**
- * Generates Schema.org TravelAgency & LocalBusiness structured data.
+ * Generates Schema.org TravelAgency structured data.
  * Optimized for Google Knowledge Graph, Local SEO (GEO), and Answer Engines (AEO).
  */
 export function organizationSchema(origin = DEFAULT_ORIGIN) {
   const base = origin || DEFAULT_ORIGIN;
   return {
     "@context": "https://schema.org",
-    "@type": ["TravelAgency", "LocalBusiness", "Organization"],
+    "@type": "TravelAgency",
     "@id": `${base}/#agency`,
     name: "Areera Travel and Tours",
     alternateName: [
@@ -101,7 +101,6 @@ export function organizationSchema(origin = DEFAULT_ORIGIN) {
       "@type": "GeoCoordinates",
       latitude: 33.7167,
       longitude: 73.0667,
-      elevation: "540m",
     },
     hasMap: "https://maps.google.com/?q=Blue+Area+Islamabad+Pakistan",
     openingHoursSpecification: [
@@ -122,15 +121,14 @@ export function organizationSchema(origin = DEFAULT_ORIGIN) {
       {
         "@type": "ContactPoint",
         telephone: contactInfo.phone,
-        contactType: "customer support & visa inquiries",
+        contactType: "customer service",
         areaServed: ["PK", "AE", "SA", "GB", "US", "CA"],
         availableLanguage: ["English", "Urdu", "Punjabi", "Arabic"],
-        contactOption: ["TollFree", "HearingImpairedSupported"],
       },
       {
         "@type": "ContactPoint",
         telephone: contactInfo.whatsapp,
-        contactType: "WhatsApp travel desk",
+        contactType: "reservations",
         areaServed: ["PK", "AE", "SA", "GB", "US", "CA"],
         availableLanguage: ["English", "Urdu", "Punjabi"],
       },
@@ -217,6 +215,19 @@ export function organizationSchema(origin = DEFAULT_ORIGIN) {
       "https://www.instagram.com/areeratravels",
       "https://maps.google.com/?q=Blue+Area+Islamabad+Pakistan",
     ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Areera Travel & Visa Services",
+      itemListElement: services.map((s) => ({
+        "@type": "Service",
+        name: s.title,
+        description: s.description,
+        url: `${base}${s.path}`,
+        provider: {
+          "@id": `${base}/#agency`,
+        },
+      })),
+    },
   };
 }
 
@@ -304,11 +315,11 @@ export function serviceSchema(
       name: `${service.title} Portfolio`,
       itemListElement: [
         {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: service.title,
-            description: service.description,
+          "@type": "Service",
+          name: service.title,
+          description: service.description,
+          provider: {
+            "@id": `${base}/#agency`,
           },
         },
       ],
@@ -357,16 +368,6 @@ export function touristDestinationSchema(country: Country, origin = DEFAULT_ORIG
       "@type": "AdministrativeArea",
       name: country.region,
     },
-    provider: {
-      "@id": `${base}/#agency`,
-    },
-    hasPart: country.visaCategories.map((vc) => ({
-      "@type": "Offer",
-      name: `${country.name} ${vc.name}`,
-      category: vc.typeBadge,
-      description: `Duration: ${vc.duration}, Validity: ${vc.validity}, Processing: ${vc.processingTime}. Best for: ${vc.bestFor}`,
-      offeredBy: { "@id": `${base}/#agency` },
-    })),
   };
 }
 
@@ -424,61 +425,21 @@ export function howToVisaSchema(countryName = "International", origin = DEFAULT_
 
 /**
  * Generates comprehensive Homepage / Index Schema.org JSON-LD graph.
- * Combines WebSite, TravelAgency with GEO, AEO, Reviews, WebPage, Breadcrumbs, and FAQs.
+ * Combines WebPage, Breadcrumbs, HowTo, and FAQs, linking to global WebSite & Agency schemas.
  */
 export function homeIndexSchema(
   faqs: { question: string; answer: string }[] = [],
   origin = DEFAULT_ORIGIN,
 ) {
   const base = origin || DEFAULT_ORIGIN;
-  const org = organizationSchema(base);
-  const web = websiteSchema(base);
   const faqObj = faqs.length > 0 ? faqPageSchema(faqs) : null;
+  const { "@context": _faqContext, ...cleanFaq } = faqObj || {};
   const howToObj = howToVisaSchema("International", base);
+  const { "@context": _howToContext, ...cleanHowTo } = howToObj;
 
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        ...web,
-      },
-      {
-        ...org,
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.9",
-          reviewCount: "184",
-          bestRating: "5",
-          worstRating: "1",
-        },
-        review: testimonials.map((t) => ({
-          "@type": "Review",
-          author: {
-            "@type": "Person",
-            name: t.name,
-          },
-          reviewBody: t.quote,
-          reviewRating: {
-            "@type": "Rating",
-            ratingValue: "5",
-            bestRating: "5",
-            worstRating: "1",
-          },
-        })),
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "Areera Travel & Visa Services",
-          itemListElement: services.map((s) => ({
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: s.title,
-              description: s.description,
-              url: `${base}${s.path}`,
-            },
-          })),
-        },
-      },
       {
         "@type": "WebPage",
         "@id": `${base}/#webpage`,
@@ -499,10 +460,6 @@ export function homeIndexSchema(
         breadcrumb: {
           "@id": `${base}/#breadcrumb`,
         },
-        speakable: {
-          "@type": "SpeakableSpecification",
-          cssSelector: ["h1", ".speakable-summary", "#faq", "article p"],
-        },
       },
       {
         "@type": "BreadcrumbList",
@@ -517,13 +474,13 @@ export function homeIndexSchema(
         ],
       },
       {
-        ...howToObj,
+        ...cleanHowTo,
         "@id": `${base}/#howto-visa`,
       },
       ...(faqObj
         ? [
             {
-              ...faqObj,
+              ...cleanFaq,
               "@id": `${base}/#faq`,
             },
           ]
@@ -565,9 +522,5 @@ export function articleSchema(
     dateModified: guide.dateModified || new Date().toISOString().split("T")[0],
     mainEntityOfPage: articleUrl,
     inLanguage: "en-US",
-    speakable: {
-      "@type": "SpeakableSpecification",
-      cssSelector: ["h1", "article p", ".speakable-summary"],
-    },
   };
 }

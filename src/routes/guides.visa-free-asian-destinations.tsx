@@ -69,39 +69,6 @@ export const Route = createFileRoute("/guides/visa-free-asian-destinations")({
           "@context": "https://schema.org",
           "@graph": [
             {
-              "@type": "TravelAgency",
-              "@id": "https://www.areeratravels.com/#agency",
-              name: "Areera Travel and Tours",
-              url: "https://www.areeratravels.com",
-              logo: "https://www.areeratravels.com/areera-logo.png",
-              telephone: siteConfig.phone,
-              founder: [
-                {
-                  "@type": "Person",
-                  name: "Arslan Ahmed",
-                  jobTitle: "Founder & Managing Director",
-                },
-                {
-                  "@type": "Person",
-                  name: "Hareera",
-                  jobTitle: "Co-Founder & Director",
-                },
-              ],
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Blue Area",
-                addressLocality: "Islamabad",
-                addressCountry: "PK",
-              },
-              areaServed: [
-                "South Asia",
-                "Southeast Asia",
-                "Middle East",
-                "East Asia",
-                "Worldwide",
-              ],
-            },
-            {
               "@type": "TouristTrip",
               "@id": "https://www.areeratravels.com/guides/visa-free-asian-destinations#trip",
               name: "Southeast & Central Asia Gateway Tour",

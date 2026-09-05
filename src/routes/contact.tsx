@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/Section";
 import { BookingForm } from "@/components/BookingForm";
 import { contactInfo } from "@/data/site";
-import { breadcrumbSchema, faqPageSchema, organizationSchema } from "@/lib/json-ld";
+import { breadcrumbSchema, faqPageSchema } from "@/lib/json-ld";
 import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
 import { contactArticle, contactFaqs } from "@/data/content";
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "keywords",
         content:
-          "areera travel contact number, areera travels whatsapp, travel agency blue area islamabad address, visa consultants contact islamabad, flight booking office phone number",
+          "contact areera travel, areera travels phone number, areera travels whatsapp, travel agency blue area islamabad, visa consultants contact islamabad",
       },
       { property: "og:title", content: "Contact Areera Travel and Tours — Phone, WhatsApp & Office" },
       {
@@ -36,10 +36,6 @@ export const Route = createFileRoute("/contact")({
       {
         type: "application/ld+json" as const,
         children: JSON.stringify(faqPageSchema(contactFaqs)),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(organizationSchema()),
       },
       {
         type: "application/ld+json",
