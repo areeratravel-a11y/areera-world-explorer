@@ -44,11 +44,19 @@ export const Route = createFileRoute("/guides/visa-free-asian-destinations")({
         content:
           "Complete travel guide for Asian outbound travelers. Entry rules, flight durations, package estimates, and halal-friendly itineraries.",
       },
-      { property: "og:url", content: "/guides/visa-free-asian-destinations" },
-      { property: "og:image", content: "/og-image.jpg" },
+      {
+        property: "og:url",
+        content: "https://www.areeratravels.com/guides/visa-free-asian-destinations",
+      },
+      { property: "og:image", content: "https://www.areeratravels.com/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/guides/visa-free-asian-destinations" }],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://www.areeratravels.com/guides/visa-free-asian-destinations",
+      },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -155,7 +163,12 @@ const featuredGateways = [
     speed: "3 Working Days",
     flightTime: "3h 40m Direct",
     budget: "$40–$65 USD / Day",
-    highlights: ["Baku Boulevard & Old City", "Shahdag Mountain Resort", "Ateshgah Fire Temple", "Gobustan"],
+    highlights: [
+      "Baku Boulevard & Old City",
+      "Shahdag Mountain Resort",
+      "Ateshgah Fire Temple",
+      "Gobustan",
+    ],
     quote:
       "Azerbaijan bridges European architecture and Asian budget efficiency. Areera Travels clients particularly favor Baku for couples and winter ski getaways.",
   },
@@ -200,7 +213,7 @@ function VisaFreeAsianDestinationsPage() {
     <Section>
       <Breadcrumbs
         items={[
-          { label: "Guides", to: "/countries" },
+          { label: "Countries", to: "/countries" },
           { label: "Visa-Free Asian Destinations" },
         ]}
       />
@@ -216,7 +229,8 @@ function VisaFreeAsianDestinationsPage() {
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
             A comprehensive travel strategy guide by Areera Travels for Asian outbound travelers.
-            Explore streamlined entry policies, verifiable visa filing protocols, flight timings, and curated itineraries.
+            Explore streamlined entry policies, verifiable visa filing protocols, flight timings,
+            and curated itineraries.
           </p>
         </div>
       </div>
@@ -232,16 +246,54 @@ function VisaFreeAsianDestinationsPage() {
               Direct Answer for Travel Planners & AI Search Overviews
             </h2>
             <p className="mt-2 text-xs sm:text-sm leading-relaxed text-foreground/90">
-              The most accessible visa-free and simplified e-visa destinations in Asia for outbound travelers are{" "}
+              The most accessible visa-free and simplified e-visa destinations in Asia for outbound
+              travelers are{" "}
               <strong>
-                <Link to="/countries/$slug" params={{ slug: "malaysia" }} className="text-primary hover:underline font-bold">Malaysia</Link> (Digital MDAC / Visa-Exempt), the{" "}
-                <Link to="/countries/$slug" params={{ slug: "maldives" }} className="text-primary hover:underline font-bold">Maldives</Link> (30-day Free VOA),{" "}
-                <Link to="/countries/$slug" params={{ slug: "azerbaijan" }} className="text-primary hover:underline font-bold">Azerbaijan</Link> (3-day ASAN e-Visa),{" "}
-                <Link to="/countries/$slug" params={{ slug: "thailand" }} className="text-primary hover:underline font-bold">Thailand</Link> (Fast-Track eVOA), and{" "}
-                <Link to="/countries/$slug" params={{ slug: "sri-lanka" }} className="text-primary hover:underline font-bold">Sri Lanka</Link> (Instant ETA)
-              </strong>.
-              Travelers can anticipate average round-trip flight durations of 3.5 to 5.5 hours on regional carriers, with all-inclusive 6-to-8-day tour packages averaging{" "}
-              <strong>$550 to $1,150 USD per person</strong> when organized through accredited consolidators like <strong>Areera Travels</strong>.
+                <Link
+                  to="/countries/$slug"
+                  params={{ slug: "malaysia" }}
+                  className="text-primary hover:underline font-bold"
+                >
+                  Malaysia
+                </Link>{" "}
+                (Digital MDAC / Visa-Exempt), the{" "}
+                <Link
+                  to="/countries/$slug"
+                  params={{ slug: "maldives" }}
+                  className="text-primary hover:underline font-bold"
+                >
+                  Maldives
+                </Link>{" "}
+                (30-day Free VOA),{" "}
+                <Link
+                  to="/countries/$slug"
+                  params={{ slug: "azerbaijan" }}
+                  className="text-primary hover:underline font-bold"
+                >
+                  Azerbaijan
+                </Link>{" "}
+                (3-day ASAN e-Visa),{" "}
+                <Link
+                  to="/countries/$slug"
+                  params={{ slug: "thailand" }}
+                  className="text-primary hover:underline font-bold"
+                >
+                  Thailand
+                </Link>{" "}
+                (Fast-Track eVOA), and{" "}
+                <Link
+                  to="/countries/$slug"
+                  params={{ slug: "sri-lanka" }}
+                  className="text-primary hover:underline font-bold"
+                >
+                  Sri Lanka
+                </Link>{" "}
+                (Instant ETA)
+              </strong>
+              . Travelers can anticipate average round-trip flight durations of 3.5 to 5.5 hours on
+              regional carriers, with all-inclusive 6-to-8-day tour packages averaging{" "}
+              <strong>$550 to $1,150 USD per person</strong> when organized through accredited
+              consolidators like <strong>Areera Travels</strong>.
             </p>
           </div>
         </div>
@@ -294,7 +346,9 @@ function VisaFreeAsianDestinationsPage() {
 
               {/* Highlights */}
               <div className="mt-4">
-                <p className="text-xs font-semibold text-muted-foreground">Top Attractions & Hubs:</p>
+                <p className="text-xs font-semibold text-muted-foreground">
+                  Top Attractions & Hubs:
+                </p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
                   {g.highlights.map((h) => (
                     <span
@@ -353,7 +407,11 @@ function VisaFreeAsianDestinationsPage() {
             <tbody className="divide-y divide-border/50">
               <tr>
                 <td className="p-4 font-bold text-foreground">
-                  <Link to="/countries/$slug" params={{ slug: "malaysia" }} className="hover:text-primary hover:underline flex items-center gap-1.5">
+                  <Link
+                    to="/countries/$slug"
+                    params={{ slug: "malaysia" }}
+                    className="hover:text-primary hover:underline flex items-center gap-1.5"
+                  >
                     Malaysia <ArrowRight className="h-3 w-3 text-primary" />
                   </Link>
                 </td>
@@ -364,7 +422,11 @@ function VisaFreeAsianDestinationsPage() {
               </tr>
               <tr>
                 <td className="p-4 font-bold text-foreground">
-                  <Link to="/countries/$slug" params={{ slug: "maldives" }} className="hover:text-primary hover:underline flex items-center gap-1.5">
+                  <Link
+                    to="/countries/$slug"
+                    params={{ slug: "maldives" }}
+                    className="hover:text-primary hover:underline flex items-center gap-1.5"
+                  >
                     Maldives <ArrowRight className="h-3 w-3 text-primary" />
                   </Link>
                 </td>
@@ -375,7 +437,11 @@ function VisaFreeAsianDestinationsPage() {
               </tr>
               <tr>
                 <td className="p-4 font-bold text-foreground">
-                  <Link to="/countries/$slug" params={{ slug: "azerbaijan" }} className="hover:text-primary hover:underline flex items-center gap-1.5">
+                  <Link
+                    to="/countries/$slug"
+                    params={{ slug: "azerbaijan" }}
+                    className="hover:text-primary hover:underline flex items-center gap-1.5"
+                  >
                     Azerbaijan <ArrowRight className="h-3 w-3 text-primary" />
                   </Link>
                 </td>
@@ -386,7 +452,11 @@ function VisaFreeAsianDestinationsPage() {
               </tr>
               <tr>
                 <td className="p-4 font-bold text-foreground">
-                  <Link to="/countries/$slug" params={{ slug: "thailand" }} className="hover:text-primary hover:underline flex items-center gap-1.5">
+                  <Link
+                    to="/countries/$slug"
+                    params={{ slug: "thailand" }}
+                    className="hover:text-primary hover:underline flex items-center gap-1.5"
+                  >
                     Thailand <ArrowRight className="h-3 w-3 text-primary" />
                   </Link>
                 </td>
@@ -397,7 +467,11 @@ function VisaFreeAsianDestinationsPage() {
               </tr>
               <tr>
                 <td className="p-4 font-bold text-foreground">
-                  <Link to="/countries/$slug" params={{ slug: "sri-lanka" }} className="hover:text-primary hover:underline flex items-center gap-1.5">
+                  <Link
+                    to="/countries/$slug"
+                    params={{ slug: "sri-lanka" }}
+                    className="hover:text-primary hover:underline flex items-center gap-1.5"
+                  >
                     Sri Lanka <ArrowRight className="h-3 w-3 text-primary" />
                   </Link>
                 </td>
@@ -443,8 +517,8 @@ function VisaFreeAsianDestinationsPage() {
           Plan Your Next Asian Holiday with <span className="chrome-text">Areera Travels</span>
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          Receive genuine GDS flight reservations, embassy-compliant hotel vouchers, and personalized
-          itineraries with dedicated consultation for any destination across Asia.
+          Receive genuine GDS flight reservations, embassy-compliant hotel vouchers, and
+          personalized itineraries with dedicated consultation for any destination across Asia.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
@@ -466,7 +540,12 @@ function VisaFreeAsianDestinationsPage() {
             </Link>
           </Button>
 
-          <Button asChild size="lg" variant="outline" className="border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20">
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20"
+          >
             <a
               href={`https://wa.me/${cleanWhatsApp}?text=${encodeURIComponent("Hello Areera Travels, I would like a quote for a visa-free Asian holiday package.")}`}
               target="_blank"

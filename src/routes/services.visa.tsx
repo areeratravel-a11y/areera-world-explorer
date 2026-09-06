@@ -12,7 +12,16 @@ import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
 import { visaArticle, visaFaqs } from "@/data/content";
 import { CountryFlag } from "@/components/CountryFlag";
-import { ArrowRight, BadgeCheck, Clock, FileCheck2, Globe2, PhoneCall, ShieldCheck, Stamp } from "lucide-react";
+import {
+  ArrowRight,
+  BadgeCheck,
+  Clock,
+  FileCheck2,
+  Globe2,
+  PhoneCall,
+  ShieldCheck,
+  Stamp,
+} from "lucide-react";
 import { contactInfo } from "@/data/site";
 import { ServicePageSkeleton } from "@/components/ServicePageSkeleton";
 
@@ -26,7 +35,9 @@ export const Route = createFileRoute("/services/visa")({
   }),
   head: () => ({
     meta: [
-      { title: "Visa Services — Tourist, Business, Student & Work Visas | Areera Travel and Tours" },
+      {
+        title: "Visa Services — Tourist, Business, Student & Work Visas | Areera Travel and Tours",
+      },
       {
         name: "description",
         content:
@@ -37,15 +48,19 @@ export const Route = createFileRoute("/services/visa")({
         content:
           "visa assistance pakistan, visa consultancy services islamabad, tourist visa filing pakistan, business visa consultants islamabad, schengen visa file preparation, uk visitor visa agent, usa ds160 visa filing, evisa application pakistan, embassy appointment booking islamabad, visit visa documentation",
       },
-      { property: "og:title", content: "Visa Services — Tourist, Business, Student & Work Visas | Areera Travel and Tours" },
+      {
+        property: "og:title",
+        content:
+          "Visa Services — Tourist, Business, Student & Work Visas | Areera Travel and Tours",
+      },
       {
         property: "og:description",
         content:
           "Professional visa filing support for 100+ countries: document verification, biometric appointment scheduling, and complete embassy compliance.",
       },
-      { property: "og:url", content: "/services/visa" },
+      { property: "og:url", content: "https://www.areeratravels.com/services/visa" },
     ],
-    links: [{ rel: "canonical", href: "/services/visa" }],
+    links: [{ rel: "canonical", href: "https://www.areeratravels.com/services/visa" }],
     scripts: [
       {
         type: "application/ld+json" as const,
@@ -286,7 +301,12 @@ function VisaPage() {
               <Globe2 className="mr-2 h-4 w-4 text-primary" /> Browse All 50+ Visa Destinations
             </Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-cyan-500/30 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20">
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="border-cyan-500/30 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20"
+          >
             <Link to="/guides/visa-free-asian-destinations">
               <span>Visa-Free Asian Guide 2026</span>
               <ArrowRight className="ml-2 h-4 w-4" />

@@ -101,8 +101,8 @@ for (const dir of targetDirs) {
   }
 }
 
-// Also mirror robots.txt, llms.txt, and llms-full.txt
-for (const filename of ["robots.txt", "llms.txt", "llms-full.txt"]) {
+// Also mirror robots.txt, llms.txt, llms-full.txt, _redirects, and _headers
+for (const filename of ["robots.txt", "llms.txt", "llms-full.txt", "_redirects", "_headers"]) {
   const src = path.join(rootDir, "public", filename);
   if (fs.existsSync(src)) {
     const content = fs.readFileSync(src, "utf8");
@@ -114,4 +114,6 @@ for (const filename of ["robots.txt", "llms.txt", "llms-full.txt"]) {
   }
 }
 
-console.log(`[Sitemap] Generated sitemap.xml with ${staticRoutes.length + regionalRoutes.length + countrySlugs.length} URLs for ${baseUrl}.`);
+console.log(
+  `[Sitemap] Generated sitemap.xml with ${staticRoutes.length + regionalRoutes.length + countrySlugs.length} URLs for ${baseUrl}.`,
+);

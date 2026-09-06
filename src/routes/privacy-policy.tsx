@@ -39,9 +39,9 @@ export const Route = createFileRoute("/privacy-policy")({
         content:
           "Our commitment to protecting your personal, passport, and travel documentation with bank-grade confidentiality and embassy-compliant processing.",
       },
-      { property: "og:url", content: "/privacy-policy" },
+      { property: "og:url", content: "https://www.areeratravels.com/privacy-policy" },
     ],
-    links: [{ rel: "canonical", href: "/privacy-policy" }],
+    links: [{ rel: "canonical", href: "https://www.areeratravels.com/privacy-policy" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -61,22 +61,26 @@ const keyGuarantees = [
   {
     icon: Lock,
     title: "Zero Data Brokerage",
-    description: "We never sell, monetize, or license your passport or travel information to any marketing third parties.",
+    description:
+      "We never sell, monetize, or license your passport or travel information to any marketing third parties.",
   },
   {
     icon: Shield,
     title: "Embassy-Only Disclosure",
-    description: "Your documentation is shared exclusively with accredited embassies, consulates, and authorized airline GDS networks.",
+    description:
+      "Your documentation is shared exclusively with accredited embassies, consulates, and authorized airline GDS networks.",
   },
   {
     icon: Trash2,
     title: "Post-Filing Document Purge",
-    description: "Sensitive financial and supporting records are permanently purged after visa issuance upon client request.",
+    description:
+      "Sensitive financial and supporting records are permanently purged after visa issuance upon client request.",
   },
   {
     icon: Eye,
     title: "Transparent Consent",
-    description: "Every document transmission and embassy filing is explicitly confirmed with you prior to submission.",
+    description:
+      "Every document transmission and embassy filing is explicitly confirmed with you prior to submission.",
   },
 ];
 
@@ -109,8 +113,8 @@ function PrivacyPolicyPage() {
         </h1>
         <p className="mt-4 max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
           At Areera Travel and Tours, we understand that travel planning, visa filing, and document
-          attestation involve sensitive personal and financial information. This Privacy Policy outlines
-          our protocols for collecting, processing, and safeguarding your information.
+          attestation involve sensitive personal and financial information. This Privacy Policy
+          outlines our protocols for collecting, processing, and safeguarding your information.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-muted-foreground pt-4 border-t border-white/10">
@@ -186,15 +190,15 @@ function PrivacyPolicyPage() {
               <span className="text-primary font-mono text-lg">01.</span> Introduction & Scope
             </h2>
             <p className="text-muted-foreground">
-              Areera Travel and Tours (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates travel consulting,
-              visa filing assistance, flight reservation, hotel booking, and consular document attestation
-              services headquartered at {contactInfo.address}.
+              Areera Travel and Tours (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates
+              travel consulting, visa filing assistance, flight reservation, hotel booking, and
+              consular document attestation services headquartered at {contactInfo.address}.
             </p>
             <p className="mt-3 text-muted-foreground">
-              This Privacy Policy explains how we collect, store, and process personal identification and
-              travel details when you interact with our website, inquire through WhatsApp, or consult our
-              agents in person. By utilizing our services, you acknowledge the processing practices outlined
-              in this document.
+              This Privacy Policy explains how we collect, store, and process personal
+              identification and travel details when you interact with our website, inquire through
+              WhatsApp, or consult our agents in person. By utilizing our services, you acknowledge
+              the processing practices outlined in this document.
             </p>
           </section>
 
@@ -204,40 +208,50 @@ function PrivacyPolicyPage() {
               <span className="text-primary font-mono text-lg">02.</span> Information We Collect
             </h2>
             <p className="text-muted-foreground mb-4">
-              To fulfill visa regulations, book tickets with airlines, and meet consular requirements, we
-              may collect the following categories of information:
+              To fulfill visa regulations, book tickets with airlines, and meet consular
+              requirements, we may collect the following categories of information:
             </p>
             <div className="space-y-3">
               <div className="rounded-xl border border-border/80 bg-background/50 p-4">
-                <h3 className="font-semibold text-sm text-foreground">A. Primary Traveler Identification</h3>
+                <h3 className="font-semibold text-sm text-foreground">
+                  A. Primary Traveler Identification
+                </h3>
                 <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
-                  Full name (as printed on passport), date of birth, nationality, national identity card (CNIC)
-                  number, passport number, issue date, expiration date, and biometric passport scan copies.
+                  Full name (as printed on passport), date of birth, nationality, national identity
+                  card (CNIC) number, passport number, issue date, expiration date, and biometric
+                  passport scan copies.
                 </p>
               </div>
 
               <div className="rounded-xl border border-border/80 bg-background/50 p-4">
-                <h3 className="font-semibold text-sm text-foreground">B. Contact & Communication Data</h3>
+                <h3 className="font-semibold text-sm text-foreground">
+                  B. Contact & Communication Data
+                </h3>
                 <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
-                  WhatsApp contact number, mobile telephone numbers, email addresses, and residential/business
-                  mailing addresses for courier delivery of attested files.
+                  WhatsApp contact number, mobile telephone numbers, email addresses, and
+                  residential/business mailing addresses for courier delivery of attested files.
                 </p>
               </div>
 
               <div className="rounded-xl border border-border/80 bg-background/50 p-4">
-                <h3 className="font-semibold text-sm text-foreground">C. Embassy Visa File Supporting Materials</h3>
+                <h3 className="font-semibold text-sm text-foreground">
+                  C. Embassy Visa File Supporting Materials
+                </h3>
                 <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
-                  When contracted for visa application dossiers: employment reference letters, salary slips,
-                  bank account maintenance certificates, educational degrees (for MOFA/Embassy attestation),
-                  and family relationship records as demanded by specific embassies.
+                  When contracted for visa application dossiers: employment reference letters,
+                  salary slips, bank account maintenance certificates, educational degrees (for
+                  MOFA/Embassy attestation), and family relationship records as demanded by specific
+                  embassies.
                 </p>
               </div>
 
               <div className="rounded-xl border border-border/80 bg-background/50 p-4">
-                <h3 className="font-semibold text-sm text-foreground">D. Itinerary & Booking Details</h3>
+                <h3 className="font-semibold text-sm text-foreground">
+                  D. Itinerary & Booking Details
+                </h3>
                 <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
-                  Departure city, destination sectors, preferred airline carriers, seating/meal preferences,
-                  hotel stay duration, and frequent flyer numbers.
+                  Departure city, destination sectors, preferred airline carriers, seating/meal
+                  preferences, hotel stay duration, and frequent flyer numbers.
                 </p>
               </div>
             </div>
@@ -253,25 +267,29 @@ function PrivacyPolicyPage() {
             </p>
             <ul className="space-y-2.5 text-xs sm:text-sm text-muted-foreground list-disc pl-5">
               <li>
-                <strong className="text-foreground">Airline Reservations & Ticketing:</strong> Entering traveler
-                names into Global Distribution Systems (GDS) such as Sabre and Amadeus to issue verifiable PNRs
-                and confirmed airline e-tickets.
+                <strong className="text-foreground">Airline Reservations & Ticketing:</strong>{" "}
+                Entering traveler names into Global Distribution Systems (GDS) such as Sabre and
+                Amadeus to issue verifiable PNRs and confirmed airline e-tickets.
               </li>
               <li>
-                <strong className="text-foreground">Visa Application Preparation:</strong> Completing official
-                visa portals, scheduling biometric appointments, and verifying dossier checklists.
+                <strong className="text-foreground">Visa Application Preparation:</strong>{" "}
+                Completing official visa portals, scheduling biometric appointments, and verifying
+                dossier checklists.
               </li>
               <li>
-                <strong className="text-foreground">Consular Attestation:</strong> Submitting educational,
-                commercial, or personal documents to the Ministry of Foreign Affairs (MOFA) and designated embassies.
+                <strong className="text-foreground">Consular Attestation:</strong> Submitting
+                educational, commercial, or personal documents to the Ministry of Foreign Affairs
+                (MOFA) and designated embassies.
               </li>
               <li>
-                <strong className="text-foreground">Customer Support:</strong> Providing real-time updates on
-                application progress, visa approvals, and flight gate/schedule changes via WhatsApp or telephone.
+                <strong className="text-foreground">Customer Support:</strong> Providing real-time
+                updates on application progress, visa approvals, and flight gate/schedule changes
+                via WhatsApp or telephone.
               </li>
               <li>
-                <strong className="text-foreground">Financial Record Keeping:</strong> Generating tax invoices
-                and maintaining commercial accounts in compliance with Pakistani revenue authorities.
+                <strong className="text-foreground">Financial Record Keeping:</strong> Generating
+                tax invoices and maintaining commercial accounts in compliance with Pakistani
+                revenue authorities.
               </li>
             </ul>
           </section>
@@ -279,36 +297,47 @@ function PrivacyPolicyPage() {
           {/* 4. Third-Party Sharing */}
           <section id="third-party-sharing" className="scroll-mt-24 border-t border-border pt-8">
             <h2 className="font-display text-xl sm:text-2xl font-bold text-foreground mb-3 flex items-center gap-2">
-              <span className="text-primary font-mono text-lg">04.</span> Authorized Third-Party Disclosures
+              <span className="text-primary font-mono text-lg">04.</span> Authorized Third-Party
+              Disclosures
             </h2>
             <p className="text-muted-foreground mb-3">
-              We never sell or rent your information to advertisers. Your data is disclosed solely to authorized
-              entities required to deliver travel services:
+              We never sell or rent your information to advertisers. Your data is disclosed solely
+              to authorized entities required to deliver travel services:
             </p>
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="rounded-xl border border-border bg-card/50 p-4">
-                <h3 className="font-semibold text-xs sm:text-sm text-foreground">Embassies & Consular Missions</h3>
+                <h3 className="font-semibold text-xs sm:text-sm text-foreground">
+                  Embassies & Consular Missions
+                </h3>
                 <p className="mt-1 text-xs text-muted-foreground">
                   Official government diplomatic missions evaluating your visa entry application.
                 </p>
               </div>
 
               <div className="rounded-xl border border-border bg-card/50 p-4">
-                <h3 className="font-semibold text-xs sm:text-sm text-foreground">Visa Application Centers</h3>
+                <h3 className="font-semibold text-xs sm:text-sm text-foreground">
+                  Visa Application Centers
+                </h3>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  Accredited biometric processing partners including Gerry&apos;s Visa, VFS Global, and TLScontact.
+                  Accredited biometric processing partners including Gerry&apos;s Visa, VFS Global,
+                  and TLScontact.
                 </p>
               </div>
 
               <div className="rounded-xl border border-border bg-card/50 p-4">
-                <h3 className="font-semibold text-xs sm:text-sm text-foreground">Airlines & Hospitality Providers</h3>
+                <h3 className="font-semibold text-xs sm:text-sm text-foreground">
+                  Airlines & Hospitality Providers
+                </h3>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  IATA airlines and hotel suppliers generating confirmed booking vouchers under your legal name.
+                  IATA airlines and hotel suppliers generating confirmed booking vouchers under your
+                  legal name.
                 </p>
               </div>
 
               <div className="rounded-xl border border-border bg-card/50 p-4">
-                <h3 className="font-semibold text-xs sm:text-sm text-foreground">Attestation Authorities</h3>
+                <h3 className="font-semibold text-xs sm:text-sm text-foreground">
+                  Attestation Authorities
+                </h3>
                 <p className="mt-1 text-xs text-muted-foreground">
                   Higher Education Commission (HEC), IBCC, Chamber of Commerce, and MOFA offices.
                 </p>
@@ -319,20 +348,28 @@ function PrivacyPolicyPage() {
           {/* 5. Security & Retention */}
           <section id="security-retention" className="scroll-mt-24 border-t border-border pt-8">
             <h2 className="font-display text-xl sm:text-2xl font-bold text-foreground mb-3 flex items-center gap-2">
-              <span className="text-primary font-mono text-lg">05.</span> Data Security & Document Retention
+              <span className="text-primary font-mono text-lg">05.</span> Data Security & Document
+              Retention
             </h2>
             <p className="text-muted-foreground">
-              We apply strict administrative and digital security measures to protect your documents against
-              unauthorized access or loss:
+              We apply strict administrative and digital security measures to protect your documents
+              against unauthorized access or loss:
             </p>
             <ul className="mt-3 space-y-2 text-xs sm:text-sm text-muted-foreground list-disc pl-5">
               <li>Digital communication over SSL/TLS encrypted transport.</li>
-              <li>Role-based workstation access restricted to senior consultants handling your specific file.</li>
-              <li>Physical copies kept in locked, monitored documentation cabinets prior to submission.</li>
               <li>
-                <strong className="text-foreground">Purging Policy:</strong> Supporting financial records (e.g.
-                bank statements, tax documents) are permanently shredded or deleted within 30 days of visa decision
-                notification, unless prolonged retention is explicitly instructed by you.
+                Role-based workstation access restricted to senior consultants handling your
+                specific file.
+              </li>
+              <li>
+                Physical copies kept in locked, monitored documentation cabinets prior to
+                submission.
+              </li>
+              <li>
+                <strong className="text-foreground">Purging Policy:</strong> Supporting financial
+                records (e.g. bank statements, tax documents) are permanently shredded or deleted
+                within 30 days of visa decision notification, unless prolonged retention is
+                explicitly instructed by you.
               </li>
             </ul>
           </section>
@@ -340,43 +377,62 @@ function PrivacyPolicyPage() {
           {/* 6. Your Rights */}
           <section id="your-rights" className="scroll-mt-24 border-t border-border pt-8">
             <h2 className="font-display text-xl sm:text-2xl font-bold text-foreground mb-3 flex items-center gap-2">
-              <span className="text-primary font-mono text-lg">06.</span> Your Rights & Access Requests
+              <span className="text-primary font-mono text-lg">06.</span> Your Rights & Access
+              Requests
             </h2>
             <p className="text-muted-foreground mb-3">
               As a valued client, you retain complete authority over your personal records:
             </p>
             <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground list-disc pl-5">
-              <li><strong className="text-foreground">Right of Access:</strong> Request a copy of all information held on your profile.</li>
-              <li><strong className="text-foreground">Right to Rectification:</strong> Request instant correction of misspelled names, dates, or contact details.</li>
-              <li><strong className="text-foreground">Right to Erasure:</strong> Request the deletion of remaining scanned documents upon conclusion of your trip.</li>
-              <li><strong className="text-foreground">Right to Withdraw Consent:</strong> Opt out of future travel deal announcements or WhatsApp advisory broadcasts at any time.</li>
+              <li>
+                <strong className="text-foreground">Right of Access:</strong> Request a copy of all
+                information held on your profile.
+              </li>
+              <li>
+                <strong className="text-foreground">Right to Rectification:</strong> Request instant
+                correction of misspelled names, dates, or contact details.
+              </li>
+              <li>
+                <strong className="text-foreground">Right to Erasure:</strong> Request the deletion
+                of remaining scanned documents upon conclusion of your trip.
+              </li>
+              <li>
+                <strong className="text-foreground">Right to Withdraw Consent:</strong> Opt out of
+                future travel deal announcements or WhatsApp advisory broadcasts at any time.
+              </li>
             </ul>
           </section>
 
           {/* 7. Cookies & Analytics */}
           <section id="cookies" className="scroll-mt-24 border-t border-border pt-8">
             <h2 className="font-display text-xl sm:text-2xl font-bold text-foreground mb-3 flex items-center gap-2">
-              <span className="text-primary font-mono text-lg">07.</span> Cookies & Website Analytics
+              <span className="text-primary font-mono text-lg">07.</span> Cookies & Website
+              Analytics
             </h2>
             <p className="text-muted-foreground">
-              Our website uses privacy-respecting cookies and local storage exclusively to remember your site
-              theme preferences, preserve your selected destination filter states, and ensure smooth routing.
-              We do not track you across third-party websites or engage in behavioral ad retargeting networks.
+              Our website uses privacy-respecting cookies and local storage exclusively to remember
+              your site theme preferences, preserve your selected destination filter states, and
+              ensure smooth routing. We do not track you across third-party websites or engage in
+              behavioral ad retargeting networks.
             </p>
           </section>
 
           {/* 8. Contact DPO */}
           <section id="contact-dpo" className="scroll-mt-24 border-t border-border pt-8">
             <h2 className="font-display text-xl sm:text-2xl font-bold text-foreground mb-3 flex items-center gap-2">
-              <span className="text-primary font-mono text-lg">08.</span> Contact Our Data Protection Desk
+              <span className="text-primary font-mono text-lg">08.</span> Contact Our Data
+              Protection Desk
             </h2>
             <p className="text-muted-foreground mb-4">
-              If you have any questions regarding this Privacy Policy, wish to exercise your data rights, or
-              request an immediate purge of your completed application records, contact our dedicated team:
+              If you have any questions regarding this Privacy Policy, wish to exercise your data
+              rights, or request an immediate purge of your completed application records, contact
+              our dedicated team:
             </p>
 
             <div className="rounded-2xl border border-border bg-card/80 p-6">
-              <h3 className="font-bold text-foreground">Areera Travel and Tours — Privacy & Compliance</h3>
+              <h3 className="font-bold text-foreground">
+                Areera Travel and Tours — Privacy & Compliance
+              </h3>
               <ul className="mt-3 space-y-2.5 text-xs sm:text-sm text-muted-foreground">
                 <li className="flex items-center gap-2.5">
                   <MapPin className="h-4 w-4 text-primary shrink-0" />
@@ -384,7 +440,10 @@ function PrivacyPolicyPage() {
                 </li>
                 <li className="flex items-center gap-2.5">
                   <Phone className="h-4 w-4 text-primary shrink-0" />
-                  <a href={`tel:${contactInfo.phone.replace(/\s/g, "")}`} className="hover:text-foreground">
+                  <a
+                    href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
+                    className="hover:text-foreground"
+                  >
                     {contactInfo.phone}
                   </a>
                 </li>
@@ -404,7 +463,9 @@ function PrivacyPolicyPage() {
       <div className="mt-16 rounded-2xl border border-white/10 bg-card/50 p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
         <div>
           <p className="font-semibold text-foreground text-sm">Need immediate visa assistance?</p>
-          <p className="text-xs text-muted-foreground">Consult with an experienced travel agent today.</p>
+          <p className="text-xs text-muted-foreground">
+            Consult with an experienced travel agent today.
+          </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">

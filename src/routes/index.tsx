@@ -46,15 +46,18 @@ export const Route = createFileRoute("/")({
         content:
           "Premium visa filing, air ticketing, and attestation support for travellers across Asia, Middle East, Europe, and Africa.",
       },
-      { property: "og:image", content: "/og-image.jpg" },
+      { property: "og:image", content: "https://www.areeratravels.com/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Areera Travel and Tours — Global Travel & Visa Services" },
+      {
+        property: "og:image:alt",
+        content: "Areera Travel and Tours — Global Travel & Visa Services",
+      },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "/og-image.jpg" },
-      { property: "og:url", content: "/" },
+      { name: "twitter:image", content: "https://www.areeratravels.com/og-image.jpg" },
+      { property: "og:url", content: "https://www.areeratravels.com/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://www.areeratravels.com/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -106,8 +109,8 @@ function Home() {
               </div>
 
               <h1 className="animate-fade-up mt-5 max-w-2xl font-display text-3xl font-bold leading-[1.15] tracking-tight sm:text-5xl md:text-6xl">
-                Your journey, <span className="chrome-text">planned properly</span> from paperwork to
-                departure.
+                Your journey, <span className="chrome-text">planned properly</span> from paperwork
+                to departure.
               </h1>
 
               <p className="animate-fade-up mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-lg">
@@ -123,7 +126,8 @@ function Home() {
                   ))}
                 </div>
                 <span>
-                  <strong className="font-semibold text-foreground">4.9/5 Rating</strong> from 1,200+ travellers
+                  <strong className="font-semibold text-foreground">4.9/5 Rating</strong> from
+                  1,200+ travellers
                 </span>
               </div>
 
@@ -168,7 +172,11 @@ function Home() {
               <div className="animate-fade-up mt-12 grid grid-cols-2 gap-4 border-t border-border/60 pt-6 sm:grid-cols-3">
                 {[
                   { icon: Globe2, label: "40+ Countries Covered", color: "text-primary" },
-                  { icon: ShieldCheck, label: "100% Embassy Compliance", color: "text-emerald-400" },
+                  {
+                    icon: ShieldCheck,
+                    label: "100% Embassy Compliance",
+                    color: "text-emerald-400",
+                  },
                   { icon: Headset, label: "Dedicated File Consultant", color: "text-amber-400" },
                 ].map(({ icon: Icon, label, color }) => (
                   <div
@@ -271,7 +279,9 @@ function Home() {
                 Visa-Free & Simplified <span className="chrome-text">Asian Destinations</span>
               </h2>
               <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Planning your next international trip? Discover the top visa-free, e-visa, and fast-track entry policies for Asian destinations with typical holiday package budgets and verified flight connectivity.
+                Planning your next international trip? Discover the top visa-free, e-visa, and
+                fast-track entry policies for Asian destinations with typical holiday package
+                budgets and verified flight connectivity.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3 shrink-0">
@@ -281,7 +291,12 @@ function Home() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white/20 bg-white/5 text-white hover:bg-white/10">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white/20 bg-white/5 text-white hover:bg-white/10"
+              >
                 <Link to="/countries">Browse All 50+ Countries</Link>
               </Button>
             </div>
@@ -294,7 +309,9 @@ function Home() {
             >
               <PlaneTakeoff className="h-5 w-5 text-cyan-400 shrink-0" />
               <div>
-                <p className="text-sm font-semibold text-white group-hover:text-cyan-300">Flight Reservations</p>
+                <p className="text-sm font-semibold text-white group-hover:text-cyan-300">
+                  Flight Reservations
+                </p>
                 <p className="text-xs text-slate-400">Verifiable embassy PNRs for your visa file</p>
               </div>
             </Link>
@@ -304,7 +321,9 @@ function Home() {
             >
               <BedDouble className="h-5 w-5 text-amber-400 shrink-0" />
               <div>
-                <p className="text-sm font-semibold text-white group-hover:text-amber-300">Hotel Bookings</p>
+                <p className="text-sm font-semibold text-white group-hover:text-amber-300">
+                  Hotel Bookings
+                </p>
                 <p className="text-xs text-slate-400">Confirmed embassy-compliant vouchers</p>
               </div>
             </Link>
@@ -314,7 +333,9 @@ function Home() {
             >
               <ShieldCheck className="h-5 w-5 text-emerald-400 shrink-0" />
               <div>
-                <p className="text-sm font-semibold text-white group-hover:text-emerald-300">Document Attestation</p>
+                <p className="text-sm font-semibold text-white group-hover:text-emerald-300">
+                  Document Attestation
+                </p>
                 <p className="text-xs text-slate-400">MOFA, HEC & foreign embassy legalization</p>
               </div>
             </Link>

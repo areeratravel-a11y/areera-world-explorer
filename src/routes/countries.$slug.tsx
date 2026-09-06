@@ -107,9 +107,9 @@ export const Route = createFileRoute("/countries/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/countries/${params.slug}` },
+        { property: "og:url", content: `https://www.areeratravels.com/countries/${params.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/countries/${params.slug}` }],
+      links: [{ rel: "canonical", href: `https://www.areeratravels.com/countries/${params.slug}` }],
       scripts: [
         {
           type: "application/ld+json",
@@ -179,7 +179,8 @@ function CountryOrRegion() {
                   Visa-Free & Easy-Visa Asian Destinations Strategy
                 </p>
                 <p className="mt-0.5 text-xs text-slate-300">
-                  Explore side-by-side package budgets, flight timings, and streamlined e-visa rules across Asia.
+                  Explore side-by-side package budgets, flight timings, and streamlined e-visa rules
+                  across Asia.
                 </p>
               </div>
             </div>
@@ -691,7 +692,8 @@ function CountryOrRegion() {
           <div className="mt-10 text-center">
             <Button asChild size="lg" variant="outline" className="border-border/80 bg-card/60">
               <Link to="/countries">
-                <Globe2 className="mr-2 h-4 w-4 text-primary" /> Explore All 50+ Global Visa Destinations
+                <Globe2 className="mr-2 h-4 w-4 text-primary" /> Explore All 50+ Global Visa
+                Destinations
               </Link>
             </Button>
           </div>

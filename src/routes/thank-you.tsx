@@ -29,12 +29,9 @@ type ThankYouSearch = {
 
 export const Route = createFileRoute("/thank-you")({
   validateSearch: (search: Record<string, unknown>): ThankYouSearch => ({
-    service:
-      typeof search["service"] === "string" ? search["service"].slice(0, 80) : undefined,
-    name:
-      typeof search["name"] === "string" ? search["name"].slice(0, 80) : undefined,
-    ref:
-      typeof search["ref"] === "string" ? search["ref"].slice(0, 40) : undefined,
+    service: typeof search["service"] === "string" ? search["service"].slice(0, 80) : undefined,
+    name: typeof search["name"] === "string" ? search["name"].slice(0, 80) : undefined,
+    ref: typeof search["ref"] === "string" ? search["ref"].slice(0, 40) : undefined,
   }),
   head: () => ({
     meta: [
@@ -51,9 +48,9 @@ export const Route = createFileRoute("/thank-you")({
         content:
           "Thank you for reaching out to Areera Travel and Tours. A travel specialist will connect with you via WhatsApp or phone shortly.",
       },
-      { property: "og:url", content: "/thank-you" },
+      { property: "og:url", content: "https://www.areeratravels.com/thank-you" },
     ],
-    links: [{ rel: "canonical", href: "/thank-you" }],
+    links: [{ rel: "canonical", href: "https://www.areeratravels.com/thank-you" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -145,7 +142,8 @@ function ThankYouPage() {
 
         {/* Reassurance text */}
         <p className="mt-4 text-xs text-muted-foreground">
-          ⚡ Typical response time is under 15 minutes during business hours (Mon–Sat: 9:00 AM – 7:00 PM PKT).
+          ⚡ Typical response time is under 15 minutes during business hours (Mon–Sat: 9:00 AM –
+          7:00 PM PKT).
         </p>
       </div>
 
@@ -169,7 +167,8 @@ function ThankYouPage() {
               </div>
               <h3 className="font-semibold text-base text-foreground">Specialist File Review</h3>
               <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                A senior consultant inspects your route, destination visa regulations, and current embassy appointment slots.
+                A senior consultant inspects your route, destination visa regulations, and current
+                embassy appointment slots.
               </p>
               <div className="mt-4 pt-4 border-t border-border/50 text-[11px] font-medium text-emerald-400">
                 Within 15 minutes
@@ -187,7 +186,8 @@ function ThankYouPage() {
               </div>
               <h3 className="font-semibold text-base text-foreground">Itinerary & Checklist</h3>
               <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                We share an exact embassy document checklist, transparent fee schedule, and flight itinerary options via WhatsApp.
+                We share an exact embassy document checklist, transparent fee schedule, and flight
+                itinerary options via WhatsApp.
               </p>
               <div className="mt-4 pt-4 border-t border-border/50 text-[11px] font-medium text-primary">
                 Direct WhatsApp consultation
@@ -205,7 +205,8 @@ function ThankYouPage() {
               </div>
               <h3 className="font-semibold text-base text-foreground">Issuance & Embassy Filing</h3>
               <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                Upon your approval, we issue verifiable airline PNRs, confirmed hotel vouchers, and finalize your embassy application dossier.
+                Upon your approval, we issue verifiable airline PNRs, confirmed hotel vouchers, and
+                finalize your embassy application dossier.
               </p>
               <div className="mt-4 pt-4 border-t border-border/50 text-[11px] font-medium text-foreground/80">
                 100% Embassy-verifiable

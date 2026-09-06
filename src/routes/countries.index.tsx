@@ -1,6 +1,17 @@
 import { useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Clock, FileCheck2, Globe2, Hotel, Plane, Search, ShieldCheck, X } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Clock,
+  FileCheck2,
+  Globe2,
+  Hotel,
+  Plane,
+  Search,
+  ShieldCheck,
+  X,
+} from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/Section";
 import { CountryCard } from "@/components/cards";
@@ -25,15 +36,18 @@ export const Route = createFileRoute("/countries/")({
         content:
           "visa destinations for pakistani passport, list of visa countries from pakistan, tourist visa requirements 2026, evisa countries for pakistani citizens, international travel visa guides, visa fees and processing times pakistan",
       },
-      { property: "og:title", content: "Visa Destinations & Requirements by Country | Areera Travel and Tours" },
+      {
+        property: "og:title",
+        content: "Visa Destinations & Requirements by Country | Areera Travel and Tours",
+      },
       {
         property: "og:description",
         content:
           "Detailed country visa guides with eligibility rules, required documents checklist, and professional filing support for 100+ destinations worldwide.",
       },
-      { property: "og:url", content: "/countries" },
+      { property: "og:url", content: "https://www.areeratravels.com/countries" },
     ],
-    links: [{ rel: "canonical", href: "/countries" }],
+    links: [{ rel: "canonical", href: "https://www.areeratravels.com/countries" }],
     scripts: [
       {
         type: "application/ld+json" as const,
@@ -132,7 +146,9 @@ function CountriesHub() {
                 <p className="font-semibold text-white group-hover:text-primary truncate">
                   Visa Filing Support
                 </p>
-                <p className="text-[10px] text-muted-foreground truncate">End-to-end embassy compliance</p>
+                <p className="text-[10px] text-muted-foreground truncate">
+                  End-to-end embassy compliance
+                </p>
               </div>
               <ArrowRight className="h-3 w-3 text-primary shrink-0 group-hover:translate-x-0.5 transition-transform" />
             </Link>
@@ -146,7 +162,9 @@ function CountriesHub() {
                 <p className="font-semibold text-white group-hover:text-primary truncate">
                   Flight Reservations
                 </p>
-                <p className="text-[10px] text-muted-foreground truncate">Verifiable embassy PNRs</p>
+                <p className="text-[10px] text-muted-foreground truncate">
+                  Verifiable embassy PNRs
+                </p>
               </div>
               <ArrowRight className="h-3 w-3 text-primary shrink-0 group-hover:translate-x-0.5 transition-transform" />
             </Link>
@@ -160,7 +178,9 @@ function CountriesHub() {
                 <p className="font-semibold text-white group-hover:text-amber-300 truncate">
                   Hotel Vouchers
                 </p>
-                <p className="text-[10px] text-muted-foreground truncate">Confirmed embassy bookings</p>
+                <p className="text-[10px] text-muted-foreground truncate">
+                  Confirmed embassy bookings
+                </p>
               </div>
               <ArrowRight className="h-3 w-3 text-amber-400 shrink-0 group-hover:translate-x-0.5 transition-transform" />
             </Link>

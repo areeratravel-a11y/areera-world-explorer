@@ -29,9 +29,9 @@ export const Route = createFileRoute("/about")({
         content:
           "Meet the consultants behind Areera Travel and Tours. Learn about our commitment to accurate visa filing, ticketing, and consular document attestation.",
       },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://www.areeratravels.com/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://www.areeratravels.com/about" }],
     scripts: [
       {
         type: "application/ld+json" as const,
@@ -154,7 +154,11 @@ function About() {
         <Button asChild variant="outline">
           <Link to="/countries">Browse 50+ visa destinations</Link>
         </Button>
-        <Button asChild variant="outline" className="border-cyan-500/30 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20">
+        <Button
+          asChild
+          variant="outline"
+          className="border-cyan-500/30 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20"
+        >
           <Link to="/guides/visa-free-asian-destinations">Asian Travel Guide 2026</Link>
         </Button>
       </div>

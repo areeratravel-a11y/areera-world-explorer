@@ -27,7 +27,9 @@ export const Route = createFileRoute("/hotel-booking")({
   }),
   head: () => ({
     meta: [
-      { title: "Hotel Booking — Verified Stays & Visa-Ready Reservations | Areera Travel and Tours" },
+      {
+        title: "Hotel Booking — Verified Stays & Visa-Ready Reservations | Areera Travel and Tours",
+      },
       {
         name: "description",
         content:
@@ -38,15 +40,19 @@ export const Route = createFileRoute("/hotel-booking")({
         content:
           "confirmed hotel booking for visa, hotel voucher for embassy submission, proof of accommodation visa application, schengen visa hotel booking pakistan, hotel reservation voucher islamabad, embassy compliant hotel booking, genuine hotel voucher with confirmation number",
       },
-      { property: "og:title", content: "Hotel Booking — Verified Stays & Visa-Ready Reservations | Areera Travel and Tours" },
+      {
+        property: "og:title",
+        content:
+          "Hotel Booking — Verified Stays & Visa-Ready Reservations | Areera Travel and Tours",
+      },
       {
         property: "og:description",
         content:
           "Hand-picked hotels and confirmed embassy-approved hotel vouchers arranged by Areera Travel and Tours consultants across 100+ global destinations.",
       },
-      { property: "og:url", content: "/hotel-booking" },
+      { property: "og:url", content: "https://www.areeratravels.com/hotel-booking" },
     ],
-    links: [{ rel: "canonical", href: "/hotel-booking" }],
+    links: [{ rel: "canonical", href: "https://www.areeratravels.com/hotel-booking" }],
     scripts: [
       {
         type: "application/ld+json" as const,
@@ -78,7 +84,12 @@ export const Route = createFileRoute("/hotel-booking")({
 });
 
 const featured = [
-  { name: "Marina Skyline Suites", city: "Dubai, UAE", tag: "City view · Metro nearby", slug: "uae" },
+  {
+    name: "Marina Skyline Suites",
+    city: "Dubai, UAE",
+    tag: "City view · Metro nearby",
+    slug: "uae",
+  },
   {
     name: "Bosphorus Heritage Hotel",
     city: "Istanbul, Turkey",
@@ -91,9 +102,24 @@ const featured = [
     tag: "Walking distance · Family rooms",
     slug: "saudi-arabia",
   },
-  { name: "Bukit Bintang Grand", city: "Kuala Lumpur, Malaysia", tag: "Shopping district · Pool", slug: "malaysia" },
-  { name: "Nile Court Cairo", city: "Cairo, Egypt", tag: "Riverside · Airport transfer", slug: "egypt" },
-  { name: "Sukhumvit Garden Inn", city: "Bangkok, Thailand", tag: "BTS access · Rooftop", slug: "thailand" },
+  {
+    name: "Bukit Bintang Grand",
+    city: "Kuala Lumpur, Malaysia",
+    tag: "Shopping district · Pool",
+    slug: "malaysia",
+  },
+  {
+    name: "Nile Court Cairo",
+    city: "Cairo, Egypt",
+    tag: "Riverside · Airport transfer",
+    slug: "egypt",
+  },
+  {
+    name: "Sukhumvit Garden Inn",
+    city: "Bangkok, Thailand",
+    tag: "BTS access · Rooftop",
+    slug: "thailand",
+  },
 ];
 
 function HotelBooking() {

@@ -16,7 +16,10 @@ import { attestationArticle, attestationFaqs } from "@/data/content";
 export const Route = createFileRoute("/services/attestation")({
   head: () => ({
     meta: [
-      { title: "Document Attestation Services — MOFA, HEC & Embassy Legalization | Areera Travel and Tours" },
+      {
+        title:
+          "Document Attestation Services — MOFA, HEC & Embassy Legalization | Areera Travel and Tours",
+      },
       {
         name: "description",
         content:
@@ -27,15 +30,19 @@ export const Route = createFileRoute("/services/attestation")({
         content:
           "mofa attestation islamabad, hec degree attestation pakistan, saudi embassy attestation pakistan, uae embassy attestation islamabad, qatar embassy attestation, document attestation blue area islamabad, nikahnama mofa attestation, birth certificate attestation nadra, ibcc attestation agent",
       },
-      { property: "og:title", content: "Document Attestation Services — MOFA, HEC & Embassy Legalization | Areera Travel and Tours" },
+      {
+        property: "og:title",
+        content:
+          "Document Attestation Services — MOFA, HEC & Embassy Legalization | Areera Travel and Tours",
+      },
       {
         property: "og:description",
         content:
           "Degree, diploma, marriage certificate, and commercial attestation for Gulf employment and global residency handled securely by Areera Travel and Tours.",
       },
-      { property: "og:url", content: "/services/attestation" },
+      { property: "og:url", content: "https://www.areeratravels.com/services/attestation" },
     ],
-    links: [{ rel: "canonical", href: "/services/attestation" }],
+    links: [{ rel: "canonical", href: "https://www.areeratravels.com/services/attestation" }],
     scripts: [
       {
         type: "application/ld+json" as const,

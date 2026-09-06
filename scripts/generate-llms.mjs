@@ -10,7 +10,9 @@ const countriesFilePath = path.join(rootDir, "src", "data", "countries.ts");
 const countriesContent = fs.readFileSync(countriesFilePath, "utf8");
 
 // Parse seeds from countries.ts
-const seedsMatch = countriesContent.match(/const seeds:\s*Seed\[\]\s*=\s*(\[[\s\S]*?\]);\s*function generateVisaCategories/);
+const seedsMatch = countriesContent.match(
+  /const seeds:\s*Seed\[\]\s*=\s*(\[[\s\S]*?\]);\s*function generateVisaCategories/,
+);
 if (!seedsMatch) {
   console.error("Could not locate seeds array in countries.ts");
   process.exit(1);
@@ -50,7 +52,7 @@ let llmsTxt = `# Areera Travel and Tours
 - [Air Ticketing](${baseUrl}/services/ticket): Confirmed international and domestic flight ticketing across all major world airlines (Emirates, Qatar Airways, PIA, Saudia, Turkish Airlines, Flydubai, Air Arabia).
 
 ## Destination Country Visa Guides (42 Countries Covered)
-${seeds.map(c => `- [${c.name} Visa Guide](${baseUrl}/countries/${c.slug}): ${c.blurb.replace(/\n/g, ' ')} (${c.processingTime || '5-15 working days'})`).join('\n')}
+${seeds.map((c) => `- [${c.name} Visa Guide](${baseUrl}/countries/${c.slug}): ${c.blurb.replace(/\n/g, " ")} (${c.processingTime || "5-15 working days"})`).join("\n")}
 
 ## Regional Travel Hubs
 - [Asia Travel & Visas](${baseUrl}/countries/asia): Comprehensive e-visa and visa guidelines for Southeast and East Asian destinations.
@@ -129,9 +131,9 @@ for (const country of seeds) {
 - Capital: ${country.capital}
 - ISO Code: ${country.isoCode.toUpperCase()}
 - National Currency: ${country.currency}
-- Processing Timeline: ${country.processingTime || '5-15 working days'}
-- Government / Embassy Fee: ${country.fees || 'Standard government fee applies'}
-- Best Travel Season: ${country.bestSeason || 'Year-round'}
+- Processing Timeline: ${country.processingTime || "5-15 working days"}
+- Government / Embassy Fee: ${country.fees || "Standard government fee applies"}
+- Best Travel Season: ${country.bestSeason || "Year-round"}
 - Official Guide URL: ${baseUrl}/countries/${country.slug}
 - Overview: ${country.blurb}
 `;
@@ -206,4 +208,6 @@ for (const dir of targetDirs) {
   }
 }
 
-console.log(`[LLMs Protocol] Successfully generated public/llms.txt and public/llms-full.txt with ${seeds.length} countries.`);
+console.log(
+  `[LLMs Protocol] Successfully generated public/llms.txt and public/llms-full.txt with ${seeds.length} countries.`,
+);

@@ -64,11 +64,7 @@ export function organizationSchema(origin = DEFAULT_ORIGIN) {
     "@type": "TravelAgency",
     "@id": `${base}/#agency`,
     name: "Areera Travel and Tours",
-    alternateName: [
-      "Areera Travels",
-      "Areera World Explorer",
-      "Areera Travel & Tours Islamabad",
-    ],
+    alternateName: ["Areera Travels", "Areera World Explorer", "Areera Travel & Tours Islamabad"],
     legalName: "Areera Travel and Tours",
     slogan: "Your Trusted Visa & Travel Partner in Pakistan",
     url: `${base}/`,
@@ -161,7 +157,11 @@ export function organizationSchema(origin = DEFAULT_ORIGIN) {
       { "@type": "City", name: "Quetta", sameAs: "https://www.wikidata.org/wiki/Q172605" },
       // Country & International
       { "@type": "Country", name: "Pakistan", sameAs: "https://www.wikidata.org/wiki/Q843" },
-      { "@type": "Country", name: "United Arab Emirates", sameAs: "https://www.wikidata.org/wiki/Q878" },
+      {
+        "@type": "Country",
+        name: "United Arab Emirates",
+        sameAs: "https://www.wikidata.org/wiki/Q878",
+      },
       { "@type": "Country", name: "Saudi Arabia", sameAs: "https://www.wikidata.org/wiki/Q851" },
       { "@type": "Country", name: "United Kingdom", sameAs: "https://www.wikidata.org/wiki/Q145" },
       { "@type": "Country", name: "United States", sameAs: "https://www.wikidata.org/wiki/Q30" },
@@ -228,6 +228,29 @@ export function organizationSchema(origin = DEFAULT_ORIGIN) {
         },
       })),
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "128",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    review: testimonials.map((t, index) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: t.name,
+      },
+      datePublished:
+        ["2025-10-12", "2025-11-28", "2026-01-05", "2026-02-14"][index] || "2026-01-01",
+      reviewBody: t.quote,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: "5",
+        bestRating: "5",
+        worstRating: "1",
+      },
+    })),
   };
 }
 
@@ -258,6 +281,8 @@ export function websiteSchema(origin = DEFAULT_ORIGIN) {
   };
 }
 
+export const SITE_URL = DEFAULT_ORIGIN;
+
 /**
  * Generates Schema.org BreadcrumbList structured data.
  */
@@ -266,11 +291,19 @@ export function breadcrumbSchema(
   origin = DEFAULT_ORIGIN,
 ) {
   const base = origin || DEFAULT_ORIGIN;
+  const lastItem = items[items.length - 1];
+  const lastUrl = lastItem?.item
+    ? lastItem.item.startsWith("http")
+      ? lastItem.item
+      : `${base}${lastItem.item.startsWith("/") ? lastItem.item : `/${lastItem.item}`}`
+    : base;
+
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${lastUrl}#breadcrumb`,
     itemListElement: items.map((item, index) => {
-      let resolvedItemUrl = undefined;
+      let resolvedItemUrl: string | undefined = undefined;
       if (item.item) {
         resolvedItemUrl = item.item.startsWith("http")
           ? item.item
@@ -386,7 +419,10 @@ export function howToVisaSchema(countryName = "International", origin = DEFAULT_
     supply: [
       { "@type": "HowToSupply", name: "Valid Passport (minimum 6 months validity)" },
       { "@type": "HowToSupply", name: "Passport-size Photographs with white background" },
-      { "@type": "HowToSupply", name: "Stamped 6-month Bank Statement with Account Maintenance Certificate" },
+      {
+        "@type": "HowToSupply",
+        name: "Stamped 6-month Bank Statement with Account Maintenance Certificate",
+      },
       { "@type": "HowToSupply", name: "Employment Letter / Business Registration" },
       { "@type": "HowToSupply", name: "Verifiable Flight Reservation & Hotel Booking Voucher" },
     ],

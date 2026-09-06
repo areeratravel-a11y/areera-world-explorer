@@ -32,16 +32,16 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4 py-12">
       <div className="max-w-xl text-center">
-        <h1 className="text-2xl font-bold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
+        <h1 className="text-2xl font-bold tracking-tight text-foreground">This page didn't load</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong while rendering this page.
         </p>
 
         {error ? (
           <div className="mt-4 text-left overflow-x-auto rounded-xl border border-destructive/30 bg-destructive/10 p-4 text-xs font-mono text-destructive">
-            <p className="font-bold">{error.name}: {error.message}</p>
+            <p className="font-bold">
+              {error.name}: {error.message}
+            </p>
             {error.stack ? (
               <pre className="mt-2 whitespace-pre-wrap text-[11px] text-muted-foreground opacity-80 max-h-48 overflow-y-auto">
                 {error.stack}
@@ -85,23 +85,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:site_name", content: "Areera Travel and Tours" },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/og-image.jpg" },
+      { property: "og:image", content: "https://www.areeratravels.com/og-image.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Areera Travel and Tours — World Explorer & Visa Assistance" },
+      {
+        property: "og:image:alt",
+        content: "Areera Travel and Tours — World Explorer & Visa Assistance",
+      },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "/og-image.jpg" },
+      { name: "twitter:image", content: "https://www.areeratravels.com/og-image.jpg" },
       { name: "theme-color", content: "#090d16" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad, Pakistan" },
       { name: "geo.position", content: "33.7167;73.0667" },
       { name: "ICBM", content: "33.7167, 73.0667" },
       { name: "author", content: "Arslan Ahmed & Hareera — Areera Travel and Tours" },
-      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      {
+        name: "robots",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "icon", type: "image/png", sizes: "48x48", href: "/favicon-48x48.png" },
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
       { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
       { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },

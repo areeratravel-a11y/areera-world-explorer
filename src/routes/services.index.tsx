@@ -24,15 +24,18 @@ export const Route = createFileRoute("/services/")({
         content:
           "travel and visa services islamabad, visa filing ticketing attestation pakistan, flight reservations hotel vouchers, overseas travel consultancy pakistan, areera travel services",
       },
-      { property: "og:title", content: "Travel Services — Visa, Ticketing & Attestation | Areera Travel and Tours" },
+      {
+        property: "og:title",
+        content: "Travel Services — Visa, Ticketing & Attestation | Areera Travel and Tours",
+      },
       {
         property: "og:description",
         content:
           "Full suite of travel services: expert visa advisory, confirmed flight ticketing, consular document attestation, and visa-compliant hotel reservations.",
       },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: "https://www.areeratravels.com/services" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://www.areeratravels.com/services" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -47,10 +50,19 @@ export const Route = createFileRoute("/services/")({
         type: "application/ld+json" as const,
         children: JSON.stringify(faqPageSchema(servicesFaqs)),
       },
-      ...services.map((s) => ({
+      {
         type: "application/ld+json" as const,
-        children: JSON.stringify(serviceSchema(s)),
-      })),
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Areera Travel & Visa Services",
+          itemListElement: services.map((s, idx) => ({
+            "@type": "ListItem",
+            position: idx + 1,
+            item: serviceSchema(s),
+          })),
+        }),
+      },
     ],
   }),
   component: ServicesHub,

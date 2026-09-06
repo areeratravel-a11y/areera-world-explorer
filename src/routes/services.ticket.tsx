@@ -24,15 +24,18 @@ export const Route = createFileRoute("/services/ticket")({
         content:
           "air ticketing agency islamabad, international flight tickets pakistan, cheap airline tickets islamabad, umrah flight tickets, pia tickets agent blue area, emirates qatar airways flights, domestic air ticketing pakistan",
       },
-      { property: "og:title", content: "Air Ticket Booking — Domestic & International Routes | Areera Travel and Tours" },
+      {
+        property: "og:title",
+        content: "Air Ticket Booking — Domestic & International Routes | Areera Travel and Tours",
+      },
       {
         property: "og:description",
         content:
           "Compare airline fares across hundreds of routes, book group departures, and manage date changes with 24/7 support from Areera Travel and Tours.",
       },
-      { property: "og:url", content: "/services/ticket" },
+      { property: "og:url", content: "https://www.areeratravels.com/services/ticket" },
     ],
-    links: [{ rel: "canonical", href: "/services/ticket" }],
+    links: [{ rel: "canonical", href: "https://www.areeratravels.com/services/ticket" }],
     scripts: [
       {
         type: "application/ld+json" as const,

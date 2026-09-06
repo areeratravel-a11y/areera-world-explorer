@@ -23,15 +23,18 @@ export const Route = createFileRoute("/contact")({
         content:
           "contact areera travel, areera travels phone number, areera travels whatsapp, travel agency blue area islamabad, visa consultants contact islamabad",
       },
-      { property: "og:title", content: "Contact Areera Travel and Tours — Phone, WhatsApp & Office" },
+      {
+        property: "og:title",
+        content: "Contact Areera Travel and Tours — Phone, WhatsApp & Office",
+      },
       {
         property: "og:description",
         content:
           "Connect with Areera Travel consultants by phone, WhatsApp, email, or visit our office for prompt, personalized travel assistance.",
       },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://www.areeratravels.com/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://www.areeratravels.com/contact" }],
     scripts: [
       {
         type: "application/ld+json" as const,
