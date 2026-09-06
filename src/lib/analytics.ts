@@ -8,6 +8,7 @@ declare global {
   interface Window {
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
+    clarity?: (...args: unknown[]) => void;
   }
 }
 
@@ -87,6 +88,14 @@ export function trackEvent(eventName: string, params: Record<string, unknown> = 
 
   if (measurementId && window.gtag) {
     window.gtag("event", eventName, params);
+  }
+
+  if (typeof window !== "undefined" && typeof window.clarity === "function") {
+    try {
+      window.clarity("event", eventName);
+    } catch {
+      // Gracefully ignore Clarity event dispatch errors
+    }
   }
 
   if (import.meta.env.DEV) {
