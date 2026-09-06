@@ -4,7 +4,7 @@ import { H as Compass, P as HeartHandshake, s as Target } from "../_libs/lucide-
 import { t as Breadcrumbs } from "./Breadcrumbs-_GnoNGyX.mjs";
 import { i as SectionHeading, n as Reveal, r as Section } from "./Reveal-3UjQit6f.mjs";
 import { n as FaqSection, t as ContentArticle } from "./FaqSection-C2Lyxuf-.mjs";
-import { _ as aboutFaqs, g as aboutArticle, z as Button } from "./router-CHnD0jOi2.mjs";
+import { _ as aboutFaqs, g as aboutArticle, z as Button } from "./router-WJUDkRHe2.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/about-73fqBY40.js
 var import_jsx_runtime = require_jsx_runtime();
 var team = [

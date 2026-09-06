@@ -1,1 +1,0 @@
-import{A as e}from"./index-CS56491s.js";var t=e;export{t as notFoundComponent};
