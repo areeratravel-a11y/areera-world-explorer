@@ -219,9 +219,9 @@ function VisaFreeAsianDestinationsPage() {
       />
 
       {/* Header Banner */}
-      <div className="relative mb-12 overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-br from-card/90 via-navy/70 to-navy-deep p-6 sm:p-10 shadow-lg backdrop-blur-xl">
+      <div className="relative mb-12 overflow-hidden rounded-2xl border border-blue-200/80 bg-gradient-to-br from-blue-50/80 via-white to-slate-50 p-6 sm:p-10 shadow-sm">
         <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wider text-primary">
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-blue-300/80 bg-blue-50 px-3 py-1 text-xs font-semibold tracking-wider text-blue-700">
             <span>2026 Asian Travel Corridor Intelligence</span>
           </div>
           <h1 className="mt-4 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
@@ -323,7 +323,7 @@ function VisaFreeAsianDestinationsPage() {
                     <p className="text-xs text-primary font-medium">{g.regime}</p>
                   </div>
                 </div>
-                <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-400">
+                <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">
                   <Clock className="h-3 w-3" /> {g.speed}
                 </span>
               </div>
@@ -338,7 +338,7 @@ function VisaFreeAsianDestinationsPage() {
                 </div>
                 <div className="rounded-xl border border-border/60 bg-muted/20 p-2.5">
                   <span className="flex items-center gap-1 text-[11px] text-muted-foreground">
-                    <Wallet className="h-3 w-3 text-emerald-400" /> Daily Spend
+                    <Wallet className="h-3 w-3 text-emerald-700" /> Daily Spend
                   </span>
                   <span className="mt-1 block font-semibold text-foreground">{g.budget}</span>
                 </div>
@@ -416,7 +416,7 @@ function VisaFreeAsianDestinationsPage() {
                   </Link>
                 </td>
                 <td className="p-4 text-muted-foreground">MDAC Online Registration</td>
-                <td className="p-4 text-emerald-400 font-medium">&lt; 24 Hours</td>
+                <td className="p-4 text-emerald-700 font-semibold">&lt; 24 Hours</td>
                 <td className="p-4 text-foreground font-semibold">$650 – $920 USD</td>
                 <td className="p-4 text-muted-foreground">Nov – Mar</td>
               </tr>
@@ -431,7 +431,7 @@ function VisaFreeAsianDestinationsPage() {
                   </Link>
                 </td>
                 <td className="p-4 text-muted-foreground">Free Visa on Arrival (MLE)</td>
-                <td className="p-4 text-emerald-400 font-medium">Instant</td>
+                <td className="p-4 text-emerald-700 font-semibold">Instant</td>
                 <td className="p-4 text-foreground font-semibold">$890 – $1,850 USD</td>
                 <td className="p-4 text-muted-foreground">Nov – Apr</td>
               </tr>
@@ -446,7 +446,7 @@ function VisaFreeAsianDestinationsPage() {
                   </Link>
                 </td>
                 <td className="p-4 text-muted-foreground">ASAN Electronic Visa</td>
-                <td className="p-4 text-emerald-400 font-medium">3 Days</td>
+                <td className="p-4 text-emerald-700 font-semibold">3 Days</td>
                 <td className="p-4 text-foreground font-semibold">$580 – $840 USD</td>
                 <td className="p-4 text-muted-foreground">Apr – Jun, Sep – Nov</td>
               </tr>
@@ -461,7 +461,7 @@ function VisaFreeAsianDestinationsPage() {
                   </Link>
                 </td>
                 <td className="p-4 text-muted-foreground">Fast-Track eVOA</td>
-                <td className="p-4 text-emerald-400 font-medium">24–72 Hours</td>
+                <td className="p-4 text-emerald-700 font-semibold">24–72 Hours</td>
                 <td className="p-4 text-foreground font-semibold">$520 – $790 USD</td>
                 <td className="p-4 text-muted-foreground">Nov – Feb</td>
               </tr>
@@ -476,7 +476,7 @@ function VisaFreeAsianDestinationsPage() {
                   </Link>
                 </td>
                 <td className="p-4 text-muted-foreground">Electronic Travel Authorization</td>
-                <td className="p-4 text-emerald-400 font-medium">24 Hours</td>
+                <td className="p-4 text-emerald-700 font-semibold">24 Hours</td>
                 <td className="p-4 text-foreground font-semibold">$490 – $740 USD</td>
                 <td className="p-4 text-muted-foreground">Dec – Apr</td>
               </tr>
@@ -512,7 +512,7 @@ function VisaFreeAsianDestinationsPage() {
       </div>
 
       {/* High-Converting CTA Block */}
-      <div className="mt-16 relative overflow-hidden rounded-2xl border border-primary/40 bg-gradient-to-br from-primary/15 via-card to-navy-deep p-8 text-center sm:p-12 shadow-xl">
+      <div className="mt-16 relative overflow-hidden rounded-2xl border border-blue-200/80 bg-gradient-to-br from-blue-50/70 via-white to-indigo-50/50 p-8 text-center sm:p-12 shadow-md">
         <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           Plan Your Next Asian Holiday with <span className="chrome-text">Areera Travels</span>
         </h2>
@@ -544,14 +544,14 @@ function VisaFreeAsianDestinationsPage() {
             asChild
             size="lg"
             variant="outline"
-            className="border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20"
+            className="border-emerald-500/40 bg-emerald-500/10 text-emerald-700 hover:bg-emerald-500/20"
           >
             <a
               href={`https://wa.me/${cleanWhatsApp}?text=${encodeURIComponent("Hello Areera Travels, I would like a quote for a visa-free Asian holiday package.")}`}
               target="_blank"
               rel="noreferrer"
             >
-              <MessageSquare className="mr-2 h-4 w-4 text-emerald-400" /> WhatsApp Specialist
+              <MessageSquare className="mr-2 h-4 w-4 text-emerald-700" /> WhatsApp Specialist
             </a>
           </Button>
         </div>

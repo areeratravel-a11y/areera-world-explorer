@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { contactInfo } from "@/data/site";
 import { breadcrumbSchema } from "@/lib/json-ld";
 import { popularDestinations, countries } from "@/data/countries";
+import { WhatsAppIcon } from "@/components/FloatingWhatsApp";
 
 type ThankYouSearch = {
   service?: string | undefined;
@@ -89,15 +90,15 @@ function ThankYouPage() {
       />
 
       {/* Confirmation Hero Card */}
-      <div className="relative mx-auto max-w-3xl rounded-2xl border border-white/20 bg-card/85 p-6 sm:p-12 shadow-2xl backdrop-blur-xl text-center">
+      <div className="relative mx-auto max-w-3xl rounded-2xl border border-border bg-card p-6 sm:p-12 shadow-lg text-center">
         {/* Animated Success Badge */}
-        <div className="inline-flex items-center justify-center p-3 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 mb-6 animate-in zoom-in-75 duration-300">
-          <div className="rounded-full bg-emerald-500 p-2.5 text-background shadow-lg shadow-emerald-500/30">
+        <div className="inline-flex items-center justify-center p-3 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 mb-6 animate-in zoom-in-75 duration-300">
+          <div className="rounded-full bg-emerald-600 p-2.5 text-white shadow-lg shadow-emerald-600/30">
             <CheckCircle2 className="h-8 w-8 stroke-[2.5]" />
           </div>
         </div>
 
-        <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400 mb-4">
+        <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 mb-4">
           <span>Inquiry Logged & Prioritized</span>
         </div>
 
@@ -112,7 +113,7 @@ function ThankYouPage() {
         </p>
 
         {/* Reference ID Pill */}
-        <div className="mx-auto mt-5 inline-flex items-center gap-2 rounded-xl border border-white/10 bg-background/60 px-4 py-2 text-xs text-muted-foreground">
+        <div className="mx-auto mt-5 inline-flex items-center gap-2 rounded-xl border border-border bg-slate-50 px-4 py-2 text-xs text-muted-foreground">
           <span>Inquiry Reference:</span>
           <span className="font-mono font-bold text-primary tracking-wider">{referenceCode}</span>
         </div>
@@ -125,9 +126,9 @@ function ThankYouPage() {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl bg-emerald-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-600/25 transition-transform hover:scale-[1.02] hover:bg-emerald-500"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#25D366] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-600/25 transition-all hover:scale-[1.02] hover:bg-[#20bd5a]"
           >
-            <MessageCircle className="h-4 w-4" />
+            <WhatsAppIcon className="h-4 w-4" />
             <span>Open WhatsApp Directly</span>
           </a>
 
@@ -170,7 +171,7 @@ function ThankYouPage() {
                 A senior consultant inspects your route, destination visa regulations, and current
                 embassy appointment slots.
               </p>
-              <div className="mt-4 pt-4 border-t border-border/50 text-[11px] font-medium text-emerald-400">
+              <div className="mt-4 pt-4 border-t border-border/50 text-xs font-semibold text-emerald-700">
                 Within 15 minutes
               </div>
             </div>
@@ -189,7 +190,7 @@ function ThankYouPage() {
                 We share an exact embassy document checklist, transparent fee schedule, and flight
                 itinerary options via WhatsApp.
               </p>
-              <div className="mt-4 pt-4 border-t border-border/50 text-[11px] font-medium text-primary">
+              <div className="mt-4 pt-4 border-t border-border/50 text-xs font-semibold text-primary">
                 Direct WhatsApp consultation
               </div>
             </div>
@@ -208,7 +209,7 @@ function ThankYouPage() {
                 Upon your approval, we issue verifiable airline PNRs, confirmed hotel vouchers, and
                 finalize your embassy application dossier.
               </p>
-              <div className="mt-4 pt-4 border-t border-border/50 text-[11px] font-medium text-foreground/80">
+              <div className="mt-4 pt-4 border-t border-border/50 text-xs font-semibold text-foreground">
                 100% Embassy-verifiable
               </div>
             </div>
@@ -281,7 +282,7 @@ function ThankYouPage() {
         </div>
 
         {/* Popular Destination Chips */}
-        <div className="mt-8 rounded-2xl border border-white/10 bg-card/50 p-5">
+        <div className="mt-8 rounded-2xl border border-border bg-card p-5 shadow-xs">
           <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
             Popular Country Visa Guides
           </p>

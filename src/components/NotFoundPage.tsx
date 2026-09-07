@@ -72,16 +72,16 @@ export function NotFoundPage() {
 
       {/* Decorative radar flight path rings */}
       <div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-20"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-30"
         aria-hidden="true"
       >
-        <div className="h-[400px] w-[400px] rounded-full border border-dashed border-white/20 animate-spin [animation-duration:90s]" />
-        <div className="absolute h-[650px] w-[650px] rounded-full border border-white/10" />
+        <div className="h-[400px] w-[400px] rounded-full border border-dashed border-blue-200 animate-spin [animation-duration:90s]" />
+        <div className="absolute h-[650px] w-[650px] rounded-full border border-blue-100" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-4xl text-center">
         {/* Status Pill Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 text-xs font-medium text-primary shadow-inner backdrop-blur-md">
+        <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 text-xs font-medium text-primary shadow-xs">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
@@ -92,7 +92,7 @@ export function NotFoundPage() {
 
         {/* Hero 404 Title */}
         <div className="relative mt-6 select-none">
-          <h1 className="text-8xl sm:text-9xl font-extrabold tracking-tighter bg-gradient-to-b from-white via-slate-200 to-slate-500 bg-clip-text text-transparent drop-shadow-sm">
+          <h1 className="text-8xl sm:text-9xl font-extrabold tracking-tighter bg-gradient-to-b from-blue-600 via-indigo-600 to-slate-400 bg-clip-text text-transparent">
             404
           </h1>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
@@ -117,7 +117,7 @@ export function NotFoundPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search a country, city, or service (e.g., Dubai, UK, Visa)..."
-                className="w-full rounded-2xl border border-white/15 bg-card/80 py-3.5 pl-10 pr-24 text-sm text-foreground placeholder:text-muted-foreground shadow-lg backdrop-blur-md transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/40"
+                className="w-full rounded-2xl border border-slate-200 bg-white py-3.5 pl-10 pr-24 text-sm text-foreground placeholder:text-muted-foreground shadow-md transition-all focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
               <Button
                 type="submit"
@@ -130,7 +130,7 @@ export function NotFoundPage() {
 
             {/* Instant Search Suggestions Dropdown */}
             {searchResults.length > 0 && (
-              <div className="absolute left-0 right-0 top-full mt-2 z-30 rounded-2xl border border-white/15 bg-card/95 p-2 shadow-2xl backdrop-blur-xl text-left divide-y divide-white/5">
+              <div className="absolute left-0 right-0 top-full mt-2 z-30 rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl text-left divide-y divide-slate-100">
                 <div className="px-3 py-1.5 text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">
                   Matching Destinations
                 </div>
@@ -140,7 +140,7 @@ export function NotFoundPage() {
                       key={c.slug}
                       to="/countries/$slug"
                       params={{ slug: c.slug }}
-                      className="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/10 transition-colors text-sm"
+                      className="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-slate-50 transition-colors text-sm"
                     >
                       <div className="flex items-center gap-3">
                         <CountryFlag isoCode={c.isoCode} countryName={c.name} size="sm" />
@@ -161,7 +161,7 @@ export function NotFoundPage() {
         {/* Primary Action Buttons */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
           <Link to="/">
-            <Button size="lg" className="rounded-xl gap-2 font-semibold shadow-md shadow-primary/20">
+            <Button size="lg" className="rounded-xl gap-2 font-semibold shadow-sm">
               <Home className="h-4 w-4" />
               Return to Homepage
             </Button>
@@ -170,7 +170,7 @@ export function NotFoundPage() {
             <Button
               variant="outline"
               size="lg"
-              className="rounded-xl gap-2 font-semibold border-white/15 bg-card/60 hover:bg-white/10 text-foreground"
+              className="rounded-xl gap-2 font-semibold border-slate-200 bg-white hover:bg-slate-50 text-foreground shadow-xs"
             >
               <Globe2 className="h-4 w-4 text-primary" />
               Browse All 100+ Countries
@@ -184,9 +184,9 @@ export function NotFoundPage() {
             <Button
               variant="secondary"
               size="lg"
-              className="rounded-xl gap-2 font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/30"
+              className="rounded-xl gap-2 font-semibold bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 shadow-xs"
             >
-              <Phone className="h-4 w-4" />
+              <Phone className="h-4 w-4 text-emerald-600" />
               WhatsApp Helpdesk
             </Button>
           </a>
@@ -194,7 +194,7 @@ export function NotFoundPage() {
 
         {/* Popular Destination Quick Chips */}
         {featuredCountries.length > 0 && (
-          <div className="mt-10 pt-8 border-t border-white/10">
+          <div className="mt-10 pt-8 border-t border-slate-200">
             <div className="flex items-center justify-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
               <span>Or jump to popular destinations</span>
             </div>
@@ -204,7 +204,7 @@ export function NotFoundPage() {
                   key={c.slug}
                   to="/countries/$slug"
                   params={{ slug: c.slug }}
-                  className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-card/60 px-3 py-1.5 text-xs font-medium text-foreground/90 hover:bg-white/10 hover:border-white/20 transition-all hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50 hover:border-blue-300 shadow-xs transition-all hover:-translate-y-0.5"
                 >
                   <CountryFlag isoCode={c.isoCode} countryName={c.name} size="xs" />
                   <span>{c.name}</span>
@@ -218,9 +218,9 @@ export function NotFoundPage() {
         <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
           <Link
             to="/services/visa"
-            className="group rounded-2xl border border-white/10 bg-card/40 p-4 transition-all hover:bg-card/80 hover:border-primary/40 hover:shadow-lg"
+            className="group rounded-2xl border border-slate-200 bg-white p-4 transition-all hover:border-blue-300 hover:shadow-md"
           >
-            <div className="h-9 w-9 rounded-xl bg-blue-500/15 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+            <div className="h-9 w-9 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
               <Stamp className="h-4 w-4" />
             </div>
             <div className="mt-3 font-semibold text-sm text-foreground">Visa Guidance</div>
@@ -229,9 +229,9 @@ export function NotFoundPage() {
 
           <Link
             to="/flight-reservation"
-            className="group rounded-2xl border border-white/10 bg-card/40 p-4 transition-all hover:bg-card/80 hover:border-primary/40 hover:shadow-lg"
+            className="group rounded-2xl border border-slate-200 bg-white p-4 transition-all hover:border-blue-300 hover:shadow-md"
           >
-            <div className="h-9 w-9 rounded-xl bg-purple-500/15 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
+            <div className="h-9 w-9 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
               <TicketsPlane className="h-4 w-4" />
             </div>
             <div className="mt-3 font-semibold text-sm text-foreground">Flight Itineraries</div>
@@ -240,9 +240,9 @@ export function NotFoundPage() {
 
           <Link
             to="/hotel-booking"
-            className="group rounded-2xl border border-white/10 bg-card/40 p-4 transition-all hover:bg-card/80 hover:border-primary/40 hover:shadow-lg"
+            className="group rounded-2xl border border-slate-200 bg-white p-4 transition-all hover:border-blue-300 hover:shadow-md"
           >
-            <div className="h-9 w-9 rounded-xl bg-emerald-500/15 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+            <div className="h-9 w-9 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
               <BedDouble className="h-4 w-4" />
             </div>
             <div className="mt-3 font-semibold text-sm text-foreground">Hotel Booking</div>
@@ -251,9 +251,9 @@ export function NotFoundPage() {
 
           <Link
             to="/services/attestation"
-            className="group rounded-2xl border border-white/10 bg-card/40 p-4 transition-all hover:bg-card/80 hover:border-primary/40 hover:shadow-lg"
+            className="group rounded-2xl border border-slate-200 bg-white p-4 transition-all hover:border-blue-300 hover:shadow-md"
           >
-            <div className="h-9 w-9 rounded-xl bg-amber-500/15 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+            <div className="h-9 w-9 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
               <FileCheck2 className="h-4 w-4" />
             </div>
             <div className="mt-3 font-semibold text-sm text-foreground">Attestation</div>

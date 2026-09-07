@@ -30,6 +30,7 @@ import { Reveal } from "@/components/Reveal";
 import { CountryCard } from "@/components/cards";
 import { Button } from "@/components/ui/button";
 import { CountryFlag } from "@/components/CountryFlag";
+import { WhatsAppIcon } from "@/components/FloatingWhatsApp";
 import {
   REGION_SLUGS,
   countries,
@@ -146,8 +147,8 @@ function CountryOrRegion() {
       <Section>
         <Breadcrumbs items={[{ label: "Countries", to: "/countries" }, { label: data.region }]} />
 
-        <div className="relative mb-10 overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-br from-card/90 via-navy/70 to-navy-deep p-6 sm:p-10 shadow-lg backdrop-blur-xl">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+        <div className="relative mb-10 overflow-hidden rounded-2xl border border-blue-200/80 bg-gradient-to-br from-blue-50/80 via-white to-slate-50 p-6 sm:p-10 shadow-sm">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-300/80 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-700">
             <Globe2 className="h-3.5 w-3.5" /> Regional Hub
           </span>
           <h1 className="mt-4 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -166,19 +167,19 @@ function CountryOrRegion() {
         </div>
 
         {data.region === "Asia" && (
-          <div className="mt-10 rounded-2xl border border-cyan-500/30 bg-gradient-to-r from-blue-950/60 via-slate-900/80 to-cyan-950/40 p-5 sm:p-6 shadow-md backdrop-blur-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="mt-10 rounded-2xl border border-blue-200/90 bg-gradient-to-r from-blue-50/90 via-sky-50/50 to-white p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3.5">
-              <div className="h-10 w-10 rounded-xl bg-cyan-500/15 border border-cyan-400/20 flex items-center justify-center text-cyan-400 shrink-0">
+              <div className="h-10 w-10 rounded-xl bg-blue-100 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0">
                 <Globe2 className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-cyan-400">
+                <p className="text-xs font-bold uppercase tracking-wider text-blue-700">
                   Featured 2026 Travel Guide
                 </p>
-                <p className="mt-0.5 text-sm font-semibold text-white">
+                <p className="mt-0.5 text-sm font-semibold text-slate-900">
                   Visa-Free & Easy-Visa Asian Destinations Strategy
                 </p>
-                <p className="mt-0.5 text-xs text-slate-300">
+                <p className="mt-0.5 text-xs text-slate-600">
                   Explore side-by-side package budgets, flight timings, and streamlined e-visa rules
                   across Asia.
                 </p>
@@ -206,7 +207,7 @@ function CountryOrRegion() {
           </Button>
           <Button asChild variant="outline" className="border-border/80 bg-card/60">
             <Link to="/hotel-booking">
-              <Hotel className="mr-2 h-4 w-4 text-amber-400" /> Hotel Bookings
+              <Hotel className="mr-2 h-4 w-4 text-primary" /> Hotel Bookings
             </Link>
           </Button>
         </div>
@@ -227,7 +228,7 @@ function CountryOrRegion() {
   return (
     <>
       {/* Country Hero Header */}
-      <section className="relative overflow-hidden border-b border-border/80 bg-gradient-to-b from-navy-deep/90 via-background to-background">
+      <section className="relative overflow-hidden border-b border-border/80 bg-gradient-to-b from-blue-50/60 via-background to-background">
         <div aria-hidden className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="animate-orbit absolute -right-24 -top-24 h-96 w-96 rounded-full border border-primary/40" />
           <div className="animate-float absolute right-1/4 top-16 text-5xl opacity-30">✈</div>
@@ -258,7 +259,7 @@ function CountryOrRegion() {
                   <span className="inline-flex items-center gap-1 rounded-full border border-primary/40 bg-primary/15 px-3 py-0.5 text-xs font-semibold text-primary">
                     <Globe2 className="h-3 w-3" /> {country.region}
                   </span>
-                  <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-0.5 text-xs font-semibold text-emerald-400">
+                  <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-0.5 text-xs font-semibold text-emerald-700">
                     <Clock className="h-3 w-3" /> {country.processingTime}
                   </span>
                 </div>
@@ -272,7 +273,7 @@ function CountryOrRegion() {
                   </span>
                   <span>•</span>
                   <span className="inline-flex items-center gap-1">
-                    <Coins className="h-3.5 w-3.5 text-amber-400" /> Currency:{" "}
+                    <Coins className="h-3.5 w-3.5 text-primary" /> Currency:{" "}
                     <strong className="text-foreground">{country.currency}</strong>
                   </span>
                   <span>•</span>
@@ -299,7 +300,7 @@ function CountryOrRegion() {
               </Button>
               <Button asChild size="lg" variant="outline" className="border-border/80 bg-card/60">
                 <Link to="/hotel-booking" search={{ destination: country.slug }}>
-                  <Hotel className="mr-2 h-4 w-4 text-amber-400" /> Hotels
+                  <Hotel className="mr-2 h-4 w-4 text-primary" /> Hotels
                 </Link>
               </Button>
             </div>
@@ -320,7 +321,7 @@ function CountryOrRegion() {
               label: "Processing Speed",
               value: country.processingTime,
               desc: "Standard turnaround window",
-              color: "text-emerald-400",
+              color: "text-emerald-600",
             },
             {
               icon: Landmark,
@@ -334,7 +335,7 @@ function CountryOrRegion() {
               label: "Local Currency",
               value: country.currency,
               desc: "Forex available upon request",
-              color: "text-amber-400",
+              color: "text-primary",
             },
             {
               icon: Wallet,
@@ -383,7 +384,7 @@ function CountryOrRegion() {
                     <span
                       className={`inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] font-bold ${
                         vc.typeBadge === "e-Visa" || vc.typeBadge === "Fast Track"
-                          ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
+                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
                           : "bg-primary/15 text-primary border border-primary/30"
                       }`}
                     >
@@ -409,7 +410,7 @@ function CountryOrRegion() {
                     </p>
                     <p className="flex items-center justify-between">
                       <span>Processing:</span>
-                      <strong className="text-emerald-400">{vc.processingTime}</strong>
+                      <strong className="text-emerald-700 font-semibold">{vc.processingTime}</strong>
                     </p>
                   </div>
 
@@ -456,14 +457,14 @@ function CountryOrRegion() {
                     key={doc}
                     className="flex items-start gap-3 rounded-xl border border-border/60 bg-background/50 p-3 text-xs sm:text-sm text-foreground/90 transition-colors hover:border-primary/40"
                   >
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
                     <span>{doc}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="mt-6 flex items-start gap-2.5 rounded-xl border border-amber-500/30 bg-amber-500/10 p-3.5 text-xs text-amber-300">
-                <ShieldAlert className="mt-0.5 h-4 w-4 shrink-0" />
+              <div className="mt-6 flex items-start gap-2.5 rounded-xl border border-amber-200 bg-amber-50 p-3.5 text-xs text-amber-800">
+                <ShieldAlert className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
                 <p>
                   Embassy rules and consular requirements may update periodically. Our dedicated
                   consultant double-checks your documents against active mission rules before
@@ -485,7 +486,7 @@ function CountryOrRegion() {
                     Application Process
                   </h2>
                 </div>
-                <BadgeCheck className="h-7 w-7 text-emerald-400" />
+                <BadgeCheck className="h-7 w-7 text-emerald-600" />
               </div>
               <p className="mt-2 text-xs text-muted-foreground">
                 Our 4-step streamlined workflow ensures zero paperwork mistakes.
@@ -557,7 +558,7 @@ function CountryOrRegion() {
         </div>
 
         {/* Dedicated Country Consultation & Inquiry Box */}
-        <div className="mt-16 relative overflow-hidden rounded-2xl border border-primary/40 bg-gradient-to-br from-primary/15 via-card to-navy-deep p-6 sm:p-10 shadow-xl">
+        <div className="mt-16 relative overflow-hidden rounded-2xl border border-blue-200/90 bg-gradient-to-br from-blue-50/80 via-white to-indigo-50/50 p-6 sm:p-10 shadow-md">
           <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="max-w-xl">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/20 px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-primary">
@@ -583,14 +584,14 @@ function CountryOrRegion() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-border/80 bg-background/80"
+                className="border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-[#25D366] hover:border-[#25D366] hover:text-white font-semibold transition-all shadow-xs group"
               >
                 <a
-                  href={`https://wa.me/${siteConfig.phone.replace(/[^0-9]/g, "")}?text=Hello%20Areera%2C%20I%20would%20like%20to%20inquire%20about%20a%20visa%20for%20${encodeURIComponent(country.name)}`}
+                  href={`https://wa.me/${siteConfig.whatsapp.replace(/[^0-9]/g, "")}?text=Hello%20Areera%2C%20I%20would%20like%20to%20inquire%20about%20a%20visa%20for%20${encodeURIComponent(country.name)}`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <MessageSquare className="mr-2 h-4 w-4 text-emerald-400" /> WhatsApp Inquiry
+                  <WhatsAppIcon className="mr-2 h-4 w-4 text-[#25D366] group-hover:text-white transition-colors" /> WhatsApp Inquiry
                 </a>
               </Button>
             </div>
@@ -641,7 +642,7 @@ function CountryOrRegion() {
               search={{ destination: country.slug }}
               className="card-elevate flex flex-col rounded-2xl border border-border/70 bg-background/50 p-4 hover:border-primary/50"
             >
-              <Hotel className="h-5 w-5 text-amber-400" />
+              <Hotel className="h-5 w-5 text-primary" />
               <span className="mt-2 font-display text-sm font-bold text-foreground">
                 Hotels in {country.name}
               </span>
@@ -654,7 +655,7 @@ function CountryOrRegion() {
               to="/services/attestation"
               className="card-elevate flex flex-col rounded-2xl border border-border/70 bg-background/50 p-4 hover:border-primary/50"
             >
-              <Building2 className="h-5 w-5 text-emerald-400" />
+              <Building2 className="h-5 w-5 text-emerald-600" />
               <span className="mt-2 font-display text-sm font-bold text-foreground">
                 Document Attestation
               </span>

@@ -103,7 +103,7 @@ function PrivacyPolicyPage() {
       <Breadcrumbs items={[{ label: "Privacy Policy" }]} />
 
       {/* Header Banner */}
-      <div className="relative rounded-2xl border border-white/20 bg-card/80 p-6 sm:p-12 shadow-xl backdrop-blur-xl mb-12">
+      <div className="relative rounded-2xl border border-border bg-card p-6 sm:p-12 shadow-sm mb-12">
         <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary mb-4">
           <span>Client Confidentiality Guarantee</span>
         </div>
@@ -117,13 +117,13 @@ function PrivacyPolicyPage() {
           outlines our protocols for collecting, processing, and safeguarding your information.
         </p>
 
-        <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-muted-foreground pt-4 border-t border-white/10">
+        <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-muted-foreground pt-4 border-t border-border">
           <span className="flex items-center gap-1.5">
             <Clock className="h-3.5 w-3.5 text-primary" />
             Last Updated: <strong className="text-foreground">{lastUpdated}</strong>
           </span>
           <span className="flex items-center gap-1.5">
-            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
             Applies to Web, WhatsApp & In-Office Consultations
           </span>
         </div>
@@ -460,7 +460,7 @@ function PrivacyPolicyPage() {
       </div>
 
       {/* Back to Homepage and Quick Consultation Strip */}
-      <div className="mt-16 rounded-2xl border border-white/10 bg-card/50 p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+      <div className="mt-16 rounded-2xl border border-border bg-card/60 p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
         <div>
           <p className="font-semibold text-foreground text-sm">Need immediate visa assistance?</p>
           <p className="text-xs text-muted-foreground">

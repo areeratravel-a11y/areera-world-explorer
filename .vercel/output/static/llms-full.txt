@@ -821,7 +821,7 @@
 
 ---
 
-### Egypt (North Africa)
+### Egypt (Africa)
 - Capital: Cairo
 - ISO Code: EG
 - National Currency: EGP
@@ -846,7 +846,7 @@
 
 ---
 
-### Morocco (North Africa)
+### Morocco (Africa)
 - Capital: Rabat
 - ISO Code: MA
 - National Currency: MAD
@@ -871,7 +871,7 @@
 
 ---
 
-### Tunisia (North Africa)
+### Tunisia (Africa)
 - Capital: Tunis
 - ISO Code: TN
 - National Currency: TND
@@ -896,7 +896,7 @@
 
 ---
 
-### Algeria (North Africa)
+### Algeria (Africa)
 - Capital: Algiers
 - ISO Code: DZ
 - National Currency: DZD
@@ -921,7 +921,7 @@
 
 ---
 
-### Libya (North Africa)
+### Libya (Africa)
 - Capital: Tripoli
 - ISO Code: LY
 - National Currency: LYD
@@ -946,7 +946,7 @@
 
 ---
 
-### Sudan (North Africa)
+### Sudan (Africa)
 - Capital: Khartoum
 - ISO Code: SD
 - National Currency: SDG
@@ -996,7 +996,7 @@
 
 ---
 
-### United Kingdom (Western)
+### United Kingdom (Europe & Americas)
 - Capital: London
 - ISO Code: GB
 - National Currency: GBP
@@ -1021,7 +1021,7 @@
 
 ---
 
-### United States (Western)
+### United States (Europe & Americas)
 - Capital: Washington D.C.
 - ISO Code: US
 - National Currency: USD
@@ -1046,7 +1046,7 @@
 
 ---
 
-### Canada (Western)
+### Canada (Europe & Americas)
 - Capital: Ottawa
 - ISO Code: CA
 - National Currency: CAD
@@ -1071,7 +1071,7 @@
 
 ---
 
-### Australia (Western)
+### Australia (Europe & Americas)
 - Capital: Canberra
 - ISO Code: AU
 - National Currency: AUD

@@ -20,8 +20,8 @@ export const services: Service[] = [
   {
     slug: "ticket",
     path: "/services/ticket",
-    title: "Ticket Booking",
-    short: "Domestic and international air ticketing",
+    title: "Air Ticketing (Confirmed Flights)",
+    short: "Domestic and international confirmed flight ticketing",
     description:
       "Fare comparison across airlines, group bookings, date changes and 24/7 itinerary support for domestic and international routes.",
     icon: "ticket",
@@ -38,7 +38,7 @@ export const services: Service[] = [
   {
     slug: "hotel-booking",
     path: "/hotel-booking",
-    title: "Hotel Booking",
+    title: "Hotel Booking (Embassy Stays)",
     short: "Verified hotels and visa-compliant reservations",
     description:
       "Hand-picked stays across every price band, with confirmed bookings suitable for visa applications.",
@@ -47,10 +47,10 @@ export const services: Service[] = [
   {
     slug: "flight-reservation",
     path: "/flight-reservation",
-    title: "Flight Reservation",
-    short: "Dummy and confirmed flight reservations",
+    title: "Flight Reservation (Visa PNR)",
+    short: "Verifiable embassy flight reservations",
     description:
-      "Verifiable flight reservations for embassy submission, plus confirmed ticketing when your visa is approved.",
+      "Verifiable flight reservations with live airline PNRs for embassy visa submission, plus confirmed ticketing when your visa is approved.",
     icon: "flight",
   },
 ];

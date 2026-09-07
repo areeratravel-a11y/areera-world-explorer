@@ -6,6 +6,7 @@ interface LogoProps {
   size?: "sm" | "md" | "lg" | "xl";
   showText?: boolean;
   textColor?: string;
+  variant?: "default" | "light";
 }
 
 const sizeMap = {
@@ -15,8 +16,15 @@ const sizeMap = {
   xl: { icon: "h-12 w-12 sm:h-16 sm:w-16", textTitle: "text-lg sm:text-xl md:text-2xl" },
 };
 
-export function Logo({ className, size = "md", showText = true, textColor }: LogoProps) {
+export function Logo({
+  className,
+  size = "md",
+  showText = true,
+  textColor,
+  variant = "default",
+}: LogoProps) {
   const currentSize = sizeMap[size] || sizeMap.md;
+  const isLight = variant === "light" || textColor?.includes("white");
 
   return (
     <div
@@ -28,7 +36,7 @@ export function Logo({ className, size = "md", showText = true, textColor }: Log
       {/* Official AH Monogram Emblem */}
       <div
         className={cn(
-          "relative shrink-0 flex items-center justify-center overflow-hidden rounded-full bg-slate-900 border border-blue-400/40 shadow-xs ring-1 ring-blue-500/20",
+          "relative shrink-0 flex items-center justify-center overflow-hidden rounded-full bg-slate-900 border border-blue-500/30 shadow-xs ring-1 ring-blue-500/20",
           currentSize.icon,
         )}
       >
@@ -41,17 +49,26 @@ export function Logo({ className, size = "md", showText = true, textColor }: Log
         />
       </div>
 
-      {/* Luxury Brand Typography (No slogan as requested) */}
+      {/* Luxury Brand Typography */}
       {showText && (
         <div className="flex flex-col justify-center min-w-0">
           <span
             className={cn(
-              "font-display font-bold tracking-tight text-white whitespace-nowrap leading-none",
+              "font-display font-bold tracking-tight whitespace-nowrap leading-none",
+              isLight ? "text-white" : "text-slate-900",
               currentSize.textTitle,
               textColor,
             )}
           >
-            AREERA <span className="text-blue-400 font-semibold">TRAVEL & TOURS</span>
+            AREERA{" "}
+            <span
+              className={cn(
+                "font-semibold",
+                isLight ? "text-cyan-300" : "text-blue-600",
+              )}
+            >
+              TRAVEL & TOURS
+            </span>
           </span>
         </div>
       )}

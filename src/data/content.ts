@@ -45,7 +45,13 @@ export const homeArticle: ArticleContent = {
     {
       heading: "What we will never promise",
       paragraphs: [
-        "We do not advertise approval percentages, we do not offer guaranteed visas, and we do not submit information we have not verified. Visa decisions belong to the mission and no agency can override them. What we can control is that your file is complete, consistent and submitted on time — and that is what we are accountable for.",
+        "Visa decisions belong solely to the embassy or consulate — no agency can override sovereign immigration laws. What we hold ourselves strictly accountable for is submitting a file that is complete, truthful, and verified.",
+      ],
+      list: [
+        "No artificial '100% approval' marketing claims or fake guarantees",
+        "No unverified reservations that fail consular telephone or PNR checks",
+        "No unauthorized document submissions or undisclosed filing fees",
+        "No hidden service charges after your initial written quotation",
       ],
     },
   ],

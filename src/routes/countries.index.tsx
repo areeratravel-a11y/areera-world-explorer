@@ -95,9 +95,9 @@ function CountriesHub() {
     <Section>
       <Breadcrumbs items={[{ label: "Countries" }]} />
 
-      <div className="relative mb-8 overflow-hidden rounded-2xl border border-border/80 bg-gradient-to-br from-card/90 via-navy/70 to-navy-deep p-6 sm:p-10 shadow-lg backdrop-blur-xl">
+      <div className="relative mb-8 overflow-hidden rounded-2xl border border-blue-200/80 bg-gradient-to-br from-blue-50/80 via-white to-slate-50 p-6 sm:p-10 shadow-sm">
         <div className="relative z-10 max-w-3xl">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-300/80 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-700">
             <Globe2 className="h-3.5 w-3.5" /> Worldwide Visa Hub
           </span>
           <h1 className="mt-4 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
@@ -111,39 +111,39 @@ function CountriesHub() {
 
           <div className="mt-6 flex flex-wrap gap-4 text-xs text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 font-medium text-foreground/90">
-              <CheckCircle2 className="h-4 w-4 text-emerald-400" /> 100% Embassy Compliant
+              <CheckCircle2 className="h-4 w-4 text-emerald-600" /> 100% Embassy Compliant
             </span>
             <span className="inline-flex items-center gap-1.5 font-medium text-foreground/90">
-              <ShieldCheck className="h-4 w-4 text-primary" /> Verified Document Checklists
+              <ShieldCheck className="h-4 w-4 text-blue-600" /> Verified Document Checklists
             </span>
             <span className="inline-flex items-center gap-1.5 font-medium text-foreground/90">
-              <Clock className="h-4 w-4 text-amber-400" /> Fast-Track E-Visa Support
+              <Clock className="h-4 w-4 text-blue-600" /> Fast-Track E-Visa Support
             </span>
           </div>
 
           {/* Quick Cross-Links to Travel Services & Intelligence */}
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 border-t border-white/10 pt-6">
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 border-t border-border pt-6">
             <Link
               to="/guides/visa-free-asian-destinations"
-              className="flex items-center gap-2.5 rounded-xl border border-cyan-500/25 bg-cyan-500/10 p-3 text-xs text-cyan-300 hover:bg-cyan-500/20 transition-colors group"
+              className="flex items-center gap-2.5 rounded-xl border border-cyan-200 bg-cyan-50/70 p-3 text-xs text-cyan-950 hover:bg-cyan-100/70 transition-colors group shadow-xs"
             >
-              <Globe2 className="h-4 w-4 shrink-0 text-cyan-400" />
+              <Globe2 className="h-4 w-4 shrink-0 text-cyan-600" />
               <div className="min-w-0 flex-1">
-                <p className="font-semibold text-white group-hover:text-cyan-300 truncate">
+                <p className="font-semibold text-slate-900 group-hover:text-cyan-700 truncate">
                   2026 Asian Travel Guide
                 </p>
-                <p className="text-[10px] text-cyan-200/70 truncate">Visa-free & e-visa strategy</p>
+                <p className="text-[10px] text-cyan-800/80 truncate">Visa-free & e-visa strategy</p>
               </div>
-              <ArrowRight className="h-3 w-3 text-cyan-400 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="h-3 w-3 text-cyan-600 shrink-0 group-hover:translate-x-0.5 transition-transform" />
             </Link>
 
             <Link
               to="/services/visa"
-              className="flex items-center gap-2.5 rounded-xl border border-border/60 bg-background/40 p-3 text-xs text-foreground/90 hover:border-primary/40 hover:bg-background/80 transition-colors group"
+              className="flex items-center gap-2.5 rounded-xl border border-border bg-card p-3 text-xs text-foreground hover:border-primary/40 hover:bg-slate-50 transition-colors group shadow-xs"
             >
-              <ShieldCheck className="h-4 w-4 shrink-0 text-emerald-400" />
+              <ShieldCheck className="h-4 w-4 shrink-0 text-emerald-600" />
               <div className="min-w-0 flex-1">
-                <p className="font-semibold text-white group-hover:text-primary truncate">
+                <p className="font-semibold text-foreground group-hover:text-primary truncate">
                   Visa Filing Support
                 </p>
                 <p className="text-[10px] text-muted-foreground truncate">
@@ -155,11 +155,11 @@ function CountriesHub() {
 
             <Link
               to="/flight-reservation"
-              className="flex items-center gap-2.5 rounded-xl border border-border/60 bg-background/40 p-3 text-xs text-foreground/90 hover:border-primary/40 hover:bg-background/80 transition-colors group"
+              className="flex items-center gap-2.5 rounded-xl border border-border bg-card p-3 text-xs text-foreground hover:border-primary/40 hover:bg-slate-50 transition-colors group shadow-xs"
             >
               <Plane className="h-4 w-4 shrink-0 text-primary" />
               <div className="min-w-0 flex-1">
-                <p className="font-semibold text-white group-hover:text-primary truncate">
+                <p className="font-semibold text-foreground group-hover:text-primary truncate">
                   Flight Reservations
                 </p>
                 <p className="text-[10px] text-muted-foreground truncate">
@@ -171,18 +171,18 @@ function CountriesHub() {
 
             <Link
               to="/hotel-booking"
-              className="flex items-center gap-2.5 rounded-xl border border-border/60 bg-background/40 p-3 text-xs text-foreground/90 hover:border-primary/40 hover:bg-background/80 transition-colors group"
+              className="flex items-center gap-2.5 rounded-xl border border-border bg-card p-3 text-xs text-foreground hover:border-primary/40 hover:bg-slate-50 transition-colors group shadow-xs"
             >
-              <Hotel className="h-4 w-4 shrink-0 text-amber-400" />
+              <Hotel className="h-4 w-4 shrink-0 text-blue-600" />
               <div className="min-w-0 flex-1">
-                <p className="font-semibold text-white group-hover:text-amber-300 truncate">
+                <p className="font-semibold text-foreground group-hover:text-primary truncate">
                   Hotel Vouchers
                 </p>
                 <p className="text-[10px] text-muted-foreground truncate">
                   Confirmed embassy bookings
                 </p>
               </div>
-              <ArrowRight className="h-3 w-3 text-amber-400 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="h-3 w-3 text-primary shrink-0 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
         </div>

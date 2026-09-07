@@ -1,12 +1,11 @@
-export const REGIONS = ["Asia", "Middle East", "North Africa", "Africa", "Western"] as const;
+export const REGIONS = ["Asia", "Middle East", "Africa", "Europe & Americas"] as const;
 export type Region = (typeof REGIONS)[number];
 
 export const REGION_SLUGS: Record<Region, string> = {
   Asia: "asia",
   "Middle East": "middle-east",
-  "North Africa": "north-africa",
   Africa: "africa",
-  Western: "western",
+  "Europe & Americas": "europe-and-americas",
 };
 
 export type VisaCategory = {
@@ -792,7 +791,7 @@ const seeds: Seed[] = [
     name: "Egypt",
     slug: "egypt",
     isoCode: "eg",
-    region: "North Africa",
+    region: "Africa",
     flag: "🇪🇬",
     capital: "Cairo",
     currency: "EGP",
@@ -818,7 +817,7 @@ const seeds: Seed[] = [
     name: "Morocco",
     slug: "morocco",
     isoCode: "ma",
-    region: "North Africa",
+    region: "Africa",
     flag: "🇲🇦",
     capital: "Rabat",
     currency: "MAD",
@@ -839,7 +838,7 @@ const seeds: Seed[] = [
     name: "Tunisia",
     slug: "tunisia",
     isoCode: "tn",
-    region: "North Africa",
+    region: "Africa",
     flag: "🇹🇳",
     capital: "Tunis",
     currency: "TND",
@@ -860,7 +859,7 @@ const seeds: Seed[] = [
     name: "Algeria",
     slug: "algeria",
     isoCode: "dz",
-    region: "North Africa",
+    region: "Africa",
     flag: "🇩🇿",
     capital: "Algiers",
     currency: "DZD",
@@ -885,7 +884,7 @@ const seeds: Seed[] = [
     name: "Libya",
     slug: "libya",
     isoCode: "ly",
-    region: "North Africa",
+    region: "Africa",
     flag: "🇱🇾",
     capital: "Tripoli",
     currency: "LYD",
@@ -901,7 +900,7 @@ const seeds: Seed[] = [
     name: "Sudan",
     slug: "sudan",
     isoCode: "sd",
-    region: "North Africa",
+    region: "Africa",
     flag: "🇸🇩",
     capital: "Khartoum",
     currency: "SDG",
@@ -951,7 +950,7 @@ const seeds: Seed[] = [
     name: "United Kingdom",
     slug: "united-kingdom",
     isoCode: "gb",
-    region: "Western",
+    region: "Europe & Americas",
     flag: "🇬🇧",
     capital: "London",
     currency: "GBP",
@@ -972,7 +971,7 @@ const seeds: Seed[] = [
     name: "United States",
     slug: "united-states",
     isoCode: "us",
-    region: "Western",
+    region: "Europe & Americas",
     flag: "🇺🇸",
     capital: "Washington D.C.",
     currency: "USD",
@@ -997,7 +996,7 @@ const seeds: Seed[] = [
     name: "Canada",
     slug: "canada",
     isoCode: "ca",
-    region: "Western",
+    region: "Europe & Americas",
     flag: "🇨🇦",
     capital: "Ottawa",
     currency: "CAD",
@@ -1023,7 +1022,7 @@ const seeds: Seed[] = [
     name: "Australia",
     slug: "australia",
     isoCode: "au",
-    region: "Western",
+    region: "Europe & Americas",
     flag: "🇦🇺",
     capital: "Canberra",
     currency: "AUD",
@@ -1149,8 +1148,11 @@ export const countries: Country[] = seeds.map((s) => {
 
 export const getCountry = (slug: string) => countries.find((c) => c.slug === slug);
 
-export const getRegionBySlug = (slug: string): Region | undefined =>
-  REGIONS.find((r) => REGION_SLUGS[r] === slug);
+export const getRegionBySlug = (slug: string): Region | undefined => {
+  if (slug === "western" || slug === "europe-and-americas") return "Europe & Americas";
+  if (slug === "north-africa" || slug === "africa") return "Africa";
+  return REGIONS.find((r) => REGION_SLUGS[r] === slug);
+};
 
 export const countriesByRegion = (region: Region) => countries.filter((c) => c.region === region);
 

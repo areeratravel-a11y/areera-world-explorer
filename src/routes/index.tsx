@@ -21,6 +21,7 @@ import { countries, popularDestinations } from "@/data/countries";
 import { services, siteConfig, testimonials } from "@/data/site";
 import { Button } from "@/components/ui/button";
 import { HeroBookingCard } from "@/components/HeroBookingCard";
+import { WhatsAppIcon } from "@/components/FloatingWhatsApp";
 import { homeIndexSchema } from "@/lib/json-ld";
 import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
@@ -136,48 +137,49 @@ function Home() {
                 <Button
                   asChild
                   size="lg"
-                  className="royal-surface glow-ring shadow-lg hover:scale-[1.02] transition-transform font-semibold"
+                  variant="outline"
+                  className="border-primary/40 bg-primary/5 text-primary hover:bg-primary/10 font-semibold"
                 >
                   <Link to="/services/visa">
-                    <Stamp className="mr-2 h-4 w-4" /> Get Visa Assistance
+                    <Stamp className="mr-2 h-4 w-4" aria-hidden /> Get Visa Assistance
                   </Link>
                 </Button>
                 <Button
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 hover:text-emerald-200 font-semibold"
+                  className="border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-[#25D366] hover:border-[#25D366] hover:text-white font-semibold transition-all shadow-xs group"
                 >
                   <a
                     href={`https://wa.me/${siteConfig.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hello Areera Travel, I would like to consult with an agent regarding visa and travel assistance.")}`}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <PhoneCall className="mr-2 h-4 w-4 text-emerald-400" /> WhatsApp Specialist
+                    <WhatsAppIcon className="mr-2 h-4 w-4 text-[#25D366] group-hover:text-white transition-colors" /> WhatsApp Specialist
                   </a>
                 </Button>
                 <Button
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-border/80 bg-card/60 backdrop-blur-md"
+                  className="border-slate-300 bg-white shadow-xs hover:bg-slate-50"
                 >
                   <Link to="/countries">
-                    <Globe2 className="mr-2 h-4 w-4 text-amber-400" /> 40+ Destinations
+                    <Globe2 className="mr-2 h-4 w-4 text-primary" /> 40+ Destinations
                   </Link>
                 </Button>
               </div>
 
               {/* Trust Highlights */}
-              <div className="animate-fade-up mt-12 grid grid-cols-2 gap-4 border-t border-border/60 pt-6 sm:grid-cols-3">
+              <div className="animate-fade-up mt-12 grid grid-cols-2 gap-4 border-t border-slate-200/80 pt-6 sm:grid-cols-3">
                 {[
                   { icon: Globe2, label: "40+ Countries Covered", color: "text-primary" },
                   {
                     icon: ShieldCheck,
                     label: "100% Embassy Compliance",
-                    color: "text-emerald-400",
+                    color: "text-emerald-600",
                   },
-                  { icon: Headset, label: "Dedicated File Consultant", color: "text-amber-400" },
+                  { icon: Headset, label: "Dedicated File Consultant", color: "text-primary" },
                 ].map(({ icon: Icon, label, color }) => (
                   <div
                     key={label}
@@ -212,7 +214,10 @@ function Home() {
             </Reveal>
           ))}
         </div>
-        <div className="mt-8 text-center">
+        <div className="mt-8 flex items-center justify-between border-t border-border/80 pt-6">
+          <p className="text-xs text-muted-foreground hidden sm:block">
+            Need specialized consular or corporate filing assistance?
+          </p>
           <Link
             to="/services"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
@@ -223,10 +228,8 @@ function Home() {
         </div>
       </Section>
 
-      <Divider />
-
       {/* Popular Destinations Grid */}
-      <Section>
+      <Section className="pt-4 md:pt-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-primary">
@@ -269,16 +272,16 @@ function Home() {
 
       {/* Featured Travel Intelligence & Specialized Hubs */}
       <Section>
-        <div className="relative overflow-hidden rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-blue-950/70 via-slate-950/90 to-cyan-950/50 p-6 sm:p-10 shadow-2xl backdrop-blur-xl">
+        <div className="relative overflow-hidden rounded-2xl border border-blue-200/90 bg-gradient-to-br from-blue-50/90 via-sky-50/50 to-white p-6 sm:p-10 shadow-xl backdrop-blur-xl">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="max-w-2xl">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-100/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-blue-700">
                 <Globe2 className="h-3.5 w-3.5" /> 2026 Travel Intelligence
               </span>
-              <h2 className="mt-3 font-display text-2xl font-bold text-white sm:text-3xl">
+              <h2 className="mt-3 font-display text-2xl font-bold text-slate-900 sm:text-3xl">
                 Visa-Free & Simplified <span className="chrome-text">Asian Destinations</span>
               </h2>
-              <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
                 Planning your next international trip? Discover the top visa-free, e-visa, and
                 fast-track entry policies for Asian destinations with typical holiday package
                 budgets and verified flight connectivity.
@@ -295,48 +298,48 @@ function Home() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white/20 bg-white/5 text-white hover:bg-white/10"
+                className="border-slate-300 bg-white text-slate-800 hover:bg-slate-50 shadow-xs"
               >
                 <Link to="/countries">Browse All 50+ Countries</Link>
               </Button>
             </div>
           </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-3 border-t border-white/10 pt-6">
+          <div className="mt-8 grid gap-4 sm:grid-cols-3 border-t border-slate-200/80 pt-6">
             <Link
               to="/flight-reservation"
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 hover:border-cyan-400/40 hover:bg-white/10 transition-colors group"
+              className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/90 p-4 hover:border-blue-400 hover:bg-white transition-all shadow-xs group"
             >
-              <PlaneTakeoff className="h-5 w-5 text-cyan-400 shrink-0" />
+              <PlaneTakeoff className="h-5 w-5 text-blue-600 shrink-0" />
               <div>
-                <p className="text-sm font-semibold text-white group-hover:text-cyan-300">
+                <p className="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
                   Flight Reservations
                 </p>
-                <p className="text-xs text-slate-400">Verifiable embassy PNRs for your visa file</p>
+                <p className="text-xs text-slate-500">Verifiable embassy PNRs for your visa file</p>
               </div>
             </Link>
             <Link
               to="/hotel-booking"
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 hover:border-amber-400/40 hover:bg-white/10 transition-colors group"
+              className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/90 p-4 hover:border-blue-400 hover:bg-white transition-all shadow-xs group"
             >
-              <BedDouble className="h-5 w-5 text-amber-400 shrink-0" />
+              <BedDouble className="h-5 w-5 text-blue-600 shrink-0" />
               <div>
-                <p className="text-sm font-semibold text-white group-hover:text-amber-300">
+                <p className="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
                   Hotel Bookings
                 </p>
-                <p className="text-xs text-slate-400">Confirmed embassy-compliant vouchers</p>
+                <p className="text-xs text-slate-500">Confirmed embassy-compliant vouchers</p>
               </div>
             </Link>
             <Link
               to="/services/attestation"
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 hover:border-emerald-400/40 hover:bg-white/10 transition-colors group"
+              className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/90 p-4 hover:border-emerald-500 hover:bg-white transition-all shadow-xs group"
             >
-              <ShieldCheck className="h-5 w-5 text-emerald-400 shrink-0" />
+              <ShieldCheck className="h-5 w-5 text-emerald-600 shrink-0" />
               <div>
-                <p className="text-sm font-semibold text-white group-hover:text-emerald-300">
+                <p className="text-sm font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors">
                   Document Attestation
                 </p>
-                <p className="text-xs text-slate-400">MOFA, HEC & foreign embassy legalization</p>
+                <p className="text-xs text-slate-500">MOFA, HEC & foreign embassy legalization</p>
               </div>
             </Link>
           </div>
@@ -369,7 +372,7 @@ function Home() {
                 icon: BadgeCheck,
                 title: "Checklist-Driven Filing",
                 body: "Every application starts with a bespoke checklist tailored to your target destination and profile.",
-                badgeColor: "text-emerald-400",
+                badgeColor: "text-emerald-600",
               },
               {
                 icon: Clock,
@@ -381,7 +384,7 @@ function Home() {
                 icon: ShieldCheck,
                 title: "Genuine Verification",
                 body: "100% embassy-verifiable hotel vouchers, flight reservations, and authorized attestations.",
-                badgeColor: "text-amber-400",
+                badgeColor: "text-primary",
               },
               {
                 icon: Headset,
@@ -438,34 +441,34 @@ function Home() {
       {/* Bottom CTA Banner */}
       <Section>
         <Reveal>
-          <div className="relative overflow-hidden rounded-2xl border border-primary/40 bg-gradient-to-br from-primary/20 via-navy/80 to-navy-deep p-8 text-center sm:p-14 shadow-2xl">
-            <div aria-hidden className="animate-float absolute right-8 top-8 text-5xl opacity-20">
+          <div className="relative overflow-hidden rounded-2xl border border-blue-200/90 bg-gradient-to-br from-blue-50/80 via-indigo-50/40 to-white p-8 text-center sm:p-14 shadow-xl">
+            <div aria-hidden className="animate-float absolute right-8 top-8 text-5xl opacity-15 text-blue-600">
               ✈
             </div>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/25 px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-100/90 px-3 py-1 text-xs font-bold uppercase tracking-widest text-blue-700">
               Start Your Journey
             </span>
-            <h2 className="mt-4 font-display text-2xl font-bold text-foreground sm:text-4xl">
+            <h2 className="mt-4 font-display text-2xl font-bold text-slate-900 sm:text-4xl">
               Where would you like to travel next?
             </h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground sm:text-base leading-relaxed">
+            <p className="mx-auto mt-3 max-w-xl text-sm text-slate-600 sm:text-base leading-relaxed">
               Share your target destination and travel dates with us. We will provide the exact
               document checklist, embassy requirements, and immediate step-by-step guidance.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">
-              <Button asChild size="lg" className="royal-surface glow-ring shadow-lg">
-                <Link to="/contact">
-                  <PhoneCall className="mr-2 h-4 w-4" /> Contact a Consultant
+              <Button asChild size="lg" className="royal-surface glow-ring shadow-lg font-semibold">
+                <Link to="/services/visa">
+                  <Stamp className="mr-2 h-4 w-4" aria-hidden /> Apply For Visa
                 </Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-border/80 bg-background/80"
+                className="border-slate-300 bg-white text-slate-800 hover:bg-slate-50 shadow-xs font-semibold"
               >
-                <Link to="/services/visa">
-                  <Stamp className="mr-2 h-4 w-4 text-emerald-400" /> Apply For Visa
+                <Link to="/contact">
+                  <PhoneCall className="mr-2 h-4 w-4 text-blue-600" aria-hidden /> Contact a Consultant
                 </Link>
               </Button>
             </div>

@@ -22,9 +22,9 @@ const sizeMap: Record<FlagSize, { width: string; height: string; imgWidth: numbe
 };
 
 const roundedMap = {
-  sm: "rounded-xs",
-  md: "rounded-sm",
-  lg: "rounded-md",
+  sm: "rounded-sm",
+  md: "rounded-md",
+  lg: "rounded-lg",
   full: "rounded-full aspect-square object-cover",
 };
 

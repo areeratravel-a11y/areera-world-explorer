@@ -83,7 +83,7 @@ export function CountryCard({ country }: { country: Country }) {
             isoCode={country.isoCode}
             countryName={country.name}
             size="md"
-            className="ring-2 ring-white/15 shadow-sm"
+            className="ring-1 ring-slate-200 shadow-xs"
           />
         </div>
         <div className="min-w-0 flex-1">
@@ -102,15 +102,15 @@ export function CountryCard({ country }: { country: Country }) {
         {country.blurb}
       </p>
 
-      {/* Standardized 2-Column Metadata Badges */}
-      <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-muted-foreground">
-        <span className="inline-flex items-center gap-1.5 truncate rounded-lg border border-border/60 bg-muted/30 px-2.5 py-1">
-          <Landmark className="h-3.5 w-3.5 shrink-0 text-primary/80" />
-          <span className="truncate">{country.capital}</span>
+      {/* Standardized Metadata Badges */}
+      <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+        <span className="inline-flex items-center gap-1.5 rounded-lg border border-border/60 bg-muted/30 px-2.5 py-1">
+          <Landmark className="h-3.5 w-3.5 shrink-0 text-primary/80" aria-hidden />
+          <span className="truncate max-w-[130px]">{country.capital}</span>
         </span>
-        <span className="inline-flex items-center gap-1.5 truncate rounded-lg border border-border/60 bg-muted/30 px-2.5 py-1">
-          <Clock className="h-3.5 w-3.5 shrink-0 text-emerald-400" />
-          <span className="truncate">{formatProcessingHeadline(country.processingTime)}</span>
+        <span className="inline-flex items-center gap-1.5 rounded-lg border border-border/60 bg-muted/30 px-2.5 py-1 whitespace-nowrap">
+          <Clock className="h-3.5 w-3.5 shrink-0 text-emerald-600" aria-hidden />
+          <span>{formatProcessingHeadline(country.processingTime)}</span>
         </span>
       </div>
 
@@ -143,7 +143,7 @@ export function TestimonialCard({
     <figure className="card-elevate flex h-full flex-col rounded-2xl border border-border/80 bg-card/75 p-6 shadow-sm backdrop-blur-md">
       <div className="flex items-center justify-between">
         <Quote className="h-6 w-6 text-primary" aria-hidden />
-        <span className="inline-flex items-center gap-1 rounded-full border border-border/50 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-400">
+        <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700">
           <ShieldCheck className="h-3.5 w-3.5" /> Verified Client
         </span>
       </div>

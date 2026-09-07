@@ -104,21 +104,23 @@ function TermsPage() {
       <Breadcrumbs items={[{ label: "Terms & Conditions" }]} />
 
       {/* Hero Banner */}
-      <div className="relative rounded-2xl border border-white/20 bg-card/80 p-6 sm:p-12 shadow-xl backdrop-blur-xl mb-12">
+      <div className="relative rounded-2xl border border-border bg-card p-6 sm:p-12 shadow-sm mb-12">
         <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary mb-4">
           <span>Official Service Terms</span>
         </div>
 
-        <h1 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-foreground">
+        <h1 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
           Terms and Conditions
         </h1>
-        <p className="mt-4 max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
-          These Terms and Conditions govern your engagement with Areera Travel and Tours. Please
-          read these terms carefully before purchasing tickets, requesting visa file preparation, or
-          submitting documents for attestation.
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+          These Terms and Conditions constitute a legally binding service agreement between Areera
+          Travel and Tours ("Areera Travel", "we", "us", or "our") and the client ("you", "user",
+          or "applicant"). By requesting or utilizing our visa assistance, air ticketing, hotel
+          voucher issuance, or consular attestation services, you acknowledge that you have read,
+          understood, and agreed to be bound by these provisions.
         </p>
 
-        <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-muted-foreground pt-4 border-t border-white/10">
+        <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-muted-foreground pt-4 border-t border-border">
           <span className="flex items-center gap-1.5">
             <Clock className="h-3.5 w-3.5 text-primary" />
             Last Updated: <strong className="text-foreground">{lastUpdated}</strong>
@@ -241,10 +243,10 @@ function TermsPage() {
               <span className="text-primary font-mono text-lg">03.</span> Visa Filing & Embassy
               Disclaimers
             </h2>
-            <div className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4 mb-4 text-xs sm:text-sm text-amber-300 flex items-start gap-3">
-              <AlertTriangle className="h-5 w-5 shrink-0 text-amber-400 mt-0.5" />
+            <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4 mb-4 text-xs sm:text-sm text-amber-900 flex items-start gap-3">
+              <AlertTriangle className="h-5 w-5 shrink-0 text-amber-600 mt-0.5" />
               <div>
-                <strong className="font-semibold block text-amber-200">
+                <strong className="font-semibold block text-amber-950">
                   Critical Embassy Disclaimer:
                 </strong>
                 Areera Travel and Tours is NOT an embassy, consulate, or government body. Visa
@@ -409,7 +411,7 @@ function TermsPage() {
       </div>
 
       {/* Contact & Consultation Strip */}
-      <div className="mt-16 rounded-2xl border border-white/10 bg-card/50 p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+      <div className="mt-16 rounded-2xl border border-border bg-card/60 p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
         <div>
           <p className="font-semibold text-foreground text-sm">
             Questions about our service terms?

@@ -15,6 +15,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { AiTravelAdvisor } from "@/components/AiTravelAdvisor";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { Toaster } from "@/components/ui/sonner";
 import { NotFoundPage } from "@/components/NotFoundPage";
 import { GlobalLoadingBar } from "@/components/GlobalLoadingBar";
@@ -94,7 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "https://www.areeratravels.com/og-image.jpg" },
-      { name: "theme-color", content: "#090d16" },
+      { name: "theme-color", content: "#ffffff" },
       { name: "geo.region", content: "PK-IS" },
       { name: "geo.placename", content: "Islamabad, Pakistan" },
       { name: "geo.position", content: "33.7167;73.0667" },
@@ -177,6 +178,7 @@ function RootComponent() {
       <Footer />
       <MobileStickyCTA />
       <AiTravelAdvisor />
+      <FloatingWhatsApp />
       <Toaster position="top-center" />
     </QueryClientProvider>
   );

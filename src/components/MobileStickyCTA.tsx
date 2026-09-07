@@ -17,6 +17,7 @@ import { CountryFlag } from "@/components/CountryFlag";
 import logoImg from "@/assets/areera-logo.png";
 import { cn } from "@/lib/utils";
 import { trackWhatsAppContact, trackPhoneContact } from "@/lib/analytics";
+import { WhatsAppIcon } from "@/components/FloatingWhatsApp";
 
 export function MobileStickyCTA() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -136,14 +137,14 @@ export function MobileStickyCTA() {
   return (
     <aside
       aria-label="Sticky mobile action bar"
-      className="fixed bottom-3 inset-x-0 mx-auto w-[94%] max-w-lg z-50 md:hidden rounded-full border border-blue-500/40 bg-slate-950/90 p-2 shadow-[0_14px_45px_rgba(0,0,0,0.8),0_0_24px_rgba(59,130,246,0.3)] backdrop-blur-2xl transition-all"
+      className="fixed bottom-3 inset-x-0 mx-auto w-[94%] max-w-lg z-50 md:hidden rounded-full border border-slate-200/90 bg-white/96 p-2 shadow-[0_12px_36px_rgba(15,23,42,0.12)] backdrop-blur-2xl transition-all"
     >
       <div className="flex items-center justify-between gap-2 px-1">
         {/* Left: Logo Emblem & Context Info */}
         <div className="flex min-w-0 items-center gap-2.5 pl-0.5">
           {/* Logo with Live Status Dot */}
           <div className="relative shrink-0 flex items-center justify-center">
-            <div className="h-9 w-9 overflow-hidden rounded-full border border-blue-400/40 bg-slate-900 shadow-sm ring-2 ring-blue-500/20 flex items-center justify-center">
+            <div className="h-9 w-9 overflow-hidden rounded-full border border-slate-200 bg-slate-900 shadow-sm ring-2 ring-blue-500/20 flex items-center justify-center">
               {config.flagIso ? (
                 <CountryFlag
                   isoCode={config.flagIso}
@@ -161,17 +162,17 @@ export function MobileStickyCTA() {
             </div>
             {config.isOnline && (
               <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-600" />
               </span>
             )}
           </div>
 
           <div className="min-w-0">
-            <div className="truncate text-xs font-bold text-white leading-tight">
+            <div className="truncate text-xs font-bold text-slate-900 leading-tight">
               {config.contextLabel}
             </div>
-            <div className="truncate text-[10px] font-medium text-cyan-400">
+            <div className="truncate text-[10px] font-medium text-blue-600">
               {config.subLabel}
             </div>
           </div>
@@ -189,9 +190,9 @@ export function MobileStickyCTA() {
               })
             }
             aria-label="Call Areera Travel"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-blue-400/30 bg-white/5 text-cyan-300 transition-colors hover:bg-blue-500/20 active:scale-95"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-slate-700 transition-colors hover:bg-slate-200 active:scale-95"
           >
-            <Phone className="h-4 w-4 text-cyan-400" />
+            <Phone className="h-4 w-4 text-blue-600" />
           </a>
 
           {/* WhatsApp Direct Button */}
@@ -206,9 +207,9 @@ export function MobileStickyCTA() {
             }
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/15 px-3 py-2 text-xs font-semibold text-emerald-300 transition-all hover:bg-emerald-500/25 active:scale-95 whitespace-nowrap"
+            className="flex items-center gap-1.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white px-3 py-2 text-xs font-semibold shadow-xs transition-all active:scale-95 whitespace-nowrap"
           >
-            <MessageSquare className="h-3.5 w-3.5 text-emerald-400" />
+            <WhatsAppIcon className="h-3.5 w-3.5" />
             <span className="hidden xs:inline sm:inline">WhatsApp</span>
           </a>
 

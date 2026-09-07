@@ -157,7 +157,7 @@ function About() {
         <Button
           asChild
           variant="outline"
-          className="border-cyan-500/30 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20"
+          className="border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100"
         >
           <Link to="/guides/visa-free-asian-destinations">Asian Travel Guide 2026</Link>
         </Button>

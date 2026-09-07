@@ -101,19 +101,17 @@ export function BookingForm({
     });
 
     toast.success("Opening WhatsApp with your inquiry details...");
-
-    setTimeout(() => {
-      window.open(`https://wa.me/${waNumber}?text=${encoded}`, "_blank");
-      setIsSubmitting(false);
-      navigate({
-        to: "/thank-you",
-        search: {
-          name: values.name,
-          service: title || "Travel Inquiry",
-          ref: refCode,
-        },
-      });
-    }, 450);
+    const waUrl = `https://wa.me/${waNumber}?text=${encoded}`;
+    window.open(waUrl, "_blank", "noopener,noreferrer");
+    setIsSubmitting(false);
+    navigate({
+      to: "/thank-you",
+      search: {
+        name: values.name,
+        service: title || "Travel Inquiry",
+        ref: refCode,
+      },
+    });
   }
 
   const renderFieldError = (name: FormField) => {

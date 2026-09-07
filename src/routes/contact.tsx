@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/Section";
 import { BookingForm } from "@/components/BookingForm";
 import { contactInfo } from "@/data/site";
+import { WhatsAppIcon } from "@/components/FloatingWhatsApp";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/json-ld";
 import { ContentArticle } from "@/components/ContentArticle";
 import { FaqSection } from "@/components/FaqSection";
@@ -84,12 +85,12 @@ function Contact() {
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <MessageCircle className="h-4 w-4 shrink-0 text-primary" aria-hidden />
+                <WhatsAppIcon className="h-4 w-4 shrink-0 text-[#25D366]" />
                 <a
-                  href={`https://wa.me/${wa}`}
+                  href={`https://wa.me/${wa}?text=${encodeURIComponent("Hello Areera Travel, I would like to inquire about visa and travel assistance.")}`}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="hover:text-foreground"
+                  className="font-medium text-emerald-700 hover:text-emerald-800 hover:underline"
                 >
                   Chat on WhatsApp
                 </a>

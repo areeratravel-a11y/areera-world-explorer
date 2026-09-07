@@ -321,7 +321,7 @@ export function AiTravelAdvisor() {
   return (
     <>
       {/* Floating Trigger Button */}
-      <div className="fixed bottom-24 right-4 z-40 md:bottom-8 md:right-8 print:hidden">
+      <div className="fixed bottom-20 left-4 z-40 md:bottom-6 md:left-6 print:hidden">
         {!isOpen && (
           <button
             onClick={() => {
@@ -329,18 +329,18 @@ export function AiTravelAdvisor() {
               setHasInteracted(true);
             }}
             aria-label="Open Areera AI Travel Assistant"
-            className="group relative flex items-center gap-2.5 rounded-full bg-gradient-to-r from-amber-500 via-emerald-500 to-teal-500 p-[2px] shadow-xl shadow-emerald-950/40 transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-background"
+            className="group relative flex items-center gap-2.5 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 p-[2px] shadow-xl shadow-blue-950/15 transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-background"
           >
-            <div className="flex items-center gap-2 rounded-full bg-[#0b101b] px-4 py-2.5 text-white transition-colors group-hover:bg-[#101726]">
+            <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-slate-800 transition-colors group-hover:bg-slate-50 border border-slate-200/80 shadow-md">
               <span className="relative flex h-3 w-3">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75" />
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-blue-500" />
               </span>
-              <Bot className="h-4 w-4 text-emerald-400 transition-transform group-hover:rotate-12" />
+              <Bot className="h-4 w-4 text-blue-600 transition-transform group-hover:rotate-12" />
               <span className="text-xs font-semibold tracking-wide sm:text-sm">
                 Ask Areera AI
               </span>
-              <Sparkles className="h-3.5 w-3.5 text-amber-400 animate-pulse" />
+              <Sparkles className="h-3.5 w-3.5 text-blue-500 animate-pulse" />
             </div>
           </button>
         )}
@@ -349,30 +349,30 @@ export function AiTravelAdvisor() {
       {/* AI Assistant Chat Drawer / Modal */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-end justify-end p-2 sm:p-4 md:p-6 bg-black/50 backdrop-blur-xs transition-opacity duration-200"
+          className="fixed inset-0 z-50 flex items-end justify-start p-2 sm:p-4 md:p-6 bg-black/40 backdrop-blur-xs transition-opacity duration-200"
           onClick={() => setIsOpen(false)}
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="flex flex-col h-[85vh] max-h-[680px] w-full max-w-[440px] rounded-2xl border border-white/15 bg-[#090d16] text-white shadow-2xl shadow-black/80 overflow-hidden animate-in fade-in slide-in-from-bottom-6 duration-300"
+            className="flex flex-col h-[85vh] max-h-[680px] w-full max-w-[440px] rounded-2xl border border-slate-200 bg-white text-slate-900 shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-6 duration-300"
           >
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-white/10 bg-gradient-to-r from-[#0d1424] via-[#0e172a] to-[#0d1424] px-4 py-3">
+            <div className="flex items-center justify-between border-b border-slate-200 bg-gradient-to-r from-blue-50/90 via-slate-50 to-indigo-50/80 px-4 py-3">
               <div className="flex items-center gap-3">
-                <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 text-emerald-400">
+                <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100/80 border border-blue-200 text-blue-700">
                   <Bot className="h-5 w-5" />
-                  <span className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-[#090d16]" />
+                  <span className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-white" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
-                    <h3 className="text-sm font-bold tracking-tight text-white">
+                    <h3 className="text-sm font-bold tracking-tight text-slate-900">
                       Areera AI Assistant
                     </h3>
-                    <span className="inline-flex items-center rounded-md bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-medium text-emerald-400 ring-1 ring-inset ring-emerald-500/20">
-                      24/7 LLM Intelligence
+                    <span className="inline-flex items-center rounded-md bg-blue-50 px-1.5 py-0.5 text-[10px] font-medium text-blue-700 ring-1 ring-inset ring-blue-500/20">
+                      24/7 Intelligence
                     </span>
                   </div>
-                  <p className="text-[11px] text-gray-400">
+                  <p className="text-[11px] text-slate-500">
                     Visa Requirements • Live PNR • Attestation
                   </p>
                 </div>
@@ -382,14 +382,14 @@ export function AiTravelAdvisor() {
                 <button
                   onClick={() => handleWhatsAppChat(messages[messages.length - 1]?.text)}
                   title="Hand off conversation to human expert on WhatsApp"
-                  className="rounded-lg p-2 text-emerald-400 hover:bg-emerald-500/10 transition-colors"
+                  className="rounded-lg p-2 text-emerald-600 hover:bg-emerald-50 transition-colors"
                 >
                   <MessageCircle className="h-4 w-4" />
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
                   aria-label="Close Areera AI Assistant"
-                  className="rounded-lg p-2 text-gray-400 hover:bg-white/10 hover:text-white transition-colors"
+                  className="rounded-lg p-2 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors"
                 >
                   <X className="h-4 w-4" />
                 </button>
@@ -397,10 +397,10 @@ export function AiTravelAdvisor() {
             </div>
 
             {/* Conversation Body */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 text-xs">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 text-xs bg-slate-50/50">
               {/* Context Banner if on Country Page */}
               {currentCountry && (
-                <div className="rounded-xl border border-emerald-500/20 bg-emerald-950/20 p-2.5 flex items-center justify-between text-emerald-300">
+                <div className="rounded-xl border border-emerald-200 bg-emerald-50/90 p-2.5 flex items-center justify-between text-emerald-900 shadow-xs">
                   <div className="flex items-center gap-2">
                     <span className="text-base">{currentCountry.flag}</span>
                     <span className="font-medium text-[11px]">
@@ -409,7 +409,7 @@ export function AiTravelAdvisor() {
                   </div>
                   <button
                     onClick={() => handleSend(`What are all the visa requirements for ${currentCountry.name}?`)}
-                    className="text-[10px] bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 px-2 py-1 rounded-md transition-colors font-medium"
+                    className="text-[10px] bg-emerald-600 hover:bg-emerald-700 text-white px-2 py-1 rounded-md transition-colors font-semibold shadow-xs"
                   >
                     Ask about {currentCountry.name}
                   </button>
@@ -428,19 +428,19 @@ export function AiTravelAdvisor() {
                     className={cn(
                       "max-w-[88%] rounded-2xl px-3.5 py-2.5 leading-relaxed",
                       msg.sender === "user"
-                        ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-br-xs"
-                        : "bg-white/5 border border-white/10 text-gray-200 rounded-bl-xs shadow-xs"
+                        ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-br-xs shadow-xs"
+                        : "bg-white border border-slate-200 text-slate-800 rounded-bl-xs shadow-xs"
                     )}
                   >
                     <div className="whitespace-pre-wrap">{msg.text}</div>
 
                     {/* Suggested Link */}
                     {msg.suggestedLink && (
-                      <div className="mt-2.5 pt-2 border-t border-white/10">
+                      <div className="mt-2.5 pt-2 border-t border-slate-100">
                         <Link
                           to={msg.suggestedLink.url as any}
                           onClick={() => setIsOpen(false)}
-                          className="inline-flex items-center gap-1.5 font-medium text-amber-400 hover:text-amber-300 transition-colors"
+                          className="inline-flex items-center gap-1.5 font-semibold text-blue-600 hover:text-blue-700 transition-colors"
                         >
                           <span>{msg.suggestedLink.title}</span>
                           <ExternalLink className="h-3 w-3" />
@@ -462,12 +462,12 @@ export function AiTravelAdvisor() {
                               handleSend(chip);
                             }
                           }}
-                          className="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-gray-300 hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:text-emerald-300 transition-colors flex items-center gap-1"
+                          className="rounded-lg border border-slate-200 bg-white px-2.5 py-1 text-[11px] text-slate-700 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-colors flex items-center gap-1 shadow-xs"
                         >
                           {chip.includes("WhatsApp") || chip.includes("Consultant") ? (
-                            <MessageCircle className="h-2.5 w-2.5 text-emerald-400" />
+                            <MessageCircle className="h-2.5 w-2.5 text-emerald-600" />
                           ) : (
-                            <Sparkles className="h-2.5 w-2.5 text-amber-400" />
+                            <Sparkles className="h-2.5 w-2.5 text-blue-500" />
                           )}
                           <span>{chip}</span>
                         </button>
@@ -475,15 +475,15 @@ export function AiTravelAdvisor() {
                     </div>
                   )}
 
-                  <span className="text-[9px] text-gray-500 px-1">
+                  <span className="text-[9px] text-slate-400 px-1">
                     {msg.sender === "user" ? "You" : "Areera AI"} • {msg.timestamp}
                   </span>
                 </div>
               ))}
 
               {isTyping && (
-                <div className="flex items-center gap-2 text-gray-400 bg-white/5 border border-white/10 rounded-2xl px-3.5 py-2.5 w-fit">
-                  <Bot className="h-3.5 w-3.5 text-emerald-400 animate-spin" />
+                <div className="flex items-center gap-2 text-slate-500 bg-white border border-slate-200 rounded-2xl px-3.5 py-2.5 w-fit shadow-xs">
+                  <Bot className="h-3.5 w-3.5 text-blue-600 animate-spin" />
                   <span className="text-xs">Consulting Areera Knowledge Base...</span>
                 </div>
               )}
@@ -493,14 +493,14 @@ export function AiTravelAdvisor() {
 
             {/* Quick Suggestions (if no interaction yet) */}
             {!hasInteracted && (
-              <div className="px-4 py-2 border-t border-white/5 bg-white/[0.02]">
-                <p className="text-[10px] text-gray-400 mb-1.5 font-medium">Frequently Asked:</p>
+              <div className="px-4 py-2 border-t border-slate-200 bg-white">
+                <p className="text-[10px] text-slate-500 mb-1.5 font-medium">Frequently Asked:</p>
                 <div className="flex gap-1.5 overflow-x-auto no-scrollbar pb-1">
                   {INITIAL_SUGGESTIONS.slice(0, 3).map((sugg, i) => (
                     <button
                       key={i}
                       onClick={() => handleSend(sugg)}
-                      className="shrink-0 text-[10px] rounded-md bg-white/5 hover:bg-white/10 border border-white/10 px-2 py-1 text-gray-300 transition-colors"
+                      className="shrink-0 text-[10px] rounded-md bg-slate-50 hover:bg-blue-50 hover:text-blue-700 border border-slate-200 px-2 py-1 text-slate-600 transition-colors"
                     >
                       {sugg}
                     </button>
@@ -510,21 +510,21 @@ export function AiTravelAdvisor() {
             )}
 
             {/* Direct Human WhatsApp Escalation Banner */}
-            <div className="flex items-center justify-between border-t border-white/10 bg-[#0c121f] px-4 py-2 text-[11px]">
-              <span className="text-gray-400 flex items-center gap-1.5">
-                <MessageCircle className="h-3.5 w-3.5 text-emerald-400" />
+            <div className="flex items-center justify-between border-t border-slate-200 bg-emerald-50/80 px-4 py-2 text-[11px]">
+              <span className="text-slate-600 flex items-center gap-1.5">
+                <MessageCircle className="h-3.5 w-3.5 text-emerald-600" />
                 Prefer a human specialist?
               </span>
               <button
                 onClick={() => handleWhatsAppChat(query || "General Visa Consultation")}
-                className="font-semibold text-emerald-400 hover:text-emerald-300 hover:underline transition-colors"
+                className="font-semibold text-emerald-700 hover:text-emerald-800 hover:underline transition-colors"
               >
                 Chat on WhatsApp ➔
               </button>
             </div>
 
             {/* Chat Input Bar */}
-            <div className="p-3 border-t border-white/10 bg-[#080b13]">
+            <div className="p-3 border-t border-slate-200 bg-white">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -538,21 +538,21 @@ export function AiTravelAdvisor() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Ask about Turkey visa, flight PNR, MOFA..."
-                  className="flex-1 rounded-xl border border-white/15 bg-white/5 px-3.5 py-2.5 text-xs text-white placeholder-gray-500 focus:border-emerald-500 focus:bg-white/10 focus:outline-none transition-colors"
+                  className="flex-1 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none transition-colors"
                 />
                 <button
                   type="submit"
                   disabled={!query.trim() || isTyping}
                   aria-label="Send query to Areera AI"
-                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-md shadow-emerald-950/50 hover:from-emerald-600 hover:to-teal-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-sm hover:from-blue-700 hover:to-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                 >
                   <Send className="h-4 w-4" />
                 </button>
               </form>
-              <div className="mt-1.5 flex items-center justify-between text-[9px] text-gray-500 px-1">
+              <div className="mt-1.5 flex items-center justify-between text-[9px] text-slate-400 px-1">
                 <span>Verified against Areera Travel Knowledge Base</span>
                 <span className="flex items-center gap-1">
-                  <kbd className="px-1 py-0.5 rounded bg-white/10 font-mono">↵</kbd> to send
+                  <kbd className="px-1 py-0.5 rounded bg-slate-100 border border-slate-200 font-mono text-slate-500">↵</kbd> to send
                 </span>
               </div>
             </div>
