@@ -4,7 +4,7 @@ import { V as Earth } from "../_libs/lucide-react.mjs";
 import { t as Breadcrumbs } from "./Breadcrumbs-_GnoNGyX.mjs";
 import { i as SectionHeading, n as Reveal, r as Section } from "./Reveal-3UjQit6f.mjs";
 import { n as FaqSection, t as ContentArticle } from "./FaqSection-C5CjSI_F.mjs";
-import { C as attestationArticle, W as Button, d as countries, u as attestationCountries, w as attestationFaqs } from "./router-DVre9Y2s2.mjs";
+import { C as attestationArticle, W as Button, d as countries, u as attestationCountries, w as attestationFaqs } from "./router-F7AE0Etm2.mjs";
 import { t as BookingForm } from "./BookingForm-BIqwlYfB.mjs";
 import { t as CountryCard } from "./cards-CNZ1sMux.mjs";
 import { t as RelatedServices } from "./RelatedServices-Hc1WqBMg.mjs";

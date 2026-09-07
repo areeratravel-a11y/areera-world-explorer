@@ -1,7 +1,7 @@
 import { l as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { _ as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { rt as ArrowRight } from "../_libs/lucide-react.mjs";
-import { v as services } from "./router-DVre9Y2s2.mjs";
+import { v as services } from "./router-F7AE0Etm2.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/RelatedServices-Hc1WqBMg.js
 var import_jsx_runtime = require_jsx_runtime();
 function RelatedServices({ exclude }) {

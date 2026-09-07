@@ -446,10 +446,10 @@ export function Navbar() {
 
           {/* Right: Actions */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0 whitespace-nowrap">
-            {/* Apply for Visa — Round Pill CTA */}
+            {/* Apply for Visa — Round Pill CTA (Desktop & Tablet) */}
             <Link
               to="/services/visa"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 border border-blue-400/40 px-4 sm:px-5 py-2 sm:py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-blue-500/25 transition-all duration-200 hover:scale-[1.02] hover:shadow-blue-500/35 shrink-0 whitespace-nowrap"
+              className="hidden md:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 border border-blue-400/40 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-blue-500/25 transition-all duration-200 hover:scale-[1.02] hover:shadow-blue-500/35 shrink-0 whitespace-nowrap"
             >
               <span>Apply For Visa</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -908,17 +908,7 @@ export function Navbar() {
               </nav>
 
               {/* Footer CTA */}
-              <div className="mt-auto pt-3 border-t border-slate-200 space-y-2">
-                <a
-                  href={`https://wa.me/${contactInfo.whatsapp.replace(/[^0-9]/g, "")}?text=Hello%20Areera%20Travel%2C%20I%20would%20like%20to%20inquire%20about%20visa%20services.`}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#20bd5a] px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-emerald-600/20 transition-colors"
-                >
-                  <WhatsAppIcon className="h-4 w-4" />
-                  Chat on WhatsApp
-                </a>
+              <div className="mt-auto pt-3 border-t border-slate-200">
                 <Link
                   to="/services/visa"
                   onClick={() => setMobileOpen(false)}

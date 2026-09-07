@@ -5,7 +5,7 @@ import { K as CircleCheck, N as Hotel, V as Earth, W as Clock, f as ShieldCheck,
 import { t as Breadcrumbs } from "./Breadcrumbs-_GnoNGyX.mjs";
 import { r as Section } from "./Reveal-3UjQit6f.mjs";
 import { n as FaqSection, t as ContentArticle } from "./FaqSection-C5CjSI_F.mjs";
-import { D as countriesHubArticle, G as cn, O as countriesHubFaqs, c as REGIONS, d as countries } from "./router-DVre9Y2s2.mjs";
+import { D as countriesHubArticle, G as cn, O as countriesHubFaqs, c as REGIONS, d as countries } from "./router-F7AE0Etm2.mjs";
 import { t as CountryCard } from "./cards-CNZ1sMux.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/countries.index-Ds8J4np1.js
 var import_react = /* @__PURE__ */ __toESM(require_react());

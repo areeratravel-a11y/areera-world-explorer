@@ -3,7 +3,7 @@ import { _ as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { C as MessageSquare, G as CircleQuestionMark, H as Compass, V as Earth, W as Clock, l as Stamp, r as Wallet, rt as ArrowRight, y as Plane } from "../_libs/lucide-react.mjs";
 import { t as Breadcrumbs } from "./Breadcrumbs-_GnoNGyX.mjs";
 import { i as SectionHeading, n as Reveal, r as Section } from "./Reveal-3UjQit6f.mjs";
-import { W as Button, s as CountryFlag, y as siteConfig } from "./router-DVre9Y2s2.mjs";
+import { W as Button, s as CountryFlag, y as siteConfig } from "./router-F7AE0Etm2.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/guides.visa-free-asian-destinations-BbbPGDog.js
 var import_jsx_runtime = require_jsx_runtime();
 var featuredGateways = [

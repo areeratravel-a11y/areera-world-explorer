@@ -41,7 +41,7 @@ export function FloatingWhatsApp({
   return (
     <div
       className={cn(
-        "fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 flex items-center select-none",
+        "hidden md:flex fixed bottom-6 right-6 z-50 items-center select-none",
         className,
       )}
       onMouseEnter={() => setIsHovered(true)}
